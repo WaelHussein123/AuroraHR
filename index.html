@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora HR Consulting - Enhanced Website</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Aurora HR Consulting",
+      "url": "https://yourdomain.com/",
+      "logo": "https://yourdomain.com/path-to-logo.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "email": "info@aurorah.ca",
+        "telephone": "+1-778-892-5892",
+        "contactType": "customer service"
+      }],
+      "sameAs": [
+        "https://www.linkedin.com/in/yourprofile",
+        "https://x.com/yourprofile",
+        "https://www.facebook.com/yourprofile",
+        "https://www.instagram.com/yourprofile"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --color-bg: #0f0f23;
+            --color-card: #1a1a2e;
+            --color-card-hover: #16213e;
+            --color-accent-teal: #00ffb4;
+            --color-accent-purple: #7c3aed;
+            --color-accent-pink: #ff6b9d;
+            --color-aurora-blue: #00d4ff;
+        }
+        
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Segoe UI', 'Inter', sans-serif; 
+            color: rgba(255, 255, 255, 0.8); 
+            overflow-x: hidden;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAA4A7oDAREAAhEBAxEB/8QAGwABAQEBAQEBAQAAAAAAAAAAAAECAwQFBgf/xAA5EAACAQMDAwIFAgQEBAcAAAAAAQIDBBEFEiExQQYTUWFxIhQycYGRobHB8FLhI0LxFjNTYnKSov/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAgEQEBAQEAAgICAwEAAAAAAAAAARECIRIxA0FRYSIy/9oADAMBAAIREAPwD5GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYAAATAAAAAAAAACYAAAAAAAAAAnYABOwAATsAJ2AAAJ2E7AAnYABOwAAnYTAAATAAAAAAAAAAAToAE6AAnQAE6ABOgAJ0ABOgAJ0ABMAAJgAAAAAAAAAAAAACdgAJ2AAnYACdgAJ2AAnYACdgAJ2AAnYACdgAJgACYAAAAAAAAAAAACdgAE7AAnYACdgAJ2AAnYACdgAJ2EwAAnYTAACYAAAAAAAAAAACYAAAnQAE6ABOgAJgACYAAAnYTAAEwAAAAAAAAAACYAAAJhMAATACYACYAAAnYTAAEwAAAAAAAAAAAnYTAAEwABMAATAAAnYTATAAACYAAAAAAAAACdhMAATAAAnYTATAAAEwABMwACYAAAAAAAAACdhMAATMJgACdhMBMAATAAnYTATAAACYAAAAAAAAACdhMAATATAACYACYACdhMBMAATAAAAAAAAAAAnYACdhMBMAATACYACdhMBMAATAAnYTAAEwAAAAACdgAJ2AAnYACdgAJ2AAnYACdgAJ2AAnYACdgAAmAACYAAAAAAAAACdgAE7AAnYACdgAJ2AAnYACdgAJ2AAnYTAAEwAAAAAAAAAAAJgACdgAJ2AAnYACdgAJ2AAnYACdhMAAnYTAAEwAAAAAAAAAE6ABOgAToACdAAAEwABOgAToACdAAAnQTAAEwAAAAAAAAAAToACdAAAnQAE6ABMAAToACdAAAnYTAAATAAAAAAAAAAToACdAAAnQAE6ABMAAToACdAJgAnYACYAAAAAE6ABOgAToACdCATAAE6ABOgATAAnQAmAACYAAAAAAAAAATAAnQAmAAEwAJ0ABMAATAAnQAmAAEwAAAAAAAAAnYTATAAATAAmAAEwAJ2EwAAmAAAAnYACdhMBMAATACYACdhMBMAATAAnYTAAEwAAAJ2AAnYACdhMBMAATAAAnYACdhMBMAAnYTAAEwACdgAJ2AAnYACdhMAAnYACdhMAAnYACdhMAAnYTATAAE7AAnYACdgAJ2AAnYACdgAJ2AAnYACdgAJ2AAnYACdgAT//Z');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: var(--color-bg); /* Fallback color */
+        } 
+        
+        /* Header styles */
+        .header { 
+            background: rgba(15, 15, 35, 0.85); 
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+        }
+        .text-gradient { 
+            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple), var(--color-accent-pink)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        .button-gradient { 
+            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple)); 
+        }
+        .button-gradient:hover { 
+            box-shadow: 0 8px 25px rgba(0, 255, 180, 0.4); 
+        } 
+        
+        /* Navigation styles */
+        .nav-link { 
+            color: rgba(255, 255, 255, 0.8); 
+            padding-top: 0.75rem; 
+            padding-bottom: 0.75rem; 
+            transition: all 0.3s ease; 
+        } 
+        .nav-link::after { 
+            content: ''; 
+            display: block; 
+            width: 0; 
+            height: 2px; 
+            background: linear-gradient(90deg, var(--color-accent-teal), var(--color-accent-purple)); 
+            transition: width .3s; 
+        }
+        .nav-link:hover::after, 
+        .nav-link.active::after { 
+            width: 100%; 
+        }
+        
+        /* Card styles (Service and Value) */
+        .service-card, .value-card { 
+            background-color: var(--color-card);
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            transition: all 0.3s ease; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative; 
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+        .service-card.active, 
+        .service-card:hover,
+        .value-card.active,
+        .value-card:hover { 
+            transform: translateY(-8px); 
+            border-color: var(--color-accent-teal); 
+            box-shadow: 0 10px 30px rgba(0, 255, 180, 0.4);
+            background-color: var(--color-card-hover);
+        }
+        
+        /* SWOT button styles */
+        .swot-button { 
+            background-color: var(--color-card);
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+        }
+        .swot-button.active { 
+            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple)); 
+            color: white; 
+            border-color: var(--color-accent-teal);
+            box-shadow: 0 5px 15px rgba(0, 255, 180, 0.4); 
+        }
+        .swot-button:hover:not(.active) { 
+            background-color: var(--color-card-hover);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
+
+        /* Section backgrounds */
+        .section-bg-light { background-color: var(--color-card); } 
+
+        /* Hero animation */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg, 
+                transparent, 
+                rgba(0, 255, 180, 0.1), 
+                transparent, 
+                rgba(124, 58, 237, 0.15), 
+                transparent
+            ); 
+            animation: rotate 25s linear infinite; 
+            z-index: 1;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero-aurora {
+            width: 200px;
+            height: 120px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        .hero-wave {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            animation: aurora-flow 5s ease-in-out infinite; 
+        }
+        .hero-wave-1 {
+            background: linear-gradient(90deg, var(--color-accent-teal), var(--color-accent-purple), var(--color-accent-pink));
+            top: 15px;
+            animation-delay: 0s;
+        }
+        .hero-wave-2 {
+            background: linear-gradient(90deg, var(--color-accent-purple), #00d4ff, var(--color-accent-teal));
+            top: 35px;
+            animation-delay: 0.7s; 
+            opacity: 0.8;
+        }
+        .hero-wave-3 {
+            background: linear-gradient(90deg, var(--color-accent-pink), var(--color-accent-teal), var(--color-accent-purple));
+            top: 55px;
+            animation-delay: 1.4s; 
+            opacity: 0.6;
+        }
+        .hero-wave-4 {
+            background: linear-gradient(90deg, #00d4ff, var(--color-accent-pink), var(--color-accent-teal));
+            top: 75px;
+            animation-delay: 2.1s; 
+            opacity: 0.4;
+        }
+        @keyframes aurora-flow {
+            0%, 100% {
+                transform: translateX(-15px) scaleX(0.7); 
+                opacity: 0.2; 
+            }
+            50% {
+                transform: translateX(15px) scaleX(1.3); 
+                opacity: 1;
+            }
+        }
+
+        /* Contact form styles */
+        .contact label { color: rgba(255, 255, 255, 0.8); }
+        .contact input, .contact textarea {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .contact input:focus, .contact textarea:focus {
+            border-color: var(--color-accent-teal);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Mobile menu styles */
+        #mobile-menu { background-color: var(--color-card-hover); }
+        #mobile-menu a { 
+            color: rgba(255, 255, 255, 0.8); 
+            padding-top: 0.75rem; 
+            padding-bottom: 0.75rem; 
+        } 
+        #mobile-menu-button div { background-color: white; }
+        
+        /* Footer styles */
+        footer { color: rgba(255, 255, 255, 0.7); } 
+        footer a { color: rgba(255, 255, 255, 0.7); } 
+
+        /* HR insights cards */
+        .hr-insights-content-card { 
+            background-color: var(--color-card); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            transition: all 0.3s ease; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
+        .hr-insights-content-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+        }
+        .hr-insights-content-card a { 
+            color: var(--color-aurora-blue);
+        }
+        .hr-insights-content-card a:hover { 
+            text-decoration: underline; 
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 255, 180, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 15px 10px rgba(0, 255, 180, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 255, 180, 0); }
+        }
+        .cta-button.pulse-anim { 
+            animation: pulse 2s infinite;
+        }
+        
+        /* Approach section styles */
+        .approach-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .approach-content h4 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--color-accent-teal);
+            font-weight: 500;
+        }
+        
+        /* Service section styles */
+        .service-highlight {
+            background: linear-gradient(120deg, rgba(0,255,180,0.1), rgba(124,58,237,0.1));
+            border-left: 4px solid var(--color-accent-teal);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        /* Icon styles */
+        .custom-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .custom-icon {
+            transform: scale(1.15);
+        }
+        
+        /* Team photos */
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--color-accent-purple);
+            margin: 0 auto 20px;
+        }
+        
+        /* Social icons */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple));
+        }
+
+        /* Color variables for theme consistency */
+        .text-aurora-teal { color: var(--color-accent-teal); }
+        .text-aurora-purple { color: var(--color-accent-purple); }
+        .text-aurora-pink { color: var(--color-accent-pink); }
+        .text-aurora-blue { color: var(--color-aurora-blue); }
+
+        /* Styles for the "Our Values" cards */
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+            animation: icon-pulse 4s ease-in-out infinite;
+        }
+        .value-card:hover .value-icon {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 10px rgba(0, 255, 180, 0.7));
+        }
+        
+        .values-grid > .value-card:nth-child(1) .value-icon { animation-delay: 0s; }
+        .values-grid > .value-card:nth-child(2) .value-icon { animation-delay: 0.5s; }
+        .values-grid > .value-card:nth-child(3) .value-icon { animation-delay: 1s; }
+        .values-grid > .value-card:nth-child(4) .value-icon { animation-delay: 1.5s; }
+
+        @keyframes icon-pulse {
+          0% { filter: drop-shadow(0 0 5px rgba(0, 255, 180, 0.5)); }
+          50% { filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.7)); }
+          100% { filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.5)); }
+        }
+
+        /* Accessibility: Skip Link */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 1rem;
+            margin: 1rem;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+            background: var(--color-accent-teal);
+            color: var(--color-bg);
+            z-index: 1000;
+        }
+         /* Accessibility: Focus Styles */
+        :focus-visible {
+            outline: 3px solid var(--color-accent-teal);
+            outline-offset: 2px;
+        }
+        .button-gradient:focus-visible, .service-card:focus-visible, .value-card:focus-visible, .swot-button:focus-visible {
+             box-shadow: 0 0 0 3px var(--color-accent-teal), 0 8px 25px rgba(0, 255, 180, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-white text-black absolute top-0 left-0 z-50">Skip to main content</a>
+    <noscript>
+      <div style="background: #ff6b9d; color: #fff; padding: 1em; text-align: center;">
+        This site works best with JavaScript enabled. Some interactive features may not be available.
+      </div>
+    </noscript>
+    <header class="header fixed top-0 left-0 right-0 z-50" role="banner">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-light text-gradient text-center leading-none">
+                AURORA HR
+                <span class="block text-xs font-normal text-white/70 tracking-wider -mt-1">CONSULTING</span>
+            </h1>
+            <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+                <a href="#services" class="nav-link text-lg font-light">Services</a>
+                <a href="#approach" class="nav-link text-lg font-light">Approach</a>
+                <a href="#about-us" class="nav-link text-lg font-light">About Us</a>
+                <a href="#engagement-models" class="nav-link text-lg font-light">Partnership Models</a>
+                <a href="#hr-insights-section" class="nav-link text-lg font-light">HR Insights</a>
+                <a href="#contact" class="nav-link text-lg font-light">Engage Us</a>
+            </nav>
+            <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
+                <div class="w-6 h-0.5 mb-1.5 bg-white"></div>
+                <div class="w-6 h-0.5 bg-white"></div>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden p-4">
+            <a href="#services" class="block py-2 text-center">Services</a>
+            <a href="#approach" class="block py-2 text-center">Approach</a>
+            <a href="#about-us" class="block py-2 text-center">About Us</a>
+            <a href="#engagement-models" class="block py-2 text-center">Partnership Models</a>
+            <a href="#hr-insights-section" class="block py-2 text-center">HR Insights</a>
+            <a href="#contact" class="block py-2 text-center">Engage Us</a>
+        </div>
+    </header>
+
+    <main role="main" id="main-content" tabindex="-1">
+        <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="hero-aurora">
+                    <div class="hero-wave hero-wave-1"></div>
+                    <div class="hero-wave hero-wave-2"></div>
+                    <div class="hero-wave hero-wave-3"></div>
+                    <div class="hero-wave hero-wave-4"></div>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-light text-gradient leading-normal">Aurora HR Consulting</h2>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed" style="color: rgba(255,255,255,0.9);">Illuminating the Human Spirit in Mission-Driven Workplaces</p>
+                <p class="mt-2 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed" style="color: rgba(255,255,255,0.7);">Driven by values. Powered by strategy. Grounded in execution.</p>
+                <a href="#services" class="mt-8 inline-block button-gradient text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105 pulse-anim">Explore Our Services</a>
+            </div>
+        </section>
+
+        
+
+<section id="services" class="py-10 md:py-16 section-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Services</h2>
+                    <p id="services-intro-text" class="mt-4 text-lg max-w-3xl mx-auto font-light">HR Support That Fits the Way You Work</p>
+                </div>
+                
+                <div class="service-highlight max-w-4xl mx-auto mt-10">
+                    <p class="text-lg font-medium text-center">No two organizations are alike—your HR solutions shouldn’t be either. We tailor every service to reflect your mission, culture, and operational reality—so you can lead with clarity today and scale with confidence tomorrow.</p>
+                </div>
+                
+                
+
+<div id="services-grid" class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="hr-policy-development" tabindex="0" role="button" aria-pressed="false" aria-label="HR Policy Development">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <title>HR Policy Development Icon</title>
+                                <defs>
+                                    <linearGradient id="policy-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient>
+                                    <filter id="glow"><feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" /><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                                </defs>
+                                <rect x="15" y="10" width="70" height="80" rx="5" fill="rgba(255, 255, 255, 0.05)" stroke="url(#policy-gradient)" stroke-width="2" />
+                                <path d="M75,10 L85,20 L75,20 Z" fill="rgba(255, 255, 255, 0.1)" stroke="url(#policy-gradient)" stroke-width="2" />
+                                <path d="M50,25 C45,25 40,28 40,35 L40,45 C40,60 50,70 50,70 C50,70 60,60 60,45 L60,35 C60,28 55,25 50,25 Z" fill="none" stroke="url(#policy-gradient)" stroke-width="3" />
+                                <path d="M50,35 L45,40 L47,45 L50,43 L53,45 L55,40 Z" fill="url(#policy-gradient)" filter="url(#glow)" />
+                                <line x1="25" y1="50" x2="65" y2="50" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="58" x2="65" y2="58" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="66" x2="65" y2="66" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="74" x2="50" y2="74" stroke="url(#policy-gradient)" stroke-width="2" />
+                                <path d="M30,55 L35,60 L45,50" fill="none" stroke="#00ffb4" stroke-width="2" /><path d="M30,65 L35,70 L45,60" fill="none" stroke="#7c3aed" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">HR Policy Development</h3>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Crafting people-first tools for workplace clarity</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="process-improvement" tabindex="0" role="button" aria-pressed="false" aria-label="Process Improvement">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                 <title>Process Improvement Icon</title>
+                                <defs><linearGradient id="process-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <circle cx="50" cy="50" r="30" fill="rgba(255, 255, 255, 0.05)" stroke="url(#process-gradient)" stroke-width="2" />
+                                <g transform="rotate(15, 50, 50)"><rect x="45" y="15" width="10" height="15" rx="2" fill="url(#process-gradient)" /><rect x="45" y="70" width="10" height="15" rx="2" fill="url(#process-gradient)" /><rect x="15" y="45" width="15" height="10" rx="2" fill="url(#process-gradient)" /><rect x="70" y="45" width="15" height="10" rx="2" fill="url(#process-gradient)" /></g>
+                                <path d="M50,32 a18,18 0 0,1 15.58,9" stroke="#00ffb4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M68,48 L63,52 L69,54 Z" fill="#00ffb4"/>
+                                <circle cx="50" cy="50" r="5" fill="url(#process-gradient)" filter="url(#glow)" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Process Improvement</h3>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Streamlining HR workflows for efficiency gains</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="employee-engagement" tabindex="0" role="button" aria-pressed="false" aria-label="Employee Engagement">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <title>Employee Engagement Icon</title>
+                                <defs><linearGradient id="engagement-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <circle cx="35" cy="40" r="8" fill="#00ffb4" filter="url(#glow)" /><path d="M28,55 h14 a7,7 0 0,0 -14,0 z" fill="#00ffb4" />
+                                <circle cx="50" cy="30" r="8" fill="#7c3aed" filter="url(#glow)" /><path d="M43,45 h14 a7,7 0 0,0 -14,0 z" fill="#7c3aed" />
+                                <circle cx="65" cy="40" r="8" fill="#ff6b9d" filter="url(#glow)" /><path d="M58,55 h14 a7,7 0 0,0 -14,0 z" fill="#ff6b9d" />
+                                <line x1="40" y1="45" x2="48" y2="38" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" /><line x1="52" y1="38" x2="60" y2="45" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" />
+                                <path d="M50,65 Q55,60 60,65 Q65,70 50,85 Q35,70 40,65 Q45,60 50,65 Z" fill="url(#engagement-gradient)" opacity="0.9" filter="url(#glow)" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Employee Engagement</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Creating cultures where people want to be</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="hr-communications" tabindex="0" role="button" aria-pressed="false" aria-label="HR Communications">
+                        <div class="custom-icon" aria-hidden="true">
+                           <svg viewBox="0 0 100 100">
+                               <title>HR Communications Icon</title>
+                                <defs><linearGradient id="comms-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M35,25 a15,15 0 1,1 0,30 l-10,10 v-10 h-5 a15,15 0 0,1 -15,-15 v0 a15,15 0 0,1 15,-15 z" fill="rgba(255,255,255,0.05)" stroke="url(#comms-gradient)" stroke-width="2" />
+                                <path d="M65,45 a15,15 0 1,0 0,30 l10,10 v-10 h5 a15,15 0 0,0 15,-15 v0 a15,15 0 0,0 -15,-15 z" fill="rgba(255,255,255,0.1)" stroke="url(#comms-gradient)" stroke-width="2" filter="url(#glow)"/>
+                                <line x1="30" y1="35" x2="40" y2="35" stroke="#00ffb4" stroke-width="2" /><line x1="25" y1="45" x2="45" y2="45" stroke="#00ffb4" stroke-width="2" />
+                                <line x1="60" y1="55" x2="70" y2="55" stroke="#7c3aed" stroke-width="2" /><line x1="55" y1="65" x2="75" y2="65" stroke="#7c3aed" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">HR Communications</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Clear, professional messaging for your team</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="hris-data-management" tabindex="0" role="button" aria-pressed="false" aria-label="HRIS & Data Management">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                 <title>HRIS & Data Management Icon</title>
+                                <defs><linearGradient id="hris-gradient" x1="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <ellipse cx="50" cy="25" rx="30" ry="10" fill="rgba(255, 255, 255, 0.05)" stroke="url(#hris-gradient)" stroke-width="2" />
+                                <path d="M20,25 V75 a30,10 0 0,0 60,0 V25" fill="rgba(255,255,255,0.05)" stroke="url(#hris-gradient)" stroke-width="2" />
+                                <ellipse cx="50" cy="75" rx="30" ry="10" fill="rgba(255, 255, 255, 0.05)" stroke="url(#hris-gradient)" stroke-width="2" />
+                                <ellipse cx="50" cy="40" rx="25" ry="8" fill="none" stroke="url(#hris-gradient)" stroke-width="1.5" opacity="0.8"/>
+                                <ellipse cx="50" cy="58" rx="25" ry="8" fill="none" stroke="url(#hris-gradient)" stroke-width="1.5" opacity="0.6"/>
+                                <path d="M60,25 l5,-5 l5,5" stroke="#00ffb4" fill="none" stroke-width="2" /><line x1="65" y1="20" y2="10" stroke="#00ffb4" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">HRIS & Data Management</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Aligning technology with people's strategy</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="total-rewards" tabindex="0" role="button" aria-pressed="false" aria-label="Total Rewards">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <title>Total Rewards Icon</title>
+                                <defs><linearGradient id="rewards-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M50,20 L80,50 L50,80 L20,50 Z" fill="rgba(255,255,255,0.05)" stroke="url(#rewards-gradient)" stroke-width="2" />
+                                <path d="M50,28 L72,50 L50,72 L28,50 Z" fill="url(#rewards-gradient)" filter="url(#glow)"/>
+                                <path d="M50,20 L55,25 L60,20 L55,15 Z" fill="#00ffb4" filter="url(#glow)" /><path d="M80,50 L75,55 L70,50 L75,45 Z" fill="#7c3aed" filter="url(#glow)" /><path d="M50,80 L45,75 L40,80 L45,85 Z" fill="#ff6b9d" filter="url(#glow)" /><path d="M20,50 L25,45 L30,50 L25,55 Z" fill="url(#rewards-gradient)" filter="url(#glow)" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Total Rewards</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Balancing Values, Equity, and Sustainability</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="diversity-inclusion" tabindex="0" role="button" aria-pressed="false" aria-label="Diversity & Inclusion">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <title>Diversity & Inclusion Icon</title>
+                                <defs><linearGradient id="diversity-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#diversity-gradient)" stroke-width="2" stroke-dasharray="6, 4" />
+                                <circle cx="50" cy="50" r="10" fill="url(#diversity-gradient)" filter="url(#glow)"/>
+                                <circle cx="50" cy="18" r="7" fill="#00ffb4" /><circle cx="20" cy="35" r="7" fill="#7c3aed" /><circle cx="28" cy="68" r="7" fill="#ff6b9d" /><circle cx="72" cy="68" r="7" fill="#00ffb4" /><circle cx="80" cy="35" r="7" fill="#7c3aed" />
+                                <line x1="50" y1="18" x2="50" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="20" y1="35" x2="43" y2="45" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="28" y1="68" x2="45" y2="58" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="72" y1="68" x2="55" y2="58" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="80" y1="35" x2="57" y2="45" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Diversity & Inclusion</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Building inclusive practices that respect culture</p>
+                    </div>
+                    
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="learning-development" tabindex="0" role="button" aria-pressed="false" aria-label="Learning & Development">
+                         <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                 <title>Learning & Development Icon</title>
+                                <defs><linearGradient id="learning-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M20,80 L80,80 L80,75 L20,75 Z" fill="rgba(255,255,255,0.05)" stroke="url(#learning-gradient)" stroke-width="2"/>
+                                <path d="M25,75 L75,75 L70,20 L30,20 Z" fill="rgba(255,255,255,0.05)" stroke="url(#learning-gradient)" stroke-width="2"/>
+                                <path d="M45,30 Q50,20 55,30" fill="url(#learning-gradient)" filter="url(#glow)"/><line x1="50" y1="30" x2="50" y2="40" stroke="url(#learning-gradient)" stroke-width="3"/>
+                                <path d="M45,40 Q50,45 55,40" fill="none" stroke="url(#learning-gradient)" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="35" y1="50" x2="65" y2="50" stroke="#00ffb4" stroke-width="2" /><line x1="35" y1="60" x2="65" y2="60" stroke="#7c3aed" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Learning & Development</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Practical training that builds real capabilities</p>
+                    </div>
+
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="performance-management" tabindex="0" role="button" aria-pressed="false" aria-label="Performance Management">
+                        <div class="custom-icon" aria-hidden="true">
+                           <svg viewBox="0 0 100 100">
+                                <title>Performance Management Icon</title>
+                                <defs><linearGradient id="performance-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <circle cx="50" cy="50" r="35" fill="rgba(255, 255, 255, 0.05)" stroke="url(#performance-gradient)" stroke-width="1.5"/>
+                                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#performance-gradient)" stroke-width="1.5"/>
+                                <circle cx="50" cy="50" r="15" fill="url(#performance-gradient)" filter="url(#glow)"/>
+                                <path d="M50,15 L60,30 L55,30 L55,45 L45,45 L45,30 L40,30 Z" fill="#00ffb4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Performance Management</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Driving individual and organizational growth.</p>
+                    </div>
+
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="competency-frameworks" tabindex="0" role="button" aria-pressed="false" aria-label="Competency Frameworks">
+                        <div class="custom-icon" aria-hidden="true">
+                           <svg viewBox="0 0 100 100">
+                                <title>Competency Frameworks Icon</title>
+                                <defs><linearGradient id="competency-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M30,20 h40 a10,10 0 0,1 10,10 v40 a10,10 0 0,1 -10,10 h-40 a10,10 0 0,1 -10,-10 v-40 a10,10 0 0,1 10,-10 z" fill="rgba(255,255,255,0.05)" stroke="url(#competency-gradient)" stroke-width="2"/>
+                                <rect x="30" y="30" width="15" height="15" rx="3" fill="#00ffb4" filter="url(#glow)"/><rect x="55" y="30" width="15" height="15" rx="3" fill="#7c3aed" filter="url(#glow)"/>
+                                <rect x="30" y="55" width="15" height="15" rx="3" fill="#ff6b9d" filter="url(#glow)"/><rect x="55" y="55" width="15" height="15" rx="3" fill="#00d4ff" filter="url(#glow)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Competency Frameworks</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Defining the skills needed for success.</p>
+                    </div>
+
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="metrics-kpi" tabindex="0" role="button" aria-pressed="false" aria-label="Metrics & KPI">
+                        <div class="custom-icon" aria-hidden="true">
+                           <svg viewBox="0 0 100 100">
+                               <title>Metrics & KPI Icon</title>
+                                <defs><linearGradient id="metrics-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <rect x="20" y="60" width="15" height="25" rx="2" fill="url(#metrics-gradient)" opacity="0.8"/>
+                                <rect x="42.5" y="40" width="15" height="45" rx="2" fill="url(#metrics-gradient)" opacity="0.7"/>
+                                <rect x="65" y="20" width="15" height="65" rx="2" fill="url(#metrics-gradient)" opacity="0.6"/>
+                                <path d="M15,80 Q40,30 85,20" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+                                <circle cx="85" cy="20" r="5" fill="white" filter="url(#glow)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Metrics & KPI</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Measuring HR effectiveness with data.</p>
+                    </div>
+
+                    
+
+<div class="service-card p-6 rounded-lg text-center" data-service-id="conflict-resolution-investigations" tabindex="0" role="button" aria-pressed="false" aria-label="Conflict Resolution & Investigations">
+                        <div class="custom-icon" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <title>Conflict Resolution & Investigations Icon</title>
+                                <defs><linearGradient id="conflict-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M20,60 L80,60" stroke="url(#conflict-gradient)" stroke-width="3" filter="url(#glow)"/><path d="M50,20 L50,60" stroke="url(#conflict-gradient)" stroke-width="3" filter="url(#glow)"/>
+                                <path d="M25,60 a15,20 0 0,0 0,20 h-10 a15,20 0 0,0 0,-20 z" fill="rgba(255,255,255,0.1)" stroke="url(#conflict-gradient)" stroke-width="2"/>
+                                <path d="M75,60 a15,20 0 0,1 0,20 h10 a15,20 0 0,1 0,-20 z" fill="rgba(255,255,255,0.1)" stroke="url(#conflict-gradient)" stroke-width="2"/>
+                                <circle cx="50" cy="40" r="15" fill="none" stroke="#7c3aed" stroke-width="3" filter="url(#glow)"/><line x1="60" y1="50" x2="70" y2="60" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Conflict Resolution & Investigations</h4>
+                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">Navigating workplace disputes with fairness.</p>
+                    </div>
+                </div>
+                <div id="service-details" class="mt-8 p-8 border rounded-lg" style="background-color: #16213e; border-color: rgba(255, 255, 255, 0.1); display: none; position: relative;">
+                    
+
+</div>
+            </div>
+        </section>
+
+        
+
+<section id="approach" class="py-10 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient flex items-center justify-center">
+                        Approach 
+                        <span class="ml-3">
+                            <svg class="approach-icon-svg" style="width:36px; height:36px;" viewBox="0 0 100 100" aria-hidden="true">
+                                <defs><linearGradient id="approach-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
+                                <path d="M50,20 a20,20 0 1,1 0.1,0 Z" fill="rgba(255,255,255,0.1)" stroke="url(#approach-gradient)" stroke-width="2"/>
+                                <path d="M50,42 L50,60" stroke="url(#approach-gradient)" stroke-width="4" stroke-linecap="round"/>
+                                <circle cx="50" cy="70" r="3" fill="url(#approach-gradient)"/>
+                                <line x1="50" y1="10" x2="50" y2="0" stroke="#00ffb4" stroke-width="2"/><line x1="30" y1="15" x2="20" y2="5" stroke="#7c3aed" stroke-width="2"/><line x1="70" y1="15" x2="80" y2="5" stroke="#ff6b9d" stroke-width="2"/>
+                            </svg>
+                        </span>
+                    </h2>
+                </div>
+                <div class="approach-content max-w-4xl mx-auto">
+                    <h3 class="text-xl font-semibold text-aurora-teal mb-2">Human-Centered Tailored Solutions for Distinctive Workplaces</h3>
+                    <p>At Aurora HR, we believe the organizations doing the most good in our communities deserve more than generic HR solutions. You face real-world challenges—tight budgets, growing pains, evolving teams—and your HR strategy should reflect your reality, not someone else’s.</p>
+                    <p>Your people, your culture, your stage of growth, and the unique realities you face each day demand an approach that’s as individual as your business. That’s why we deliver trusted, human-centered HR expertise—with clarity, compassion, and respect at every step. No jargon. No cookie-cutter playbooks. Just thoughtful, practical support tailored to the way you work.</p>
+                    <p>We don’t copy and paste. We co-create. Whether you're growing quickly, navigating change, or redefining how your team works together, we work alongside you to build flexible, values-aligned HR strategies that evolve as you do.</p>
+                    <p>Because at the heart of every strong organization is its people—and your team deserves the right support to truly thrive.</p>
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="service-card p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3">Beyond Compliance to Culture</h4>
+                        <p class="font-light" style="color: rgba(255, 255, 255, 0.7);">Cultivating belonging: We help mission-driven organizations build truly inclusive cultures, not just comply with mandates. Your values, reflected in your people.</p>
+                    </div>
+                    <div class="service-card p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3">Empowering Autonomy: Build Your Internal HR Strength</h4>
+                        <p class="font-light" style="color: rgba(255, 255, 255, 0.7);">We don't just do HR for you; we empower you to do it better. Build lasting internal HR capability with Aurora HR and gain true organizational autonomy</p>
+                    </div>
+                    <div class="service-card p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3">Culturally Attuned & Integrated strategies  </h4>
+                        <p class="font-light" style="color: rgba(255, 255, 255, 0.7);">Your people strategy isn't just HR. It's the engine of your entire organization. Let us show you how to connect every piece for maximum impact.</p>
+                    </div>
+                    <div class="service-card p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3">Growth-Ready Scale with Confidence</h4>
+                        <p class="font-light" style="color: rgba(255, 255, 255, 0.7);">Ready to grow? Our HR solutions are built for scale, ensuring your people operations keep pace with your ambition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+<section id="about-us" class="py-10 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Our Story</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">At Aurora HR, we're dedicated to supporting the small organizations that truly are the backbone of our community. We believe that those making a positive impact deserves the very best support. Small organizations encounter unique challenges, and we understand that they need tailored solutions, not a one-size-fits-all approach. That's why we offer trusted HR expertise wrapped in deep respect and compassion. Our method is rooted in practical strategy, offering clear, jargon-free solutions that empower you to build a stronger, more unified team and create a workplace where everyone feels they truly belong. We're here to help align your people strategy with your long-term goals.</p>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <h3 class="text-3xl md:text-4xl font-light text-gradient mb-6">Our Vision</h3>
+                    <p class="text-lg max-w-3xl mx-auto font-light">To be the most trusted and sought-after HR partner for small and medium-sized organizations across British Columbia, empowering them to build thriving workplaces through practical, people-centered solutions.</p>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <h3 class="text-3xl md:text-4xl font-light text-gradient mb-6">Our Mission</h3>
+                    <p class="text-lg max-w-3xl mx-auto font-light">We partner with values-driven organizations to build stronger, more equitable workplaces. Our mission is to provide hands-on, collaborative HR expertise—designing the policies, systems, and total rewards strategies that reflect a team's unique identity and support their future goals.</p>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <h3 class="text-3xl md:text-4xl font-light text-gradient mb-6">Your Partners Behind the Mission</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="text-center md:text-left">
+                        <div class="md:w-32 md:h-32 w-40 h-40 rounded-full bg-gray-700 mx-auto md:mx-0 mb-4 flex items-center justify-center">
+                            <img src="https://i.ibb.co/4nNzj384/Wael-Cropped.jpg" alt="Wa'el Hussein, CPHR, GRP" class="rounded-full h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <h4 class="text-2xl font-semibold text-aurora-purple">Wa'el Hussein, CPHR, GRP</h4>
+                        <p class="mt-4 font-light text-white/90">A seasoned HR leader with 15+ years of experience spanning private, public, and non-profit sectors. Wa'el specializes in crafting innovative HR solutions that align with organizational values. His expertise in Total Rewards, HRIS implementation, and organizational design has helped build award-winning, people-first workplace cultures recognized by Great Place to Work.</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                           <div class="md:w-32 md:h-32 w-40 h-40 rounded-full bg-gray-700 mx-auto md:mx-0 mb-4 flex items-center justify-center">
+                            <img src="https://placehold.co/400x400/1a1a2e/ffffff?text=Gary+M." alt="Gary McFarlane" class="rounded-full h-full w-full object-cover" loading="lazy">
+                        </div>
+                        <h4 class="text-xl font-semibold text-aurora-pink">Gary McFarlane</h4>
+                        <p class="mt-4 font-light text-white/90">An HR Generalist with a decade of HR experience and 30 years in the non-profit sector. Known for his empathetic and social-justice-oriented approach, Gary excels in communications, process improvement, and employee engagement. He leverages his creative background in the arts to deliver unique, effective HR solutions. You can often find him hiking the North Shore mountains, or practicing music.</p>
+                    </div>
+                </div>
+
+                
+
+<div class="mt-20 text-center">
+                  <h3 class="text-3xl md:text-4xl font-light text-gradient mb-6">Our Values</h3>
+                  <div class="values-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center px-4">
+                    
+
+<div class="value-card p-6 rounded-lg shadow-lg" data-value-id="integrity" tabindex="0" role="button" aria-pressed="false" aria-label="Integrity">
+                      <div class="custom-icon" role="img" aria-label="A balanced scale with a gem in the center, representing integrity.">
+                        <svg viewBox="0 0 100 100" class="value-icon">
+                            <title>Integrity: A balanced scale with a gem in the center</title>
+                            <defs>
+                                <linearGradient id="integrity-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00ffb4"/>
+                                    <stop offset="50%" stop-color="#7c3aed"/>
+                                    <stop offset="100%" stop-color="#ff6b9d"/>
+                                </linearGradient>
+                                <filter id="glow-values" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                </filter>
+                            </defs>
+                            
+
+<path d="M20 70 H 80" stroke="url(#integrity-gradient)" stroke-width="3" filter="url(#glow-values)"/>
+                            <path d="M50 25 V 70" stroke="url(#integrity-gradient)" stroke-width="3" filter="url(#glow-values)"/>
+                            <path d="M30 45 L 50 25 L 70 45" stroke="url(#integrity-gradient)" stroke-width="3" fill="none" filter="url(#glow-values)"/>
+                            
+
+<path d="M15 50 L 45 50" stroke="url(#integrity-gradient)" stroke-width="2" filter="url(#glow-values)"/>
+                            
+
+<path d="M55 50 L 85 50" stroke="url(#integrity-gradient)" stroke-width="2" filter="url(#glow-values)"/>
+                             
+
+<path d="M50,68 L55,73 L50,78 L45,73 Z" fill="url(#integrity-gradient)" filter="url(#glow-values)"/>
+                        </svg>
+                      </div>
+                      <h4 class="text-xl font-semibold text-white mb-2">Integrity</h4>
+                      <p class="text-gray-300">Grounded in transparency and ethical practices, building trust in every interaction.</p>
+                    </div>
+
+                    
+
+<div class="value-card p-6 rounded-lg shadow-lg" data-value-id="innovation" tabindex="0" role="button" aria-pressed="false" aria-label="Innovation">
+                      <div class="custom-icon" role="img" aria-label="A lightbulb with a growing sprout inside, representing innovation.">
+                        <svg viewBox="0 0 100 100" class="value-icon">
+                           <title>Innovation: A lightbulb with a growing sprout inside</title>
+                          <defs>
+                            <linearGradient id="innovation-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#00ffb4"/>
+                              <stop offset="50%" stop-color="#7c3aed"/>
+                              <stop offset="100%" stop-color="#ff6b9d"/>
+                            </linearGradient>
+                          </defs>
+                            
+
+<path d="M50,15 C35,15 25,30 25,45 C25,58 35,70 42,73 L42,80 H58 L58,73 C65,70 75,58 75,45 C75,30 65,15 50,15 Z" fill="rgba(255,255,255,0.05)" stroke="url(#innovation-gradient)" stroke-width="2" filter="url(#glow-values)"/>
+                            
+
+<path d="M50,70 Q50,60 55,55 T 50 40" fill="none" stroke="#00ffb4" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M45,55 Q40,50 42,45" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M55,55 Q60,50 58,45" fill="none" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                      <h4 class="text-xl font-semibold text-white mb-2">Innovation</h4>
+                      <p class="text-gray-300">We challenge the status quo of traditional HR by designing solutions that are tailored—not templated.</p>
+                    </div>
+
+                    
+
+<div class="value-card p-6 rounded-lg shadow-lg" data-value-id="respect" tabindex="0" role="button" aria-pressed="false" aria-label="Respect">
+                      <div class="custom-icon" role="img" aria-label="A heart with a checkmark, representing respect and approval.">
+                        <svg viewBox="0 0 100 100" class="value-icon">
+                           <title>Respect: A heart with a checkmark</title>
+                          <defs>
+                            <linearGradient id="respect-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#00ffb4"/>
+                              <stop offset="50%" stop-color="#7c3aed"/>
+                              <stop offset="100%" stop-color="#ff6b9d"/>
+                            </linearGradient>
+                          </defs>
+                          <circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)" stroke="url(#respect-gradient)" stroke-width="2" filter="url(#glow-values)"/>
+                          <path d="M30,55 Q50,30 70,55" fill="none" stroke="url(#respect-gradient)" stroke-width="3" filter="url(#glow-values)"/>
+                          <path d="M35,65 L45,75 L65,55" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glow-values)"/>
+                        </svg>
+                      </div>
+                      <h4 class="text-xl font-semibold text-white mb-2">Respect</h4>
+                      <p class="text-gray-300">For diverse people, unique cultures, and the communities we serve.</p>
+                    </div>
+
+                    
+
+<div class="value-card p-6 rounded-lg shadow-lg" data-value-id="accessibility" tabindex="0" role="button" aria-pressed="false" aria-label="Accessibility">
+                      <div class="custom-icon" role="img" aria-label="An icon representing an accessible person.">
+                        <svg viewBox="0 0 100 100" class="value-icon">
+                           <title>Accessibility: An icon representing an accessible person</title>
+                          <defs>
+                            <linearGradient id="accessibility-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#00ffb4"/>
+                              <stop offset="50%" stop-color="#7c3aed"/>
+                              <stop offset="100%" stop-color="#ff6b9d"/>
+                            </linearGradient>
+                          </defs>
+                          <circle cx="50" cy="35" r="10" fill="url(#accessibility-gradient)" filter="url(#glow-values)"/>
+                          <path d="M50,45 L50,75" stroke="url(#accessibility-gradient)" stroke-width="8" stroke-linecap="round" filter="url(#glow-values)"/>
+                          <path d="M35,60 L50,75 L65,60" fill="none" stroke="url(#accessibility-gradient)" stroke-width="8" stroke-linecap="round" filter="url(#glow-values)"/>
+                        </svg>
+                      </div>
+                      <h4 class="text-xl font-semibold text-white mb-2">Accessibility</h4>
+                      <p class="text-gray-300">Delivering high-impact HR support where it matters most—without barriers.</p>
+                    </div>
+                  </div>
+                   <div id="value-details" class="mt-8 p-8 border rounded-lg" style="background-color: #16213e; border-color: rgba(255, 255, 255, 0.1); display: none; position: relative;">
+                    
+
+</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="engagement-models" class="py-10 md:py-16 section-bg-light">
+             <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Flexible Partnership Models</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">We offer a flexible, hybrid service model tailored to meet you remotely across BC or in person in the Lower Mainland.</p>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">As part of our commitment to integrity and fairness, we proudly and openly publish our rates for discovery consultations and project-based work. This ensures that every organization receives the same clear, equitable offering. No hidden deals. No preferential pricing. Just transparent, values-based service built on mutual respect.</p>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">We believe you deserve to know what to expect before you invest. And because we stand behind the quality of our work, our discovery consultation is backed by a satisfaction-first approach—making your experience valuable from day one.</p>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">This isn’t just about service delivery—it’s about building trust through consistent, principled partnerships.</p>
+                </div>
+                <div class="mt-12 max-w-4xl mx-auto">
+                    <div id="swot-buttons" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+                    <div id="swot-details" class="mt-6 p-6 border border-white/10 rounded-lg min-h-[150px]"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hr-insights-section" class="py-10 md:py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-light text-gradient">HR Insights & Resources</h2>
+                <p class="mt-4 text-lg max-w-3xl mx-auto font-light">Stay informed and empowered with our collection of expert articles, legal analyses, and helpful tools for navigating the HR landscape.</p>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="hr-insights-content-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-aurora-teal mb-2">Legal Insights</h3>
+                        <p class="text-gray-300 mb-4">Dive deep into recent BC court cases impacting HR. Stay compliant and informed.</p>
+                        <a href="#" class="text-aurora-blue hover:underline">Read Article →</a>
+                    </div>
+                    <div class="hr-insights-content-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-aurora-teal mb-2">HR Podcast: Expert Interviews</h3>
+                        <p class="text-gray-300 mb-4">Listen to our discussions with industry leaders on talent, culture, and business growth.</p>
+                        <a href="#" class="text-aurora-blue hover:underline">Listen Now →</a>
+                    </div>
+                    <div class="hr-insights-content-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-aurora-teal mb-2">Essential HR Checklists & Guides</h3>
+                        <p class="text-gray-300 mb-4">Download practical tools to streamline your HR processes.</p>
+                        <a href="#" class="text-aurora-blue hover:underline">Get Free Resources →</a>
+                    </div>
+                    <div class="hr-insights-content-card p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-aurora-teal mb-2">Sign Up for Our Newsletter</h3>
+                        <p class="text-gray-300 mb-4">Get monthly insights and updates directly to your inbox.</p>
+                        <div class="mt-4 flex">
+                            <input type="email" placeholder="Your email" class="flex-grow bg-gray-800 border border-white/20 text-white text-sm rounded-l-lg px-4 py-2">
+                            <button class="button-gradient text-white font-semibold px-6 rounded-r-lg">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="py-10 md:py-16 section-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Engage Us</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto font-light">Ready to illuminate your organization's potential? Reach out to start a conversation. We're here to help you navigate your HR challenges and achieve your business goals.</p>
+                </div>
+                <div class="mt-12 max-w-xl mx-auto">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Name</label>
+                            <input type="text" id="name" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" required aria-required="true" aria-invalid="false">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Email</label>
+                            <input type="email" id="email" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" required aria-required="true" aria-invalid="false">
+                        </div>
+                        <div class="mb-6">
+                            <label for="organization" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Organization</label>
+                            <input type="text" id="organization" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Service Interest</label>
+                            <select id="service" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5">
+                                <option value="">Select a service</option>
+                                <option>HR Policy Development</option>
+                                <option>Process Improvement</option>
+                                <option>Employee Engagement</option>
+                                <option>HR Communications</option>
+                                <option>HRIS & Data Management</option>
+                                <option>Total Rewards</option>
+                                <option>Diversity & Inclusion</option>
+                                <option>Learning & Development</option>
+                                <option>Performance Management</option>
+                                <option>Competency Frameworks</option>
+                                <option>Metrics & KPI</option>
+                                <option>Conflict Resolution & Investigations</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Message</label>
+                            <textarea id="message" rows="4" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" placeholder="Tell us about your HR challenges and goals..."></textarea>
+                        </div>
+                        <div id="form-error" class="text-red-400 mt-2" aria-live="polite"></div>
+                        <div class="text-center mt-6">
+                                <button type="submit" class="button-gradient text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">Engage Us</button>
+                        </div>
+                    </form>
+                    <div id="form-feedback" class="text-center text-aurora-teal mt-4" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 section-bg-light">
+        <div class="container mx-auto px-6 text-center" style="color: rgba(255, 255, 255, 0.7);">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-left">
+                    <h2 class="text-xl font-light text-gradient text-left leading-none">
+                        AURORA HR
+                        <span class="block text-xs font-normal text-white/70 tracking-wider -mt-1">CONSULTING</span>
+                    </h2>
+                    <p class="mt-2 text-sm max-w-xs">Professional HR solutions for small and medium-sized organizations across British Columbia.</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/yourprofile" target="_blank" class="social-icon" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 text-white">
+                        <a href="mailto:info@aurorah.ca" class="hover:text-aurora-teal transition-colors duration-200">📧 info@aurorah.ca</a>
+                        <a href="tel:+17788925892" class="hover:text-aurora-teal transition-colors duration-200">📞 (778) 892-5892</a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <div class="footer-links flex flex-wrap justify-center gap-4">
+                        <a href="#services" class="text-white/70 hover:text-aurora-teal">Services</a>
+                        <a href="#approach" class="text-white/70 hover:text-aurora-teal">Approach</a>
+                        <a href="#about-us" class="text-white/70 hover:text-aurora-teal">About Us</a>
+                        <a href="#engagement-models" class="text-white/70 hover:text-aurora-teal">Partnership Models</a>
+                        <a href="#hr-insights-section" class="text-white/70 hover:text-aurora-teal">HR Insights</a>
+                        <a href="#contact" class="text-white/70 hover:text-aurora-teal">Engage Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-white/10">
+                <p>&copy; <span id="copyright-year"></span> Aurora HR Consulting Services. All rights reserved.</p>
+                
+                <p class="text-sm mt-2">Serving small and medium-sized organizations across British Columbia.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="live-region" class="sr-only" aria-live="polite"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Data for dynamic content
+            const data = {
+                services: [
+                    { id: 'hr-policy-development', title: 'HR Policy Development', content: 'Our policies go beyond legal compliance—they’re people-first tools tailored to your workplace culture, legal needs, and day-to-day realities, written in clear, inclusive language. They serve as a trusted point of reference for employees, lowering confusion, supporting accountability, and reducing recurring questions. This fosters transparency, risk reduction, and allows leaders to focus on strategic goals.' },
+                    { id: 'process-improvement', title: 'Process Improvement', content: 'We conduct comprehensive assessments of your HR processes and provide practical recommendations for efficiency gains. We help document and implement new workflows that save time and reduce frustration.' },
+                    { id: 'employee-engagement', title: 'Employee Engagement', content: "At Aurora HR, we believe true engagement is more than a feel-good survey—it’s a meaningful exchange between people and purpose. Employees want to feel heard, but organizations also need insight into what drives performance and resilience. That’s why our approach bridges employee sentiment with system needs, helping you uncover blind spots, align goals, and act with clarity. From quick wins that build trust to deep-rooted shifts in culture and communication, we help turn employee insights into shared success. Because when your people thrive, so does your organization." },
+                    { id: 'hr-communications', title: 'HR Communications', content: 'Clear, professional, and effective HR messaging. We develop presentations, create engaging orientation sessions, and write essential HR documents like contracts, policies, and job descriptions.' },
+                    { id: 'hris-data-management', title: 'HRIS & Data Management', content: 'Choosing and implementing the right HRIS is one of the most critical — and often most misunderstood — decisions an organization can make. Many teams struggle with unrealistic expectations, poor data hygiene, lack of internal capacity, and misaligned software choices.<br><br> At Aurora, we bring deep expertise to guide your team through the full lifecycle: assessing needs, selecting the right platform, mapping and cleansing legacy data, and ensuring adoption with clear workflows and training. We don’t just implement systems — we build alignment between your technology, people, and goals. When you partner with us, you gain a trusted advisor who understands both the technical and human sides of HRIS success.' },
+                    { id: 'total-rewards', title: 'Total Rewards', content: 'We recognize that total rewards are more than just salaries and benefits — they are strategic tools that shape culture, drive engagement, and support long-term sustainability. Every organization is different: some face funding or resource limitations, others strive to meet living wage commitments, and many struggle to balance rising costs with equitable pay. We help organizations design holistic, practical total rewards strategies that that reflect their values, workforce composition, and financial realities. From building a compensation philosophy to creating scalable salary bands and aligning incentives with business goals, we bring the structure, insight, and customization needed to support both organizational resilience and employee well-being.' },
+                    { id: 'diversity-inclusion', title: 'Diversity & Inclusion', content: 'Move beyond theory to practical implementation. We offer cultural assessments, actionable recommendations, and leadership training, with expertise in Indigenous relations, to build a truly inclusive workplace.' },
+                    { id: 'learning-development', title: 'Learning & Development', content: "At Aurora HR, our Learning & Development programs go beyond basic compliance to equip leaders and teams with the knowledge, tools, and confidence to navigate the evolving landscape of workplace law, equity, and performance. Grounded in real BC case law, our training is scenario-based, legally accurate, and culturally responsive—covering critical topics such as the duty to accommodate, respectful workplace conduct, investigation skills, occupational health and safety, and human rights obligations. We specialize in turning complex legal obligations into practical, engaging learning experiences that build confidence, prevent risk, and foster inclusive, high-performing workplaces.<br><br>Our signature Conflict & Investigation Training equips managers and HR professionals with the confidence and tools to respond effectively and fairly.<br><br>What makes our training different?<br><br>✔ Rooted in BC law with real case studies and up-to-date standards<br>✔ Scenario-based and interactive, not just theory<br>✔ Tailored for small to medium organizations, including nonprofits and Indigenous-led teams<br>✔ Manager-focused, with step-by-step frameworks they can actually use<br>✔ Post-training integration tools to help translate learning into lasting change<br><br>Whether resolving interpersonal issues, conducting a formal investigation, or building preventative leadership practices, we help organizations reduce risk, restore trust, and create safer, more resilient workplaces." },
+                    { id: 'performance-management', title: 'Performance Management', content: 'Driving individual and organizational growth through effective feedback, goal setting, and development planning. We design systems that foster continuous improvement and align employee performance with strategic objectives.' },
+                    { id: 'competency-frameworks', title: 'Competency Frameworks', content: 'Aurora HR helps organizations build competency frameworks that align people development with business goals. We define the skills, knowledge, and behaviours needed for success across roles, functions, and leadership levels - so you can hire, develop, and promote with clarity and consistency.<br><br> Whether you\'re strengthening leadership pipelines, supporting succession planning, or aligning performance expectations, our frameworks provide a practical foundation for growth. Grounded in your values and context, they become tools for better decisions, stronger teams, and a more future-ready workforce.' },
+                    { id: 'metrics-kpi', title: 'Metrics & KPI', content: 'Measuring HR effectiveness with data-driven insights. We help identify key performance indicators (KPIs) and establish metrics to track the impact of HR initiatives on business outcomes.' },
+                    { id: 'conflict-resolution-investigations', title: 'Conflict Resolution & Investigations', content: 'At Aurora HR, we help organizations address conflict early—before it escalates into legal, reputational, or cultural risk. Our services include early intervention, facilitated dialogue, mediation, and impartial investigations, all grounded in empathy, procedural fairness, and your organizational values.<br><br>But we don’t stop at service delivery—we build your internal capability. Our signature Conflict & Investigation Training equips managers and HR professionals with the confidence and tools to respond effectively and fairly.<br><br>What makes our training different?<br><br>✔ Rooted in BC law with real case studies and up-to-date standards<br>✔ Scenario-based and interactive, not just theory<br>✔ Tailored for small to medium organizations, including nonprofits and Indigenous-led teams<br>✔ Manager-focused, with step-by-step frameworks they can actually use<br>✔ Post-training integration tools to help translate learning into lasting change<br><br>Whether resolving interpersonal issues, conducting a formal investigation, or building preventative leadership practices, we help organizations reduce risk, restore trust, and create safer, more resilient workplaces.' }
+                ],
+                values: [
+                    { id: 'integrity', title: 'Integrity', content: 'We operate with unwavering honesty and transparency. Our commitment to ethical practices is the foundation of every partnership, ensuring that we build relationships grounded in trust and mutual respect. We believe that doing the right thing is not just a guideline, but the only way to do business.'},
+                    { id: 'innovation', title: 'Innovation', content: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated. We bridge strategy and humanity, crafting people-first practices that evolve with your organization and drive meaningful change.'},
+                    { id: 'respect', title: 'Respect', content: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve. We listen, we learn, and we co-create solutions that honor the individual and strengthen the collective, fostering environments of true belonging.'},
+                    { id: 'accessibility', title: 'Accessibility', content: 'We believe transformative HR shouldn’t be out of reach. That’s why we deliver expert, high-quality support designed to meet the realities of small businesses and non-profits. Our approach ensures that every organization—regardless of size or resources—has access to the strategic HR guidance they need to grow, lead with confidence, and make a lasting impact in their communities.'}
+                ],
+                engagementModels: {
+                    discoveryConsult: { title: 'Discovery Consult', color: 'text-aurora-teal', points: [
+                        '60-90 Minute Strategic Consult',
+                        'Investment: $200 - $300',
+                        '100% Satisfaction Guarantee',
+                        'Unlock Tailored Insights for Your Needs'
+                    ]},
+                    projectBased: { title: 'Project-Based Partnerships', color: 'text-aurora-pink', points: [
+                        'HR Policies: Starting from $1,500',
+                        'Employee Handbook Development: From $5,000+',
+                        'Handbook Review & Tune-up: From $2,000+',
+                        '6-Hour Training Session: $1,800',
+                        'Customized Training: $500 per hour',
+                        'Policy Review & Tune-up: From $900+',
+                        'Engagement Toolkit Development: From $1,500+',
+                        'HR System Setup Assistance: From $1,800+'
+                    ]},
+                    ongoing: { title: 'Ongoing Partnerships', color: 'text-aurora-blue', points: [
+                        'Proactive Compliance & Policy Updates',
+                        'Streamlined Talent Lifecycle Management',
+                        'Strategic Total Rewards & Engagement',
+                        'Integrated HR Systems & Data Insights',
+                        'Responsive Employee Relations & Management Coaching'
+                    ]}
+                }
+            };
+
+            const serviceDetailsContainer = document.getElementById('service-details'); 
+            const valueDetailsContainer = document.getElementById('value-details');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const valueCards = document.querySelectorAll('.value-card');
+            let activeServiceCard = null;
+            let activeValueCard = null;
+
+            function handleCardClick(card, dataArray, detailsContainer, type) {
+                // Deactivate other type
+                if (type === 'service') {
+                    if(valueDetailsContainer) valueDetailsContainer.style.display = 'none';
+                    if(activeValueCard) {
+                        activeValueCard.classList.remove('active');
+                        activeValueCard.setAttribute('aria-pressed', 'false');
+                    }
+                    activeValueCard = null;
+                } else {
+                    if(serviceDetailsContainer) serviceDetailsContainer.style.display = 'none';
+                    if(activeServiceCard) {
+                        activeServiceCard.classList.remove('active');
+                        activeServiceCard.setAttribute('aria-pressed', 'false');
+                    }
+                    activeServiceCard = null;
+                }
+
+                // Handle current type
+                let activeCard = type === 'service' ? activeServiceCard : activeValueCard;
+                if (activeCard) {
+                    activeCard.classList.remove('active');
+                    activeCard.setAttribute('aria-pressed', 'false');
+                }
+                card.classList.add('active');
+                card.setAttribute('aria-pressed', 'true');
+                
+                if (type === 'service') {
+                    activeServiceCard = card;
+                } else {
+                    activeValueCard = card;
+                }
+                
+                const id = card.dataset.serviceId || card.dataset.valueId;
+                const selectedItem = data.services.find(item => item.id === id);
+                
+                if(selectedItem && detailsContainer) {
+                    detailsContainer.innerHTML = `
+                        <button class="absolute top-4 right-4 text-white text-2xl font-bold focus:outline-none" aria-label="Close" onclick="this.parentElement.style.display='none'">&times;</button>
+                        <h4 class="text-2xl font-bold text-gradient mb-2">${selectedItem.title}</h4>
+                        <p class="text-lg font-light" style="color: rgba(255, 255, 255, 0.7);">${selectedItem.content}</p>
+                    `; 
+                    detailsContainer.style.display = 'block'; 
+                    detailsContainer.querySelector('button').focus();
+                    document.getElementById('live-region').textContent = `${selectedItem.title} details opened.`;
+                    
+                    if (window.innerWidth < 768) {
+                        detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
+
+            serviceCards.forEach(card => {
+                card.addEventListener('click', () => handleCardClick(card, data.services, serviceDetailsContainer, 'service'));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardClick(card, data.services, serviceDetailsContainer, 'service');
+                    }
+                });
+            });
+
+            valueCards.forEach(card => {
+                card.addEventListener('click', () => handleCardClick(card, data.values, valueDetailsContainer, 'value'));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardClick(card, data.values, valueDetailsContainer, 'value');
+                    }
+                });
+            });
+            
+            // Partnership Models section
+            const swotButtonsContainer = document.getElementById('swot-buttons');
+            const swotDetailsContainer = document.getElementById('swot-details');
+
+            Object.keys(data.engagementModels).forEach(key => {
+                const item = data.engagementModels[key];
+                const button = document.createElement('button');
+                button.className = `swot-button p-3 rounded-md font-semibold transition-colors duration-300`;
+                button.textContent = item.title;
+                button.dataset.key = key;
+                swotButtonsContainer.appendChild(button);
+
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.swot-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const list = document.createElement('ul');
+                    list.className = 'list-inside space-y-2 text-left mx-auto max-w-lg'; 
+                    item.points.forEach(point => {
+                       const li = document.createElement('li');
+                       li.innerHTML = `<span class="${item.color} mr-2">•</span> <span class="font-light" style="color: rgba(255, 255, 255, 0.7);">${point}</span>`; 
+                       list.appendChild(li);
+                    });
+                    swotDetailsContainer.innerHTML = '';
+                    swotDetailsContainer.appendChild(list);
+                });
+            });
+
+            if (document.querySelector('.swot-button')) {
+                document.querySelector('.swot-button').click();
+            }
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#nav-menu a, #mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.querySelector('form');
+            const formFeedback = document.getElementById('form-feedback');
+            const formError = document.getElementById('form-error');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formError.textContent = '';
+                let valid = true;
+
+                // Example: check required fields
+                ['name', 'email'].forEach(id => {
+                    const field = document.getElementById(id);
+                    if (!field.value.trim()) {
+                        field.setAttribute('aria-invalid', 'true');
+                        valid = false;
+                    } else {
+                        field.setAttribute('aria-invalid', 'false');
+                    }
+                });
+
+                if (!valid) {
+                    formError.textContent = 'Please fill in all required fields.';
+                    return;
+                }
+
+                formFeedback.textContent = 'Thank you for your message! We will contact you soon.';
+                setTimeout(() => { formFeedback.textContent = ''; }, 5000);
+                contactForm.reset();
+            });
+
+            // Set copyright year dynamically
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            // Active nav link on scroll
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

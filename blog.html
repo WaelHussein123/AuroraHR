@@ -144,65 +144,76 @@
 
         <section class="pb-16 md:pb-24">
             <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Blog Post 1 -->
-                    <div class="blog-card rounded-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="blog-card-content">
-                                <p class="text-sm text-white/60 mb-2">July 19, 2025</p>
-                                <h2 class="text-2xl font-semibold text-white mb-3">The True Cost of a Bad Hire (and How to Avoid It)</h2>
-                                <p class="font-light mb-4">Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.</p>
-                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="index.html#services" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
-                                    Explore Our Services
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Post 2 -->
-                    <div class="blog-card rounded-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="blog-card-content">
-                                <p class="text-sm text-white/60 mb-2">July 12, 2025</p>
-                                <h2 class="text-2xl font-semibold text-white mb-3">Rethinking Performance Management: From Scorecards to Growth Conversations</h2>
-                                <p class="font-light mb-4">The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.</p>
-                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="index.html#service-performance-management" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
-                                    Related Service: Performance Management
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blog Post 3 -->
-                    <div class="blog-card rounded-lg overflow-hidden">
-                        <div class="p-6">
-                            <div class="blog-card-content">
-                                <p class="text-sm text-white/60 mb-2">July 5, 2025</p>
-                                <h2 class="text-2xl font-semibold text-white mb-3">Why Your People-First Policies Are Your Best Legal Defence</h2>
-                                <p class="font-light mb-4">Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.</p>
-                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="index.html#service-hr-policy-development" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
-                                    Related Service: HR Policy Development
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Blog posts will be dynamically inserted here -->
+                <div id="blog-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
             </div>
         </section>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- BLOG POST DATA ---
+            // To add a new blog post, copy one of the blocks below (from { to },)
+            // and paste it at the top of this list. Then, edit the content.
+            const blogPosts = [
+                {
+                    date: "July 19, 2025",
+                    title: "The True Cost of a Bad Hire (and How to Avoid It)",
+                    summary: "Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.",
+                    readMoreLink: "#", // Link to the full article page
+                    relatedServiceLink: "index.html#services", // Link to a section on the main page
+                    relatedServiceText: "Explore Our Services" // Text for the link
+                },
+                {
+                    date: "July 12, 2025",
+                    title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
+                    summary: "The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.",
+                    readMoreLink: "#",
+                    relatedServiceLink: "index.html#service-performance-management",
+                    relatedServiceText: "Related Service: Performance Management"
+                },
+                {
+                    date: "July 5, 2025",
+                    title: "Why Your People-First Policies Are Your Best Legal Defence",
+                    summary: "Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.",
+                    readMoreLink: "#",
+                    relatedServiceLink: "index.html#service-hr-policy-development",
+                    relatedServiceText: "Related Service: HR Policy Development"
+                }
+            ];
+
+            // Function to populate the blog posts on the page
+            function populateBlogPosts() {
+                const container = document.getElementById('blog-posts-container');
+                if (!container) return;
+
+                let allPostsHTML = '';
+                blogPosts.forEach(post => {
+                    allPostsHTML += `
+                        <div class="blog-card rounded-lg overflow-hidden">
+                            <div class="p-6">
+                                <div class="blog-card-content">
+                                    <p class="text-sm text-white/60 mb-2">${post.date}</p>
+                                    <h2 class="text-2xl font-semibold text-white mb-3">${post.title}</h2>
+                                    <p class="font-light mb-4">${post.summary}</p>
+                                    <a href="${post.readMoreLink}" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-white/10">
+                                    <a href="${post.relatedServiceLink}" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
+                                        ${post.relatedServiceText}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = allPostsHTML;
+            }
+
+            // Run the function to build the page
+            populateBlogPosts();
+
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');

@@ -1144,7 +1144,7 @@
             // Handle deep linking from blog
             const hash = window.location.hash;
             if (hash && hash.startsWith('#service-')) {
-                const serviceId = hash.substring(1); // remove #
+                const serviceId = hash.substring(9); // remove #service-
                 const cardToClick = document.querySelector(`.service-card[data-service-id="${serviceId}"]`);
                 if (cardToClick) {
                     setTimeout(() => {

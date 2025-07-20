@@ -70,11 +70,28 @@
             background-color: var(--color-card);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .blog-card:hover {
             transform: translateY(-5px);
             border-color: var(--color-accent-teal);
         }
+        .blog-card .p-6 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card-content {
+            flex-grow: 1;
+        }
+        #mobile-menu { background-color: var(--color-card-hover); }
+        #mobile-menu a { 
+            color: rgba(255, 255, 255, 0.8); 
+            padding-top: 0.75rem; 
+            padding-bottom: 0.75rem; 
+        } 
+        #mobile-menu-button div { background-color: white; }
    </style>
 </head>
 <body class="antialiased">
@@ -92,10 +109,28 @@
                     <text x="0" y="70" font-family="serif" font-size="60" fill="url(#auroraGradient)">Aurora HR</text>
                 </svg>
             </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link text-lg font-light">Home</a>
+            <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+                <a href="index.html#home" class="nav-link text-lg font-light">Home</a>
+                <a href="index.html#services" class="nav-link text-lg font-light">Services</a>
+                <a href="index.html#approach" class="nav-link text-lg font-light">Approach</a>
                 <a href="blog.html" class="nav-link text-lg font-light active">Blog</a>
+                <a href="index.html#engagement-models" class="nav-link text-lg font-light">Partnership Models</a>
+                <a href="index.html#contact" class="nav-link text-lg font-light">Engage Us</a>
+                <a href="index.html#about-us" class="nav-link text-lg font-light">About Us</a>
             </nav>
+            <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
+                <div class="w-6 h-0.5 mb-1.5 bg-white"></div>
+                <div class="w-6 h-0.5 bg-white"></div>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden p-4">
+            <a href="index.html#home" class="block py-2 text-center">Home</a>
+            <a href="index.html#services" class="block py-2 text-center">Services</a>
+            <a href="index.html#approach" class="block py-2 text-center">Approach</a>
+            <a href="blog.html" class="block py-2 text-center">Blog</a>
+            <a href="index.html#engagement-models" class="block py-2 text-center">Partnership Models</a>
+            <a href="index.html#contact" class="block py-2 text-center">Engage Us</a>
+            <a href="index.html#about-us" class="block py-2 text-center">About Us</a>
         </div>
     </header>
 
@@ -114,30 +149,51 @@
                     <!-- Blog Post 1 -->
                     <div class="blog-card rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <p class="text-sm text-white/60 mb-2">July 19, 2025</p>
-                            <h2 class="text-2xl font-semibold text-white mb-3">The True Cost of a Bad Hire (and How to Avoid It)</h2>
-                            <p class="font-light mb-4">Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.</p>
-                            <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            <div class="blog-card-content">
+                                <p class="text-sm text-white/60 mb-2">July 19, 2025</p>
+                                <h2 class="text-2xl font-semibold text-white mb-3">The True Cost of a Bad Hire (and How to Avoid It)</h2>
+                                <p class="font-light mb-4">Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.</p>
+                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-white/10">
+                                <a href="index.html#services" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
+                                    Explore Our Services
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Blog Post 2 -->
                     <div class="blog-card rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <p class="text-sm text-white/60 mb-2">July 12, 2025</p>
-                            <h2 class="text-2xl font-semibold text-white mb-3">Rethinking Performance Management: From Scorecards to Growth Conversations</h2>
-                            <p class="font-light mb-4">The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.</p>
-                            <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            <div class="blog-card-content">
+                                <p class="text-sm text-white/60 mb-2">July 12, 2025</p>
+                                <h2 class="text-2xl font-semibold text-white mb-3">Rethinking Performance Management: From Scorecards to Growth Conversations</h2>
+                                <p class="font-light mb-4">The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.</p>
+                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-white/10">
+                                <a href="index.html#service-performance-management" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
+                                    Related Service: Performance Management
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Blog Post 3 -->
                     <div class="blog-card rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <p class="text-sm text-white/60 mb-2">July 5, 2025</p>
-                            <h2 class="text-2xl font-semibold text-white mb-3">Why Your People-First Policies Are Your Best Legal Defence</h2>
-                            <p class="font-light mb-4">Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.</p>
-                            <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            <div class="blog-card-content">
+                                <p class="text-sm text-white/60 mb-2">July 5, 2025</p>
+                                <h2 class="text-2xl font-semibold text-white mb-3">Why Your People-First Policies Are Your Best Legal Defence</h2>
+                                <p class="font-light mb-4">Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.</p>
+                                <a href="#" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-white/10">
+                                <a href="index.html#service-hr-policy-development" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
+                                    Related Service: HR Policy Development
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -145,6 +201,26 @@
             </div>
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
 
+                // Close mobile menu on link click
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if(!mobileMenu.classList.contains('hidden')) {
+                           mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

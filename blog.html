@@ -15,7 +15,7 @@
     <title>Blog | Aurora HR Consulting</title>
     <meta name="description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces for mission-driven organizations in BC.">
     
-    <link rel="icon" type="https://aurorahr.ca/Wael-Cropped.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -158,14 +158,7 @@
             // and paste it at the top of this list. Then, edit the content.
             const blogPosts = [
                 {
-                    date: "July 21, 2025",
-                    title: "test",
-                    summary: " ABCD",
-                    readMoreLink: "#", // Link to the full article page
-                    relatedServiceLink: "index.html#service-total-rewards",
-                    relatedServiceText: "Related Service: Total Rewards"
-                },
-                {
+                    id: "post-1", // Unique ID for linking
                     date: "July 19, 2025",
                     title: "The True Cost of a Bad Hire (and How to Avoid It)",
                     summary: "Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.",
@@ -174,6 +167,7 @@
                     relatedServiceText: "Explore Our Services" // Text for the link
                 },
                 {
+                    id: "post-2",
                     date: "July 12, 2025",
                     title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
                     summary: "The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.",
@@ -182,6 +176,7 @@
                     relatedServiceText: "Related Service: Performance Management"
                 },
                 {
+                    id: "post-3",
                     date: "July 5, 2025",
                     title: "Why Your People-First Policies Are Your Best Legal Defence",
                     summary: "Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.",
@@ -199,7 +194,7 @@
                 let allPostsHTML = '';
                 blogPosts.forEach(post => {
                     allPostsHTML += `
-                        <div class="blog-card rounded-lg overflow-hidden">
+                        <div id="${post.id}" class="blog-card rounded-lg overflow-hidden">
                             <div class="p-6">
                                 <div class="blog-card-content">
                                     <p class="text-sm text-white/60 mb-2">${post.date}</p>

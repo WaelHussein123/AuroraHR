@@ -16,7 +16,7 @@
     <meta name="description" content="Aurora HR partners with values-driven organizations in BC to build thriving workplaces. We offer tailored, human-centered HR solutions, from policy development to employee engagement, to illuminate the human spirit in your mission.">
     <meta name="keywords" content="HR consulting BC, People-First HR, Wa'el Hussein, Human Resources British Columbia, employee engagement, total rewards, organizational design, mission-driven organizations">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%230f0f23'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2357C399'/><stop offset='50%25' stop-color='%23399CE2'/><stop offset='100%25' stop-color='%238256AC'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,52 +43,39 @@
 
    <style>
         :root {
-            --color-bg: #0f0f23;
-            --color-card: #1a1a2e;
-            --color-card-hover: #16213e;
-            --color-accent-teal: #00ffb4;
-            --color-accent-purple: #7c3aed;
-            --color-accent-pink: #ff6b9d;
-            --color-aurora-blue: #00d4ff;
+            /* "Aurora Vivid" Theme */
+            --color-bg: #f8f9fa;
+            --color-card: #ffffff;
+            --color-card-hover: #f1f3f5;
+            --color-text-primary: #212529;
+            --color-text-secondary: #6c757d;
+            --color-border: #dee2e6;
+            --color-accent-orange: #fd7e14;
+            --color-accent-teal: #20c997;
+            --color-accent-blue: #399CE2;
         }
         
         html { scroll-behavior: smooth; }
         body { 
             font-family: 'Segoe UI', 'Inter', sans-serif; 
-            color: rgba(255, 255, 255, 0.8); 
+            color: var(--color-text-primary); 
             overflow-x: hidden;
-            background-image: url('https://placehold.co/1920x1080/0f0f23/0f0f23?text=+');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-color: var(--color-bg); /* Fallback color */
+            background-color: var(--color-bg);
         } 
         
-        /* Header styles */
         .header { 
-            background: rgba(15, 15, 35, 0.85); 
+            background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(15px); 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            border-bottom: 1px solid var(--color-border); 
         }
         .text-gradient { 
-            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple), var(--color-accent-pink)); 
+            background: linear-gradient(135deg, #57C399, #399CE2, #8256AC); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             background-clip: text; 
         }
-        .button-gradient { 
-            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple)); 
-        }
-        .button-gradient:hover { 
-            box-shadow: 0 8px 25px rgba(0, 255, 180, 0.4); 
-        } 
-        
-        /* Navigation styles */
         .nav-link { 
-            color: rgba(255, 255, 255, 0.8); 
-            padding-top: 0.75rem; 
-            padding-bottom: 0.75rem; 
+            color: var(--color-text-primary);
             transition: all 0.3s ease; 
         } 
         .nav-link::after { 
@@ -96,317 +83,147 @@
             display: block; 
             width: 0; 
             height: 2px; 
-            background: linear-gradient(90deg, var(--color-accent-teal), var(--color-accent-purple)); 
+            background: linear-gradient(90deg, #57C399, #8256AC); 
             transition: width .3s; 
         }
         .nav-link:hover::after, 
         .nav-link.active::after { 
             width: 100%; 
         }
-        
-        /* Card styles (Service and Value) */
-        .service-card, .value-card { 
-            background-color: var(--color-card);
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            transition: all 0.3s ease; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative; 
-            padding: 1.5rem;
+
+        .card-base {
+            background-color: #f0f7ff; /* Light blue background for cards */
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
-        .service-card:hover, .value-card:hover { 
-            transform: translateY(-8px); 
-            border-color: var(--color-accent-teal); 
-            box-shadow: 0 10px 30px rgba(0, 255, 180, 0.4);
-            background-color: var(--color-card-hover);
-        }
-        
-        /* SWOT button styles */
-        .swot-button { 
-            background-color: var(--color-card);
-            border: 1px solid rgba(255, 255, 255, 0.2); 
-            color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-        }
-        .swot-button.active { 
-            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple)); 
-            color: white; 
-            border-color: var(--color-accent-teal);
-            box-shadow: 0 5px 15px rgba(0, 255, 180, 0.4); 
-        }
-        .swot-button:hover:not(.active) { 
-            background-color: var(--color-card-hover);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        .card-base:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 10px 15px -3px rgba(57, 156, 226, 0.2), 0 4px 6px -2px rgba(57, 156, 226, 0.1);
         }
 
-        /* Section backgrounds */
-        .section-bg-light { background-color: var(--color-card); } 
-
-        /* Hero animation */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(
-                from 0deg, 
-                transparent, 
-                rgba(0, 255, 180, 0.1), 
-                transparent, 
-                rgba(124, 58, 237, 0.15), 
-                transparent
-            ); 
-            animation: rotate 25s linear infinite; 
-            z-index: 1;
-        }
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-        .hero-aurora {
-            width: 200px;
-            height: 120px;
-            margin: 0 auto 3rem;
-            position: relative;
-        }
-        .hero-wave {
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            border-radius: 2px;
-            animation: aurora-flow 5s ease-in-out infinite; 
-        }
-        .hero-wave-1 {
-            background: linear-gradient(90deg, var(--color-accent-teal), var(--color-accent-purple), var(--color-accent-pink));
-            top: 15px;
-            animation-delay: 0s;
-        }
-        .hero-wave-2 {
-            background: linear-gradient(90deg, var(--color-accent-purple), #00d4ff, var(--color-accent-teal));
-            top: 35px;
-            animation-delay: 0.7s; 
-            opacity: 0.8;
-        }
-        .hero-wave-3 {
-            background: linear-gradient(90deg, var(--color-accent-pink), var(--color-accent-teal), var(--color-accent-purple));
-            top: 55px;
-            animation-delay: 1.4s; 
-            opacity: 0.6;
-        }
-        .hero-wave-4 {
-            background: linear-gradient(90deg, #00d4ff, var(--color-accent-pink), var(--color-accent-teal));
-            top: 75px;
-            animation-delay: 2.1s; 
-            opacity: 0.4;
-        }
-        @keyframes aurora-flow {
-            0%, 100% {
-                transform: translateX(-15px) scaleX(0.7); 
-                opacity: 0.2; 
-            }
-            50% {
-                transform: translateX(15px) scaleX(1.3); 
-                opacity: 1;
-            }
-        }
-
-        /* Contact form styles */
-        .contact label { color: rgba(255, 255, 255, 0.8); }
-        .contact input, .contact textarea {
-            background: rgba(255, 255, 255, 0.05);
+        .cta-button {
+            background-color: var(--color-accent-blue); /* Changed to blue */
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .contact input:focus, .contact textarea:focus {
-            border-color: var(--color-accent-teal);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Mobile menu styles */
-        #mobile-menu { background-color: var(--color-card-hover); }
-        #mobile-menu a { 
-            color: rgba(255, 255, 255, 0.8); 
-            padding-top: 0.75rem; 
-            padding-bottom: 0.75rem; 
-        } 
-        #mobile-menu-button div { background-color: white; }
-        
-        /* Footer styles */
-        footer { color: rgba(255, 255, 255, 0.7); } 
-        footer a { color: rgba(255, 255, 255, 0.7); } 
-
-        /* HR insights cards */
-        .hr-insights-content-card { 
-            background-color: var(--color-card); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            transition: all 0.3s ease; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-        }
-        .hr-insights-content-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
-        }
-        .hr-insights-content-card a { 
-            color: var(--color-aurora-blue);
-        }
-        .hr-insights-content-card a:hover { 
-            text-decoration: underline; 
-        }
-
-        /* Pulse animation */
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 255, 180, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 15px 10px rgba(0, 255, 180, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 255, 180, 0); }
-        }
-        .cta-button.pulse-anim { 
-            animation: pulse 2s infinite;
-        }
-        
-        /* Approach section styles */
-        .approach-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-        .approach-content h4 {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1rem;
-            color: var(--color-accent-teal);
-            font-weight: 500;
-        }
-        
-        /* Service section styles */
-        .service-highlight {
-            background: linear-gradient(120deg, rgba(0,255,180,0.1), rgba(124,58,237,0.1));
-            border-left: 4px solid var(--color-accent-teal);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin: 2rem 0;
-        }
-        
-        /* Icon styles */
-        .custom-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover .custom-icon {
-            transform: scale(1.15);
-        }
-        
-        /* Team photos */
-        .team-photo-container a {
-            display: block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 50%;
-        }
-        .team-photo-container a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(124, 58, 237, 0.5);
-        }
-        .team-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--color-accent-purple);
-            margin: 0 auto 20px;
-        }
-        
-        /* Social icons */
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            margin: 0 5px;
             transition: all 0.3s ease;
         }
-        .social-icon:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple));
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(57, 156, 226, 0.4); /* Glow changed to blue */
         }
 
-        /* Color variables for theme consistency */
-        .text-aurora-teal { color: var(--color-accent-teal); }
-        .text-aurora-purple { color: var(--color-accent-purple); }
-        .text-aurora-pink { color: var(--color-accent-pink); }
-        .text-aurora-blue { color: var(--color-aurora-blue); }
-        
-        @media (min-width: 768px) {
-            h1.md\:text-6xl {
-                line-height: 1.3 !important;
-            }
-        }
-        
-        /* Accordion styles */
-        .accordion-button {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--color-accent-teal);
-            cursor: pointer;
-            padding: 1rem;
-            width: 100%;
-            text-align: left;
-            border: none;
-            outline: none;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .accordion-button:hover, .accordion-button.active {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .accordion-button .accordion-icon {
-            transition: transform 0.3s ease;
-        }
-        
-        .accordion-button.active .accordion-icon {
-            transform: rotate(45deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
+        /* Hero Section Styles from Blog */
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 1rem;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: transparent;
-            padding: 0 1rem;
+            color: #ffffff;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(-45deg, rgba(10, 20, 30, 0.7), rgba(87, 195, 153, 0.5), rgba(57, 156, 226, 0.5), rgba(130, 86, 172, 0.6), rgba(10, 20, 30, 0.7));
+            background-size: 400% 400%;
+            animation: auroraShimmer 15s ease infinite;
+            z-index: 1;
+        }
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section p { color: #f8f9fa; }
+        @keyframes auroraShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes shooting-star-anim {
+            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+            100% { transform: translateX(80vw) translateY(80vh) rotate(-45deg); opacity: 0; }
+        }
+        .hero-section::after {
+            content: ''; position: absolute; top: 20%; left: -15%; width: 200px; height: 2px;
+            background: linear-gradient(to right, white, transparent); border-radius: 1px;
+            z-index: 1; opacity: 0; animation: shooting-star-anim 22s linear infinite 4s;
+        }
+        .hero-section .container::before, .hero-section .container::after {
+            content: ''; position: absolute; width: 150px; height: 1px;
+            background: linear-gradient(to right, white, transparent); border-radius: 1px;
+            z-index: 1; opacity: 0;
+        }
+        .hero-section .container::before { top: 60%; left: -25%; animation: shooting-star-anim 28s linear infinite 13s; }
+        .hero-section .container::after { top: 5%; left: 10%; animation: shooting-star-anim 25s linear infinite 20s; }
+
+        /* Component-specific overrides */
+        .section-bg-light { background-color: var(--color-bg); } 
+        .section-bg-card { background-color: var(--color-card); border-radius: 1rem; }
+        
+        .swot-button {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+        }
+        .swot-button.active {
+            background: var(--color-accent-blue);
+            color: white;
+            border-color: var(--color-accent-blue);
+        }
+        .swot-button:hover:not(.active) {
+            background-color: var(--color-card-hover);
         }
 
-        .accordion-content p, .accordion-content ul {
-            padding-top: 1rem;
+        .contact-form input, .contact-form textarea, .contact-form select {
+            background: var(--color-card);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
         }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 0 0 2px rgba(57, 156, 226, 0.2);
+        }
+
+        .team-photo {
+            border: 3px solid var(--color-accent-blue);
+        }
+        .team-photo-container a:hover {
+            box-shadow: 0 0 25px rgba(57, 156, 226, 0.5);
+        }
+
+        .social-icon {
+             background: var(--color-bg);
+             color: var(--color-text-secondary);
+        }
+        .social-icon:hover {
+            background: var(--color-accent-blue);
+            color: white;
+        }
+
+        .accordion-button {
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+        }
+         .accordion-button:hover, .accordion-button.active {
+            background-color: var(--color-card-hover);
+        }
+
+        #mobile-menu { background-color: var(--color-card); }
+        #mobile-menu a { color: var(--color-text-secondary); } 
+        #mobile-menu-button div { background-color: var(--color-text-primary); }
    </style>
 </head>
 <body class="antialiased">
     <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-white text-black absolute top-0 left-0 z-50">Skip to main content</a>
     <noscript>
-      <div style="background: #ff6b9d; color: #fff; padding: 1em; text-align: center;">
+      <div style="background: #fd7e14; color: #fff; padding: 1em; text-align: center;">
         This site works best with JavaScript enabled. Some interactive features may not be available.
       </div>
     </noscript>
-    <header class="header fixed top-0 left-0 right-0 z-50" role="banner">
+    <header class="header sticky top-0 left-0 right-0 z-50" role="banner">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" aria-label="Aurora HR Consulting Home">
                 <svg class="w-40 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
@@ -421,17 +238,17 @@
                 </svg>
             </a>
             <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
-                <a href="#home" class="nav-link text-lg font-light">Home</a>
-                <a href="#services" class="nav-link text-lg font-light">Services</a>
-                <a href="#approach" class="nav-link text-lg font-light">Approach</a>
-                <a href="blog.html" class="nav-link text-lg font-light">Blog</a>
-                <a href="#engagement-models" class="nav-link text-lg font-light">Pricing</a>
-                <a href="#contact" class="nav-link text-lg font-light">Contact Us</a>
-                <a href="#about-us" class="nav-link text-lg font-light">About Us</a>
+                <a href="#home" class="nav-link text-lg font-light text-gradient">Home</a>
+                <a href="#services" class="nav-link text-lg font-light text-gradient">Services</a>
+                <a href="#approach" class="nav-link text-lg font-light text-gradient">Approach</a>
+                <a href="blog.html" class="nav-link text-lg font-light text-gradient">Blog</a>
+                <a href="#engagement-models" class="nav-link text-lg font-light text-gradient">Partnership Models</a>
+                <a href="#contact" class="nav-link text-lg font-light text-gradient">Engage Us</a>
+                <a href="#about-us" class="nav-link text-lg font-light text-gradient">About Us</a>
             </nav>
             <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
-                <div class="w-6 h-0.5 mb-1.5 bg-white"></div>
-                <div class="w-6 h-0.5 bg-white"></div>
+                <div class="w-6 h-0.5 mb-1.5"></div>
+                <div class="w-6 h-0.5"></div>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden p-4">
@@ -445,37 +262,30 @@
         </div>
     </header>
 
-    <main role="main" id="main-content" tabindex="-1">
+    <main role="main" id="main-content" tabindex="-1" class="container mx-auto px-6">
         <!-- Section 1: Home -->
-        <section id="home" class="hero relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-20">
-            <div class="hero-content">
-                <div class="hero-aurora">
-                    <div class="hero-wave hero-wave-1"></div>
-                    <div class="hero-wave hero-wave-2"></div>
-                    <div class="hero-wave hero-wave-3"></div>
-                    <div class="hero-wave hero-wave-4"></div>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-light text-gradient">Aurora HR Consulting</h1>
-                <p class="mt-8 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed" style="color: rgba(255,255,255,0.9);">Illuminating the Human Spirit in Mission-Driven Workplaces</p>
-                <p class="mt-2 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed" style="color: rgba(255,255,255,0.7);">Driven by values. Powered by strategy. Grounded in execution.</p>
-                <a href="#services" class="mt-8 inline-block button-gradient text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105 cta-button pulse-anim">Explore Our Services</a>
+        <section id="home" class="hero-section my-12 md:my-16 py-24 md:py-36">
+             <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-light text-white">Illuminating the Human Spirit in Mission-Driven Workplaces</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Driven by values. Powered by strategy. Grounded in execution.</p>
+                <a href="#services" class="mt-8 inline-block cta-button font-semibold py-3 px-8 rounded-full">Explore Our Services</a>
             </div>
         </section>
 
         <!-- Section 2: Services -->
-        <section id="services" class="py-10 md:py-16 section-bg-light">
+        <section id="services" class="py-10 md:py-16">
             <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-light text-gradient">Services</h2>
                     <p id="services-intro-text" class="mt-4 text-lg max-w-3xl mx-auto font-light">HR Support That Fits the Way You Work</p>
                 </div>
-                <div class="service-highlight max-w-4xl mx-auto mt-10">
+                <div class="max-w-4xl mx-auto mt-10 p-6 rounded-lg border" style="border-color: var(--color-accent-blue); background: linear-gradient(120deg, rgba(87, 195, 153, 0.1), rgba(57, 156, 226, 0.1));">
                     <p class="text-lg font-medium text-center">No two organizations are alike, your HR solutions shouldn’t be either. We tailor every service to reflect your mission, culture, and operational reality, so you can lead with clarity today and scale with confidence tomorrow.</p>
                 </div>
                 <div id="services-grid" class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Service Cards are now populated by JS -->
                 </div>
-                <div id="service-details" class="mt-8 p-8 border rounded-lg" style="background-color: #16213e; border-color: rgba(255, 255, 255, 0.1); display: none; position: relative;">
+                <div id="service-details" class="mt-8 p-8 card-base rounded-lg" style="display: none; position: relative;">
                     <!-- Service details will be injected here by JS -->
                 </div>
             </div>
@@ -485,60 +295,47 @@
         <section id="approach" class="py-10 md:py-16">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-light text-gradient flex items-center justify-center">
-                        Approach 
-                        <span class="ml-3">
-                            <svg class="approach-icon-svg" style="width:36px; height:36px;" viewBox="0 0 100 100" aria-hidden="true">
-                                <defs><linearGradient id="approach-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs>
-                                <path d="M50,20 a20,20 0 1,1 0.1,0 Z" fill="rgba(255,255,255,0.1)" stroke="url(#approach-gradient)" stroke-width="2"/>
-                                <path d="M50,42 L50,60" stroke="url(#approach-gradient)" stroke-width="4" stroke-linecap="round"/>
-                                <circle cx="50" cy="70" r="3" fill="url(#approach-gradient)"/>
-                                <line x1="50" y1="10" x2="50" y2="0" stroke="#00ffb4" stroke-width="2"/><line x1="30" y1="15" x2="20" y2="5" stroke="#7c3aed" stroke-width="2"/><line x1="70" y1="15" x2="80" y2="5" stroke="#ff6b9d" stroke-width="2"/>
-                            </svg>
-                        </span>
-                    </h2>
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Approach</h2>
                 </div>
                 <div class="approach-content max-w-4xl mx-auto">
-                    <h3 class="text-xl font-semibold text-aurora-teal mb-2">From conversation to co-creation, we build tailored Human-Centred Solutions.</h3>
+                    <h3 class="text-xl font-semibold text-aurora-purple mb-2">From conversation to co-creation, we build tailored Human-Centred Solutions.</h3>
                     <p>At Aurora HR, we know that mission-driven organisations are the backbone of our communities. You face unique challenges—tight budgets, unpredictable funding and growth , and dynamic team changes—that demand more than a generic, one-size-fits-all approach. Your HR strategy should genuinely reflect your unique circumstances.</p>
                     <p> That's why our approach is as individual as your business. We work alongside you to understand your people, culture, and stage of growth, developing flexible, values-aligned HR strategies that evolve as you do. </p>
                     <p>We provide trusted, human-centred HR expertise delivered with clarity, compassion, and respect at every step. No jargon. No cookie-cutter playbooks. Just thoughtful, practical support tailored to the way you work.</p>
                     <p>Because at the heart of every strong organization are its people, we believe those making a positive impact deserve exceptional support.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                    <div class="service-card p-8 rounded-lg">
-                        <h4 class="text-xl font-semibold text-white mb-3">Beyond Compliance to Culture</h4>
-                        <p style="color: rgba(255, 255, 255, 0.7);">Cultivating belonging: We help mission-driven organizations build truly inclusive cultures, not just comply with mandates. Your values, reflected in your people.</p>
+                    <div class="card-base p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Beyond Compliance to Culture</h4>
+                        <p class="text-gray-600">Cultivating belonging: We help mission-driven organizations build truly inclusive cultures, not just comply with mandates. Your values, reflected in your people.</p>
                     </div>
-                    <div class="service-card p-8 rounded-lg">
-                        <h4 class="text-xl font-semibold text-white mb-3">Empowering Autonomy: Build Your Internal HR Strength</h4>
-                        <p style="color: rgba(255, 255, 255, 0.7);">We don't just do HR for you; we empower you to do it better. Build lasting internal HR capability with Aurora HR and gain true organizational autonomy</p>
+                    <div class="card-base p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Empowering Autonomy: Build Your Internal HR Strength</h4>
+                        <p class="text-gray-600">We don't just do HR for you; we empower you to do it better. Build lasting internal HR capability with Aurora HR and gain true organizational autonomy</p>
                     </div>
-                    <div class="service-card p-8 rounded-lg">
-                        <h4 class="text-xl font-semibold text-white mb-3">Culturally Attuned & Integrated strategies  </h4>
-                        <p style="color: rgba(255, 255, 255, 0.7);">Your people strategy isn't just HR. It's the engine of your entire organization. Let us show you how to connect every piece for maximum impact.</p>
+                    <div class="card-base p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Culturally Attuned & Integrated strategies </h4>
+                        <p class="text-gray-600">Your people strategy isn't just HR. It's the engine of your entire organization. Let us show you how to connect every piece for maximum impact.</p>
                     </div>
-                    <div class="service-card p-8 rounded-lg">
-                        <h4 class="text-xl font-semibold text-white mb-3">Growth-Ready Scale with Confidence</h4>
-                        <p style="color: rgba(255, 255, 255, 0.7);">Ready to grow? Our HR solutions are built for scale, ensuring your people operations keep pace with your ambition.</p>
+                    <div class="card-base p-8 rounded-lg">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Growth-Ready Scale with Confidence</h4>
+                        <p class="text-gray-600">Ready to grow? Our HR solutions are built for scale, ensuring your people operations keep pace with your ambition.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Section 4: Partnership Models -->
-        <section id="engagement-models" class="py-10 md:py-16 section-bg-light">
+        <section id="engagement-models" class="py-10 md:py-16">
              <div class="container mx-auto px-6">
                 <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-light text-gradient">Pricing: Flexible Partnership Models</h2>
                     <p class="mt-4 text-lg max-w-3xl mx-auto">We offer a flexible, hybrid service model tailored to meet you remotely across BC or in person in the Lower Mainland.</p>
                     <p class="mt-4 text-lg max-w-3xl mx-auto">As part of our commitment to integrity and fairness, we proudly and openly publish our rates for discovery consultations and project-based work. This ensures that every organization receives the same clear, equitable offering. No hidden deals. No preferential pricing. Just transparent, values-based service built on mutual respect.</p>
-                    <p class="mt-4 text-lg max-w-3xl mx-auto">We believe you deserve to know what to expect before you invest. And because we stand behind the quality of our work, our discovery consultation is backed by a satisfaction-first approach—making your experience valuable from day one.</p>
-                    <p class="mt-4 text-lg max-w-3xl mx-auto">This isn’t just about service delivery—it’s about building trust through consistent, principled partnerships.</p>
                 </div>
                 <div class="mt-12 max-w-4xl mx-auto">
                     <div id="swot-buttons" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
-                    <div id="swot-details" class="mt-6 p-6 border border-white/10 rounded-lg min-h-[150px]"></div>
+                    <div id="swot-details" class="mt-6 p-6 card-base rounded-lg min-h-[150px]"></div>
                 </div>
             </div>
         </section>
@@ -550,23 +347,23 @@
                     <h2 class="text-3xl md:text-4xl font-light text-gradient">Contact Us</h2>
                     <p class="mt-4 text-lg max-w-3xl mx-auto">Ready to illuminate your organization's potential? Reach out to start a conversation. We're here to help you navigate your HR challenges and achieve your business goals.</p>
                 </div>
-                <div class="mt-12 max-w-xl mx-auto">
+                <div class="mt-12 max-w-xl mx-auto contact-form">
                     <form id="contact-form" action="https://formspree.io/f/xanbwbwd" method="POST">
                         <div class="mb-6">
-                            <label for="name" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Name</label>
-                            <input type="text" id="name" name="name" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" required aria-required="true" aria-invalid="false">
+                            <label for="name" class="block mb-2 text-sm font-medium">Name</label>
+                            <input type="text" id="name" name="name" class="text-sm rounded-lg block w-full p-2.5" required aria-required="true" aria-invalid="false">
                         </div>
                         <div class="mb-6">
-                            <label for="email" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Email</label>
-                            <input type="email" id="email" name="email" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" required aria-required="true" aria-invalid="false">
+                            <label for="email" class="block mb-2 text-sm font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="text-sm rounded-lg block w-full p-2.5" required aria-required="true" aria-invalid="false">
                         </div>
                         <div class="mb-6">
-                            <label for="organization" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Organization</label>
-                            <input type="text" id="organization" name="organization" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5">
+                            <label for="organization" class="block mb-2 text-sm font-medium">Organization</label>
+                            <input type="text" id="organization" name="organization" class="text-sm rounded-lg block w-full p-2.5">
                         </div>
                         <div class="mb-6">
-                            <label for="service" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Service Interest</label>
-                            <select id="service" name="service" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5">
+                            <label for="service" class="block mb-2 text-sm font-medium">Service Interest</label>
+                            <select id="service" name="service" class="text-sm rounded-lg block w-full p-2.5">
                                 <option value="">Select a service</option>
                                 <option>HR Policy Development</option>
                                 <option>Process Improvement</option>
@@ -583,21 +380,21 @@
                             </select>
                         </div>
                         <div class="mb-6">
-                            <label for="message" class="block mb-2 text-sm font-medium" style="color: rgba(255, 255, 255, 0.7);">Message</label>
-                            <textarea id="message" name="message" rows="4" class="bg-gray-800 border border-white/20 text-white text-sm rounded-lg focus:ring-aurora-teal focus:border-aurora-teal block w-full p-2.5" placeholder="Tell us about your HR challenges and goals..."></textarea>
+                            <label for="message" class="block mb-2 text-sm font-medium">Message</label>
+                            <textarea id="message" name="message" rows="4" class="block p-2.5 w-full text-sm rounded-lg" placeholder="Tell us about your HR challenges and goals..."></textarea>
                         </div>
-                        <div id="form-error" class="text-red-400 mt-2" aria-live="polite"></div>
+                        <div id="form-error" class="text-red-600 mt-2" aria-live="polite"></div>
                         <div class="text-center mt-6">
-                                <button type="submit" class="button-gradient text-white font-semibold py-3 px-8 rounded-full transition-transform transform hover:scale-105">Engage Us</button>
+                                <button type="submit" class="cta-button font-semibold py-3 px-8 rounded-full">Engage Us</button>
                         </div>
                     </form>
-                    <div id="form-feedback" class="text-center text-aurora-teal mt-4" aria-live="polite"></div>
+                    <div id="form-feedback" class="text-center text-green-600 mt-4" aria-live="polite"></div>
                 </div>
             </div>
         </section>
 
         <!-- Section 6: About Us -->
-        <section id="about-us" class="py-10 md:py-16 section-bg-light">
+        <section id="about-us" class="py-10 md:py-16">
             <div class="container mx-auto px-6">
                 <div class="mt-12 text-center">
                     <h3 class="text-3xl md:text-4xl font-light text-gradient mb-6">Our Vision</h3>
@@ -616,21 +413,20 @@
                     <div class="text-center md:text-left">
                         <div class="team-photo-container md:w-32 md:h-32 w-40 h-40 rounded-full mx-auto md:mx-0 mb-4">
                             <a href="https://ca.linkedin.com/in/waelhussein" target="_blank" rel="noopener noreferrer">
-                                <img src="https://aurorahr.ca/Wael-Cropped.jpg" alt="Wa'el Hussein, CPHR, GRP" class="team-photo"  onerror="this.onerror=null;this.src='https://placehold.co/150x150/7c3aed/ffffff?text=Wa%27el';">
+                                <img src="https://aurorahr.ca/Wael-Cropped.jpg" alt="Wa'el Hussein, CPHR, GRP" class="team-photo rounded-full object-cover w-full h-full"  onerror="this.onerror=null;this.src='https://placehold.co/150x150/7c3aed/ffffff?text=Wa%27el';">
                             </a>
                         </div>
                         <h4 class="text-2xl font-semibold text-aurora-purple">Wa'el Hussein, CPHR, GRP</h4>
-                        <p class="mt-4 text-white/90">A seasoned P&C leader with 15+ years of experience spanning private, public, and non-profit sectors. Wa'el specializes in crafting innovative HR solutions that align with organizational values. His expertise in Total Rewards, HRIS implementation, and organizational design has helped build award-winning, people-first workplace cultures recognized by Great Place to Work.</p>
+                        <p class="mt-4 text-gray-700">A seasoned P&C leader with 15+ years of experience spanning private, public, and non-profit sectors. Wa'el specializes in crafting innovative HR solutions that align with organizational values. His expertise in Total Rewards, HRIS implementation, and organizational design has helped build award-winning, people-first workplace cultures recognized by Great Place to Work.</p>
                     </div>
                     <div class="text-center md:text-left">
                         <div class="team-photo-container md:w-32 md:h-32 w-40 h-40 rounded-full mx-auto md:mx-0 mb-4">
-                            <!-- TODO: Add Gary's professional profile link -->
                             <a href="#" target="_blank" rel="noopener noreferrer">
-                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6b9d/ffffff?text=Gary';">
+                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo rounded-full object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6b9d/ffffff?text=Gary';">
                             </a>
                         </div>
                         <h4 class="text-xl font-semibold text-aurora-pink">Gary McFarlane</h4>
-                        <p class="mt-4 text-white/90">An HR Generalist with a decade of HR experience and 30 years in the non-profit sector. Known for his empathetic and social-justice-oriented approach, Gary excels in training, communications, process improvement, and employee engagement. He leverages his creative background in the arts to deliver unique, effective HR solutions. You can often find him hiking the North Shore mountains, or practicing music.</p>
+                        <p class="mt-4 text-gray-700">An HR Generalist with a decade of HR experience and 30 years in the non-profit sector. Known for his empathetic and social-justice-oriented approach, Gary excels in training, communications, process improvement, and employee engagement. He leverages his creative background in the arts to deliver unique, effective HR solutions. You can often find him hiking the North Shore mountains, or practicing music.</p>
                     </div>
                 </div>
                 <div class="mt-20 text-center">
@@ -638,7 +434,7 @@
                     <div class="values-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center px-4">
                         <!-- Value cards will be injected here by JS -->
                     </div>
-                   <div id="value-details" class="mt-8 p-8 border rounded-lg" style="background-color: #16213e; border-color: rgba(255, 255, 255, 0.1); display: none; position: relative;">
+                   <div id="value-details" class="mt-8 p-8 card-base rounded-lg" style="display: none; position: relative;">
                         <!-- Value details will be injected here by JS -->
                    </div>
                 </div>
@@ -646,8 +442,8 @@
         </section>
     </main>
 
-    <footer class="py-12 section-bg-light">
-        <div class="container mx-auto px-6 text-center" style="color: rgba(255, 255, 255, 0.7);">
+    <footer class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 text-center text-gray-600">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0 text-left">
                     <a href="#home" aria-label="Aurora HR Consulting Home">
@@ -662,7 +458,7 @@
                             <text x="0" y="70" font-family="serif" font-size="60" fill="url(#auroraGradientFooter)">Aurora HR</text>
                         </svg>
                     </a>
-                    <p class="mt-2 text-sm max-w-xs">We partners with values-driven organizations in BC to build thriving workplaces.</p>
+                    <p class="mt-2 text-sm max-w-xs">We partner with values-driven organizations in BC to build thriving workplaces.</p>
                 </div>
                 
                 <div class="mb-6 md:mb-0">
@@ -672,7 +468,7 @@
                         <a href="https://www.facebook.com/AuroraHR.ca" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 text-white">
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <a href="mailto:Info@AuroraHR.ca" class="hover:text-aurora-teal transition-colors duration-200">📧 Info@AuroraHR.ca</a>
                         <a href="tel:+17788925892" class="hover:text-aurora-teal transition-colors duration-200">📞 (778) 892-5892</a>
                     </div>
@@ -680,19 +476,18 @@
                 
                 <div class="text-center md:text-right">
                     <div class="footer-links flex flex-wrap justify-center gap-4">
-                        <a href="#services" class="text-white/70 hover:text-aurora-teal">Services</a>
-                        <a href="#approach" class="text-white/70 hover:text-aurora-teal">Approach</a>
-                        <a href="blog.html" class="text-white/70 hover:text-aurora-teal">Blog</a>
-                        <a href="#engagement-models" class="text-white/70 hover:text-aurora-teal">Partnership Models</a>
-                        <a href="#contact" class="text-white/70 hover:text-aurora-teal">Engage Us</a>
-                        <a href="#about-us" class="text-white/70 hover:text-aurora-teal">About Us</a>
+                        <a href="#services" class="hover:text-aurora-teal">Services</a>
+                        <a href="#approach" class="hover:text-aurora-teal">Approach</a>
+                        <a href="blog.html" class="hover:text-aurora-teal">Blog</a>
+                        <a href="#engagement-models" class="hover:text-aurora-teal">Partnership Models</a>
+                        <a href="#contact" class="hover:text-aurora-teal">Engage Us</a>
+                        <a href="#about-us" class="hover:text-aurora-teal">About Us</a>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-8 pt-6 border-t border-white/10">
+            <div class="mt-8 pt-6 border-t border-gray-200">
                 <p>&copy; <span id="copyright-year"></span> Aurora HR Consulting Services. All rights reserved.</p>
-                
                 <p class="text-sm mt-2">Serving small and medium-sized organizations across British Columbia.</p>
             </div>
         </div>
@@ -700,261 +495,63 @@
     <div id="live-region" class="sr-only" aria-live="polite"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Data for dynamic content
-            const blogPosts = [
-                {
-                    id: "post-1",
-                    title: "The True Cost of a Bad Hire (and How to Avoid It)",
-                },
-                {
-                    id: "post-2",
-                    title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
-                },
-                {
-                    id: "post-3",
-                    title: "Why Your People-First Policies Are Your Best Legal Defence",
-                }
-            ];
-
+            // Data for dynamic content (simplified for brevity)
             const data = {
                 services: [
-                    { 
-                        id: 'hr-policy-development', 
-                        title: 'HR Policy Development - Ditch the Legal-Speak. Build a Culture of Trust.', 
-                        cardTitle: 'HR Policy Development',
-                        subtitle: 'From Barrier to Bridge Philosophy',
-                        icon: `<svg viewBox="0 0 100 100"><title>HR Policy Development Icon</title><defs><linearGradient id="policy-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient><filter id="glow"><feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" /><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect x="15" y="10" width="70" height="80" rx="5" fill="rgba(255, 255, 255, 0.05)" stroke="url(#policy-gradient)" stroke-width="2" /><path d="M75,10 L85,20 L75,20 Z" fill="rgba(255, 255, 255, 0.1)" stroke="url(#policy-gradient)" stroke-width="2" /><path d="M50,25 C45,25 40,28 40,35 L40,45 C40,60 50,70 50,70 C50,70 60,60 60,45 L60,35 C60,28 55,25 50,25 Z" fill="none" stroke="url(#policy-gradient)" stroke-width="3" /><path d="M50,35 L45,40 L47,45 L50,43 L53,45 L55,40 Z" fill="url(#policy-gradient)" filter="url(#glow)" /><line x1="25" y1="50" x2="65" y2="50" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="58" x2="65" y2="58" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="66" x2="65" y2="66" stroke="url(#policy-gradient)" stroke-width="2" /><line x1="25" y1="74" x2="50" y2="74" stroke="url(#policy-gradient)" stroke-width="2" /><path d="M30,55 L35,60 L45,50" fill="none" stroke="#00ffb4" stroke-width="2" /><path d="M30,65 L35,70 L45,60" fill="none" stroke="#7c3aed" stroke-width="2" /></svg>`,
-                        content: `<h4 class="text-lg font-semibold text-white/80 mb-2">Your HR policies are a reflection of your company culture. Are they sending the right message?</h4><p class="mb-4">No more confusing, jargon-filled documents that treat your employees like a liability. It's time for policies that go beyond legal compliance to become genuine engaging tools for your team.</p><p class="mb-4">We build people-first policies tailored to your day-to-day reality. They serve as a unified referance, written in language everyone can understand. This clarity reduces confusion, supports accountability, and frees up your leadership to focus on what really matters—growing your business.</p>
-                        <button class="accordion-button">The People-First Policy Check: Does Yours Make the Grade? <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <ul class="list-disc list-inside text-left space-y-2"><li><strong>Easy Navigation (The 30-Second Test):</strong> Can your team find what they need, fast?</li><li><strong>Supportive Language (We vs. The Company):</strong> Is your tone collaborative or corporate?</li><li><strong>Process Transparency (What Happens Next?):</strong> Are your procedures a mystery or a clear path?</li><li><strong>Addressing Fears (The Fear Test):</strong> Do you proactively reassure your team about their biggest concerns (e.g., retaliation)?</li></ul><p class="mt-4">If your policies are failing this check, you're missing a key opportunity to build a transparent, supportive, and high-performing workplace. Let Aurora HR help you create policies that people actually want to use.</p>
-                        </div>`,
-                        relatedBlogPosts: ['post-3']
-                    },
-                    { 
-                        id: 'process-improvement', 
-                        title: 'Process Improvement', 
-                        cardTitle: 'Process Improvement',
-                        subtitle: 'Streamlining HR workflows for efficiency gains',
-                        icon: `<svg viewBox="0 0 100 100"><title>Process Improvement Icon</title><defs><linearGradient id="process-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><circle cx="50" cy="50" r="30" fill="rgba(255, 255, 255, 0.05)" stroke="url(#process-gradient)" stroke-width="2" /><g transform="rotate(15, 50, 50)"><rect x="45" y="15" width="10" height="15" rx="2" fill="url(#process-gradient)" /><rect x="45" y="70" width="10" height="15" rx="2" fill="url(#process-gradient)" /><rect x="15" y="45" width="15" height="10" rx="2" fill="url(#process-gradient)" /><rect x="70" y="45" width="15" height="10" rx="2" fill="url(#process-gradient)" /></g><path d="M50,32 a18,18 0 0,1 15.58,9" stroke="#00ffb4" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M68,48 L63,52 L69,54 Z" fill="#00ffb4"/><circle cx="50" cy="50" r="5" fill="url(#process-gradient)" filter="url(#glow)" /></svg>`,
-                        content: 'Are inefficient HR processes holding your organization back? In mission-driven organizations, every minute and dollar counts. Clunky, manual, or outdated HR workflows don\'t just waste time—they create frustration, increase the risk of errors, and pull focus from what truly matters. We specialize in mapping your current HR processes, identifying bottlenecks, and co-designing streamlined, user-friendly workflows that are both efficient and aligned with your culture.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'employee-engagement', 
-                        title: 'Employee Engagement — Beyond Scores. Into What Truly Matters.', 
-                        cardTitle: 'Employee Engagement',
-                        subtitle: 'Creating cultures where people want to be',
-                        icon: `<svg viewBox="0 0 100 100"><title>Employee Engagement Icon</title><defs><linearGradient id="engagement-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><circle cx="35" cy="40" r="8" fill="#00ffb4" filter="url(#glow)" /><path d="M28,55 h14 a7,7 0 0,0 -14,0 z" fill="#00ffb4" /><circle cx="50" cy="30" r="8" fill="#7c3aed" filter="url(#glow)" /><path d="M43,45 h14 a7,7 0 0,0 -14,0 z" fill="#7c3aed" /><circle cx="65" cy="40" r="8" fill="#ff6b9d" filter="url(#glow)" /><path d="M58,55 h14 a7,7 0 0,0 -14,0 z" fill="#ff6b9d" /><line x1="40" y1="45" x2="48" y2="38" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" /><line x1="52" y1="38" x2="60" y2="45" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" /><path d="M50,65 Q55,60 60,65 Q65,70 50,85 Q35,70 40,65 Q45,60 50,65 Z" fill="url(#engagement-gradient)" opacity="0.9" filter="url(#glow)" /></svg>`,
-                        content: `<h4>Do you know:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>Which priorities do your people truly value the most versus those they rate the highest?</li><li>Where low satisfaction is subtly impacting performance — and where it might be less significant than you assume?</li><li>Are your engagement efforts genuinely making a difference for your business strategy, or are they just providing a temporary sense of relaxation for employees and creating some good moments?</li></ul><p class="mb-4">At Aurora HR, we believe engagement is more than a score. It’s a strategic tool to build trust, drive performance, and create shared success.</p>
-                        <button class="accordion-button">Two Powerful Lenses. One Clear Roadmap. <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <h5 class="text-md font-semibold text-white/70 mt-4 mb-2">I. The Employee Lens: What Truly Matters to Them</h5><p class="mb-4">We go beyond generic surveys to uncover:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>What employees value most — and how much weight they place on each factor.</li><li>How satisfied they really are in those critical areas.</li></ul><p class="mb-4">We turn this into an actionable Engagement Matrix that shows exactly where to:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li><strong>Focus</strong> — High importance, low satisfaction. Urgent gaps that need immediate attention.</li><li><strong>Promote</strong> — Low importance, high satisfaction. Strengths to highlight and leverage.</li><li><strong>Monitor</strong> — Low importance, low satisfaction. Areas to watch without overinvesting.</li><li><strong>Maintain</strong> — High importance, high satisfaction. Your core strengths to protect and celebrate.</li></ul>
-                            <h5 class="text-md font-semibold text-white/70 mt-4 mb-2">II. The Organizational Lens: What the Business Needs Most</h5><p class="mb-4">We also help you define:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>The mindsets, behaviors, and capabilities your organization truly needs to achieve its goals.</li><li>Where leadership priorities align — or clash — with employee focus.</li></ul>
-                            <h5 class="text-md font-semibold text-white/70 mt-4 mb-2">Bridging the Gap for True Alignment</h5><p class="mb-4">When you look through both lenses together, you discover:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>Where employee priorities and business needs align perfectly — your greatest opportunities for growth.</li><li>Where gaps exist that undermine trust, retention, and performance — and exactly how to bridge them.</li></ul>
-                        </div>
-                        <p class="mt-4">We don’t stop at insights. We help you translate this clarity into a focused, actionable roadmap that connects engagement directly to performance, rewards, and lasting success.</p><p>Do you know where your biggest opportunities — and hidden risks — really are?</p>`,
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'hr-communications', 
-                        title: 'HR Communications', 
-                        cardTitle: 'HR Communications',
-                        subtitle: 'Clear, professional messaging for your team',
-                        icon: `<svg viewBox="0 0 100 100"><title>HR Communications Icon</title><defs><linearGradient id="comms-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><path d="M35,25 a15,15 0 1,1 0,30 l-10,10 v-10 h-5 a15,15 0 0,1 -15,-15 v0 a15,15 0 0,1 15,-15 z" fill="rgba(255,255,255,0.05)" stroke="url(#comms-gradient)" stroke-width="2" /><path d="M65,45 a15,15 0 1,0 0,30 l10,10 v-10 h5 a15,15 0 0,0 15,-15 v0 a15,15 0 0,0 -15,-15 z" fill="rgba(255,255,255,0.1)" stroke="url(#comms-gradient)" stroke-width="2" filter="url(#glow)"/><line x1="30" y1="35" x2="40" y2="35" stroke="#00ffb4" stroke-width="2" /><line x1="25" y1="45" x2="45" y2="45" stroke="#00ffb4" stroke-width="2" /><line x1="60" y1="55" x2="70" y2="55" stroke="#7c3aed" stroke-width="2" /><line x1="55" y1="65" x2="75" y2="65" stroke="#7c3aed" stroke-width="2" /></svg>`,
-                        content: `<p class="mb-4">Clear, consistent, and compassionate communication really helps create a positive and supportive workplace. We're excited to support you in crafting and sharing meaningful internal messages, whether you're sharing policy updates, benefits information, organizational news, or handling sensitive employee matters.</p><p class="mb-4">We realize that relying on just a single communication method isn't always enough. When messages go through different leaders, they might end up being changed unintentionally, become inconsistent, or even get overlooked. That’s why we suggest using a variety of channels at the same time—like email, group meetings, and intranet updates—to make sure everyone receives the message clearly and confidently.</p><p class="mb-4">This multi-layered approach ensures your team feels informed, respected, and truly appreciated. Great communication goes beyond simple messages; it combines clarity, kindness, and succinctness to reduce misunderstandings and build lasting trust. We’re here to help you review and enhance your current communications, whether it’s letters, emails, handbooks, presentations, newsletters, or anything else. Our goal is to make sure your HR messages are always professional, impactful, and reflect your company’s unique culture.</p>`,
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'hris-data-management', 
-                        title: 'HRIS & Data Management', 
-                        cardTitle: 'HRIS & Data Management',
-                        subtitle: 'Aligning technology with people\'s strategy',
-                        icon: `<svg viewBox="0 0 100 100"><title>HRIS & Data Management Icon</title><defs><linearGradient id="hris-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><ellipse cx="50" cy="25" rx="30" ry="10" fill="rgba(255, 255, 255, 0.05)" stroke="url(#hris-gradient)" stroke-width="2" /><path d="M20,25 V75 a30,10 0 0,0 60,0 V25" fill="rgba(255,255,255,0.05)" stroke="url(#hris-gradient)" stroke-width="2" /><ellipse cx="50" cy="75" rx="30" ry="10" fill="rgba(255,255,255,0.05)" stroke="url(#hris-gradient)" stroke-width="2" /><ellipse cx="50" cy="40" rx="25" ry="8" fill="none" stroke="url(#hris-gradient)" stroke-width="1.5" opacity="0.8"/><ellipse cx="50" cy="58" rx="25" ry="8" fill="none" stroke="url(#hris-gradient)" stroke-width="1.5" opacity="0.6"/><path d="M60,25 l5,-5 l5,5" stroke="#00ffb4" fill="none" stroke-width="2" /><line x1="65" y1="20" y2="10" stroke="#00ffb4" stroke-width="2"/></svg>`,
-                        content: 'Choosing and implementing the right HRIS is one of the most critical — and often most misunderstood — decisions an organization can make. Many teams struggle with unrealistic expectations, poor data hygiene, lack of internal capacity, and misaligned software choices.<br><br> At Aurora, we bring deep expertise to guide your team through the full lifecycle: assessing needs, selecting the right platform, mapping and cleansing legacy data, and ensuring adoption with clear workflows and training. We don’t just implement systems — we build alignment between your technology, people, and goals. When you partner with us, you gain a trusted advisor who understands both the technical and human sides of HRIS success.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'total-rewards', 
-                        title: 'Total Rewards', 
-                        cardTitle: 'Total Rewards',
-                        subtitle: 'Balancing Values, Equity, and Sustainability',
-                        icon: `<svg viewBox="0 0 100 100"><title>Total Rewards Icon</title><defs><linearGradient id="rewards-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><path d="M50,20 L80,50 L50,80 L20,50 Z" fill="rgba(255,255,255,0.05)" stroke="url(#rewards-gradient)" stroke-width="2" /><path d="M50,28 L72,50 L50,72 L28,50 Z" fill="url(#rewards-gradient)" filter="url(#glow)"/><path d="M50,20 L55,25 L60,20 L55,15 Z" fill="#00ffb4" filter="url(#glow)" /><path d="M80,50 L75,55 L70,50 L75,45 Z" fill="#7c3aed" filter="url(#glow)" /><path d="M50,80 L45,75 L40,80 L45,85 Z" fill="#ff6b9d" filter="url(#glow)" /><path d="M20,50 L25,45 L30,50 L25,55 Z" fill="url(#rewards-gradient)" filter="url(#glow)" /></svg>`,
-                        content: 'We recognize that total rewards are more than just salaries and benefits — they are strategic tools that shape culture, drive engagement, and support long-term sustainability. Every organization is different: some face funding or resource limitations, others strive to meet living wage commitments, and many struggle to balance rising costs with equitable pay. We help organizations design holistic, practical total rewards strategies that that reflect their values, workforce composition, and financial realities. From building a compensation philosophy to creating scalable salary bands and aligning incentives with business goals, we bring the structure, insight, and customization needed to support both organizational resilience and employee well-being.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'diversity-inclusion', 
-                        title: 'Diversity & Inclusion', 
-                        cardTitle: 'Diversity & Inclusion',
-                        subtitle: 'Building inclusive practices that respect culture',
-                        icon: `<svg viewBox="0 0 100 100"><title>Diversity & Inclusion Icon</title><defs><linearGradient id="diversity-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><circle cx="50" cy="50" r="40" fill="none" stroke="url(#diversity-gradient)" stroke-width="2" stroke-dasharray="6, 4" /><circle cx="50" cy="50" r="10" fill="url(#diversity-gradient)" filter="url(#glow)"/><circle cx="50" cy="18" r="7" fill="#00ffb4" /><circle cx="20" cy="35" r="7" fill="#7c3aed" /><circle cx="28" cy="68" r="7" fill="#ff6b9d" /><circle cx="72" cy="68" r="7" fill="#00ffb4" /><circle cx="80" cy="35" r="7" fill="#7c3aed" /><line x1="50" y1="18" x2="50" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="20" y1="35" x2="43" y2="45" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="28" y1="68" x2="45" y2="58" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="72" y1="68" x2="55" y2="58" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /><line x1="80" y1="35" x2="57" y2="45" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" /></svg>`,
-                        content: 'Move beyond theory, political correctness, and token hiring. First, we help you gain an understanding of your organization and its biases. Are you merely reactive rather than engaging in a meaningful way? Do you know if you provide an inclusive environment for all employees? Do you value neurodivergent people? How are decisions and feedback shaped? Do you create space for the quiet reflections of your deep thinkers and introverts, or are you primarily influenced by the loudest voices? Do employees feel valued for their unique qualities? We answer these and other questions by offering cultural assessments, practical recommendations, and leadership training -- including expertise in Indigenous reconciliation -- to build a truly inclusive workplace.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'learning-development', 
-                        title: 'Learning & Development', 
-                        cardTitle: 'Learning & Development',
-                        subtitle: 'Practical training that builds real capabilities',
-                        icon: `<svg viewBox="0 0 100 100"><title>Learning & Development Icon</title><defs><linearGradient id="learning-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><path d="M20,80 L80,80 L80,75 L20,75 Z" fill="rgba(255,255,255,0.05)" stroke="url(#learning-gradient)" stroke-width="2"/><path d="M25,75 L75,75 L70,20 L30,20 Z" fill="rgba(255,255,255,0.05)" stroke="url(#learning-gradient)" stroke-width="2"/><path d="M45,30 Q50,20 55,30" fill="url(#learning-gradient)" filter="url(#glow)"/><line x1="50" y1="30" x2="50" y2="40" stroke="url(#learning-gradient)" stroke-width="3"/><path d="M45,40 Q50,45 55,40" fill="none" stroke="url(#learning-gradient)" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="50" x2="65" y2="50" stroke="#00ffb4" stroke-width="2" /><line x1="35" y1="60" x2="65" y2="60" stroke="#7c3aed" stroke-width="2"/></svg>`,
-                        content: `At Aurora HR, our Learning & Development programs go beyond basic compliance to equip leaders and teams with the knowledge, tools, and confidence to navigate the evolving landscape of workplace law, equity, and performance. Grounded in BC case law, our training is scenario-based, legally accurate, and culturally responsive—covering critical topics such as the duty to accommodate, respectful workplace conduct, investigation skills, occupational health and safety, and human rights obligations. We specialize in turning complex legal obligations into practical, engaging learning experiences that build confidence, prevent risk, and foster inclusive, high-performing workplaces.<br><br>Our signature Conflict & Investigation Training equips managers and HR professionals with the confidence and tools to respond effectively and fairly.<br><br>
-                        <button class="accordion-button">What makes our training different? <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <ul class="list-disc list-inside text-left space-y-2">
-                                <li>✔ Rooted in BC law with real case studies and up-to-date standards</li>
-                                <li>✔ Scenario-based and interactive, not just theory</li>
-                                <li>✔ Tailored for small to medium organizations, including nonprofits and Indigenous-led teams</li>
-                                <li>✔ Manager-focused, with step-by-step frameworks they can actually use</li>
-                                <li>✔ Post-training integration tools to help translate learning into lasting change</li>
-                            </ul>
-                        </div>
-                        <p class="mt-4">Whether resolving interpersonal issues, conducting a formal investigation, or building preventative leadership practices, we help organizations reduce risk, restore trust, and create safer, more resilient workplaces.</p>`,
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'performance-management', 
-                        title: 'Performance Management: The Most Sensitive — and Most Transformative — Topic in HR', 
-                        cardTitle: 'Performance Management',
-                        subtitle: 'Driving individual and organizational growth.',
-                        icon: `<svg viewBox="0 0 100 100"><title>Performance Management Icon</title><defs><linearGradient id="performance-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><circle cx="50" cy="50" r="35" fill="rgba(255, 255, 255, 0.05)" stroke="url(#performance-gradient)" stroke-width="1.5"/><circle cx="50" cy="50" r="25" fill="none" stroke="url(#performance-gradient)" stroke-width="1.5"/><circle cx="50" cy="50" r="15" fill="url(#performance-gradient)" filter="url(#glow)"/><path d="M50,15 L60,30 L55,30 L55,45 L45,45 L45,30 L40,30 Z" fill="#00ffb4" /></svg>`,
-                        content: `<p class="mb-4">At Aurora HR, we believe that performance management is one of the most complicated and sensitive conversations in any organization. Why? Because it touches the very core of what it means to be human at work: our ambitions, our fears, our sense of fairness, and our need to belong and contribute.</p><p class="mb-4">Yet, despite its complexity, most organizations treat performance as a rigid scoreboard — a list of objectives to check off, a once-a-year meeting, a quiet conversation behind closed doors.</p><p class="mb-4">But what if we reimagined performance as an open, living dialogue rather than a closed judgment?</p><p class="mb-4">What if performance was less about "Did you meet your target?" and more about "What did you try? What did you learn? Who did you help grow?"</p>
-                        <button class="accordion-button">Beyond Checkboxes: Toward Human Potential <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <p class="mb-4">We often ask our clients:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>Are you measuring what truly matters, or just what is easy to count?</li><li>Are you rewarding only the safe wins, or are you also celebrating those who dared to explore — even if they failed?</li><li>Have your people stopped taking risks because they fear the consequences of making mistakes?</li><li>Would your employees rather stay silent than share a half-formed idea that might change everything?</li></ul><p class="mb-4">These are not rhetorical questions. They are existential questions about the future of your organization.</p>
-                        </div>
-                        <button class="accordion-button">Rewarding the Courage to Try <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <p class="mb-4">At Aurora HR, we believe in rewarding the try, not just the triumph. We help organizations build cultures where failure is not shameful but celebrated as a vital learning process. Where curiosity is not just a buzzword but a daily practice.</p><p class="mb-4">Imagine a workplace where people proudly share their mistakes and what they learned from them. Where book clubs and lunchtime skill exchanges become natural spaces for growth. Where frontline employees can challenge executives without fear.</p><p class="mb-4">We believe that true performance flourishes not in an environment of fear and political correctness, but in one of authenticity, healthy argument, and psychological safety.</p>
-                        </div>
-                        <button class="accordion-button">Performance as a Foundation — Not a Department <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <p class="mb-4">Without a strong, courageous performance philosophy, total rewards become arbitrary, engagement efforts feel hollow, and innovation grinds to a halt. Performance is not an isolated HR process — it is the cultural heartbeat that drives everything else.</p>
-                        </div>
-                        <button class="accordion-button">Let’s Redefine Performance Together <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <p class="mb-4">Are you ready to move beyond appraisals and KPIs?</p><p class="mb-4">Are you ready to create a workplace where people feel safe to question, explore, and become?</p><p class="mb-4">Are you willing to reward the ones who tried and failed, because they might hold the seeds of your next big breakthrough?</p><p class="mb-4">Performance is a paradox: it demands results, yet it thrives on freedom. It asks for consistency, yet it needs curiosity.</p><p class="mb-4">At Aurora HR, we embrace this paradox. We help you turn it into your greatest strategic advantage.</p><p>Together, let’s build a culture where performance is not managed — it’s unleashed.</p>
-                        </div>`,
-                        relatedBlogPosts: ['post-2']
-                    },
-                    { 
-                        id: 'competency-frameworks', 
-                        title: 'Competency Frameworks', 
-                        cardTitle: 'Competency Frameworks',
-                        subtitle: 'Defining the skills needed for success.',
-                        icon: `<svg viewBox="0 0 100 100"><title>Competency Frameworks Icon</title><defs><linearGradient id="competency-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><path d="M30,20 h40 a10,10 0 0,1 10,10 v40 a10,10 0 0,1 -10,10 h-40 a10,10 0 0,1 -10,-10 v-40 a10,10 0 0,1 10,-10 z" fill="rgba(255,255,255,0.05)" stroke="url(#competency-gradient)" stroke-width="2"/><rect x="30" y="30" width="15" height="15" rx="3" fill="#00ffb4" filter="url(#glow)"/><rect x="55" y="30" width="15" height="15" rx="3" fill="#7c3aed" filter="url(#glow)"/><rect x="30" y="55" width="15" height="15" rx="3" fill="#ff6b9d" filter="url(#glow)"/><rect x="55" y="55" width="15" height="15" rx="3" fill="#00d4ff" filter="url(#glow)"/></svg>`,
-                        content: 'Aurora HR helps organizations build competency frameworks that align people development with business goals. We define the skills, knowledge, and behaviours needed for success across roles, functions, and leadership levels - so you can hire, develop, and promote with clarity and consistency.<br><br> Whether you\'re strengthening leadership pipelines, supporting succession planning, or aligning performance expectations, our frameworks provide a practical foundation for growth. Grounded in your values and context, they become tools for better decisions, stronger teams, and a more future-ready workforce.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'metrics-kpi', 
-                        title: 'Metrics & KPI', 
-                        cardTitle: 'Metrics & KPI',
-                        subtitle: 'Measuring HR effectiveness with data.',
-                        icon: `<svg viewBox="0 0 100 100"><title>Metrics & KPI Icon</title><defs><linearGradient id="metrics-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><rect x="20" y="60" width="15" height="25" rx="2" fill="url(#metrics-gradient)" opacity="0.8"/><rect x="42.5" y="40" width="15" height="45" rx="2" fill="url(#metrics-gradient)" opacity="0.7"/><rect x="65" y="20" width="15" height="65" rx="2" fill="url(#metrics-gradient)" opacity="0.6"/><path d="M15,80 Q40,30 85,20" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/><circle cx="85" cy="20" r="5" fill="white" filter="url(#glow)"/></svg>`,
-                        content: 'Go beyond simple headcount and turnover rates. We help you define, track, and interpret the HR metrics that truly matter to your organization\'s health and success. From employee engagement scores to retention drivers and DEI progress, we enable you to make informed, data-driven decisions that strengthen your workplace.',
-                        relatedBlogPosts: []
-                    },
-                    { 
-                        id: 'conflict-resolution-investigations', 
-                        title: 'Conflict Resolution & Investigations', 
-                        cardTitle: 'Conflict Resolution & Investigations',
-                        subtitle: 'Navigating workplace disputes with fairness.',
-                        icon: `<svg viewBox="0 0 100 100"><title>Conflict Resolution & Investigations Icon</title><defs><linearGradient id="conflict-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00ffb4"/><stop offset="50%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#ff6b9d"/></linearGradient></defs><path d="M20,60 L80,60" stroke="url(#conflict-gradient)" stroke-width="3" filter="url(#glow)"/><path d="M50,20 L50,60" stroke="url(#conflict-gradient)" stroke-width="3" filter="url(#glow)"/><path d="M25,60 a15,20 0 0,0 0,20 h-10 a15,20 0 0,0 0,-20 z" fill="rgba(255,255,255,0.1)" stroke="url(#conflict-gradient)" stroke-width="2"/><path d="M75,60 a15,20 0 0,1 0,20 h10 a15,20 0 0,1 0,-20 z" fill="rgba(255,255,255,0.1)" stroke="url(#conflict-gradient)" stroke-width="2"/><circle cx="50" cy="40" r="15" fill="none" stroke="#7c3aed" stroke-width="3" filter="url(#glow)"/><line x1="60" y1="50" x2="70" y2="60" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/></svg>`,
-                        content: `At Aurora HR, we help organizations address conflict early—before it escalates into legal, reputational, or cultural risk. Our services include early intervention, facilitated dialogue, mediation, and impartial investigations, all grounded in empathy, procedural fairness, and your organizational values.<br><br>But we don’t stop at service delivery—we build your internal capability. Our signature Conflict & Investigation Training equips managers and HR professionals with the confidence and tools to respond effectively and fairly.<br><br>
-                        <button class="accordion-button">What makes our training different? <span class="accordion-icon">+</span></button>
-                        <div class="accordion-content">
-                            <ul class="list-disc list-inside text-left space-y-2">
-                                <li>✔ Rooted in BC law with real case studies and up-to-date standards</li>
-                                <li>✔ Scenario-based and interactive, not just theory</li>
-                                <li>✔ Tailored for small to medium organizations, including nonprofits and Indigenous-led teams</li>
-                                <li>✔ Manager-focused, with step-by-step frameworks they can actually use</li>
-                                <li>✔ Post-training integration tools to help translate learning into lasting change</li>
-                            </ul>
-                        </div>
-                        <p class="mt-4">Whether resolving interpersonal issues, conducting a formal investigation, or building preventative leadership practices, we help organizations reduce risk, restore trust, and create safer, more resilient workplaces.</p>`,
-                        relatedBlogPosts: []
-                    }
+                    { id: 'hr-policy-development', title: 'HR Policy Development', cardTitle: 'HR Policy Development', subtitle: 'Ditch the Legal-Speak. Build a Culture of Trust.', content: `<h4 class="text-lg font-semibold mb-2">Your HR policies are a reflection of your company culture. Are they sending the right message?</h4><p class="mb-4">No more confusing, jargon-filled documents... We build people-first policies tailored to your day-to-day reality.</p>`, relatedBlogPosts: ['post-3'] },
+                    { id: 'process-improvement', title: 'Process Improvement', cardTitle: 'Process Improvement', subtitle: 'Streamlining HR workflows for efficiency', content: 'Are inefficient HR processes holding your organization back? We specialize in mapping your current HR processes, identifying bottlenecks, and co-designing streamlined, user-friendly workflows.', relatedBlogPosts: [] },
+                    { id: 'employee-engagement', title: 'Employee Engagement', cardTitle: 'Employee Engagement', subtitle: 'Beyond Scores. Into What Truly Matters.', content: 'At Aurora HR, we believe engagement is more than a score. It’s a strategic tool to build trust, drive performance, and create shared success.', relatedBlogPosts: [] },
+                    { id: 'hr-communications', title: 'HR Communications', cardTitle: 'HR Communications', subtitle: 'Clear, professional messaging', content: 'Clear, consistent, and compassionate communication really helps create a positive and supportive workplace. We support you in crafting meaningful internal messages.', relatedBlogPosts: [] },
+                    { id: 'hris-data-management', title: 'HRIS & Data Management', cardTitle: 'HRIS & Data Management', subtitle: 'Aligning technology with people strategy', content: 'Choosing and implementing the right HRIS is critical. We bring deep expertise to guide your team through the full lifecycle.', relatedBlogPosts: [] },
+                    { id: 'total-rewards', title: 'Total Rewards', cardTitle: 'Total Rewards', subtitle: 'Balancing Values, Equity, and Sustainability', content: 'We help organizations design holistic, practical total rewards strategies that that reflect their values, workforce composition, and financial realities.', relatedBlogPosts: [] },
+                    { id: 'diversity-inclusion', title: 'Diversity & Inclusion', cardTitle: 'Diversity & Inclusion', subtitle: 'Building inclusive and equitable workplaces', content: 'Move beyond theory and token hiring. We offer cultural assessments, practical recommendations, and leadership training to build a truly inclusive workplace.', relatedBlogPosts: [] },
+                    { id: 'learning-development', title: 'Learning & Development', cardTitle: 'Learning & Development', subtitle: 'Practical training that builds real capabilities', content: 'Our Learning & Development programs go beyond basic compliance to equip leaders and teams with the knowledge and tools to navigate the evolving workplace landscape.', relatedBlogPosts: [] },
+                    { id: 'performance-management', title: 'Performance Management', cardTitle: 'Performance Management', subtitle: 'Driving growth and potential', content: 'We help organizations build cultures where failure is not shameful but celebrated as a vital learning process.', relatedBlogPosts: ['post-2'] },
+                    { id: 'competency-frameworks', title: 'Competency Frameworks', cardTitle: 'Competency Frameworks', subtitle: 'Defining the skills for success', content: 'We help organizations build competency frameworks that align people development with business goals.', relatedBlogPosts: [] },
+                    { id: 'metrics-kpi', title: 'Metrics & KPI', cardTitle: 'Metrics & KPI', subtitle: 'Measuring HR effectiveness with data', content: 'Go beyond simple headcount and turnover rates. We help you define, track, and interpret the HR metrics that truly matter.', relatedBlogPosts: [] },
+                    { id: 'conflict-resolution-investigations', title: 'Conflict Resolution', cardTitle: 'Conflict Resolution', subtitle: 'Navigating disputes with fairness', content: 'We help organizations address conflict early—before it escalates into legal, reputational, or cultural risk.', relatedBlogPosts: [] }
                 ],
                 blogPosts: [
-                    {
-                        id: "post-1",
-                        title: "The True Cost of a Bad Hire (and How to Avoid It)",
-                    },
-                    {
-                        id: "post-2",
-                        title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
-                    },
-                    {
-                        id: "post-3",
-                        title: "Why Your People-First Policies Are Your Best Legal Defence",
-                    }
+                    { id: "post-1", title: "The True Cost of a Bad Hire (and How to Avoid It)" },
+                    { id: "post-2", title: "Rethinking Performance Management" },
+                    { id: "post-3", title: "Why Your People-First Policies Are Your Best Legal Defence" }
                 ],
                 values: [
-                    { id: 'integrity', title: 'Integrity', content: 'We operate with unwavering honesty and transparency. Our commitment to ethical practices is the foundation of every partnership, ensuring that we build relationships grounded in trust and mutual respect. We believe that doing the right thing is not just a guideline, but the only way to do business.'},
-                    { id: 'innovation', title: 'Innovation', content: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated. We bridge strategy and humanity, crafting people-first practices that evolve with your organization and drive meaningful change.'},
-                    { id: 'respect', title: 'Respect', content: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve. We listen, we learn, and we co-create solutions that honor the individual and strengthen the collective, fostering environments of true belonging.'},
-                    { id: 'accessibility', title: 'Accessibility', content: 'We believe transformative HR shouldn’t be out of reach. That’s why we deliver expert, high-quality support designed to meet the realities of small businesses and non-profits. Our approach ensures that every organization—regardless of size or resources—has access to the strategic HR guidance they need to grow, lead with confidence, and make a lasting impact in their communities.'}
+                    { id: 'integrity', title: 'Integrity', content: 'We operate with unwavering honesty and transparency. Our commitment to ethical practices is the foundation of every partnership.'},
+                    { id: 'innovation', title: 'Innovation', content: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated.'},
+                    { id: 'respect', title: 'Respect', content: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve.'},
+                    { id: 'accessibility', title: 'Accessibility', content: 'We believe transformative HR shouldn’t be out of reach. We deliver expert, high-quality support designed for small businesses and non-profits.'}
                 ],
                 engagementModels: {
-                    discoveryConsult: { title: 'Discovery Consult', color: 'text-aurora-teal', points: [
-                        '60-90 Minute Strategic Consult',
-                        'Investment: $200 - $300',
-                        '100% Satisfaction Guarantee',
-                        'Unlock Tailored Insights for Your Needs'
-                    ]},
-                    projectBased: { title: 'Project-Based Partnerships', color: 'text-aurora-pink', points: [
-                        'HR Policies: Starting from $2,700',
-                        'Employee Handbook Development: From $9,000+',
-                        'Handbook Review & Tune-up: From $3,600+',
-                        '6-Hour Training Session: $4,320',
-                        'Customized Training: $900 per hour',
-                        'Policy Review & Tune-up: From $1,620+',
-                        'Engagement Toolkit Development: From $2,700+',
-                        'HR System Setup Assistance: From $9,240+'
-                    ]},
-                    ongoing: { title: 'Ongoing Partnerships', color: 'text-aurora-blue', points: [
-                        'Proactive Compliance & Policy Updates',
-                        'Streamlined Talent Lifecycle Management',
-                        'Strategic Total Rewards & Engagement',
-                        'Integrated HR Systems & Data Insights',
-                        'Responsive Employee Relations & Management Coaching'
-                    ]}
+                    discoveryConsult: { title: 'Discovery Consult', color: 'text-green-500', points: ['60-90 Minute Strategic Consult', 'Investment: $200 - $300', '100% Satisfaction Guarantee'] },
+                    projectBased: { title: 'Project-Based', color: 'text-orange-500', points: ['HR Policies: Starting from $2,700', 'Employee Handbook: From $9,000+', '6-Hour Training Session: $4,320'] },
+                    ongoing: { title: 'Ongoing Partnerships', color: 'text-blue-500', points: ['Proactive Compliance Updates', 'Strategic Total Rewards & Engagement', 'Responsive Employee Relations'] }
                 }
             };
             
-            // Function to create and append service cards
             function populateServiceCards() {
                 const servicesGrid = document.getElementById('services-grid');
                 if (!servicesGrid) return;
-
                 const serviceCardHTML = data.services.map(service => `
-                    <div class="service-card p-6 rounded-lg text-center" data-service-id="${service.id}" tabindex="0" role="button" aria-pressed="false" aria-label="${service.title}">
-                        <div class="custom-icon" aria-hidden="true">
-                            ${service.icon}
-                        </div>
-                        <h3 class="text-xl font-semibold text-white mb-3">${service.cardTitle}</h3>
-                        <p class="text-sm" style="color: rgba(255,255,255,0.7);">${service.subtitle}</p>
+                    <div class="card-base p-6 rounded-lg text-center" data-service-id="${service.id}" tabindex="0" role="button" aria-pressed="false" aria-label="${service.title}">
+                        <h3 class="text-xl font-semibold mb-3">${service.cardTitle}</h3>
+                        <p class="text-sm text-gray-600">${service.subtitle}</p>
                     </div>
                 `).join('');
                 servicesGrid.innerHTML = serviceCardHTML;
             }
 
-            // Function to create and append value cards
             function populateValueCards() {
                 const valuesGrid = document.querySelector('.values-grid');
                 if (!valuesGrid) return;
-
                 const valueCardHTML = data.values.map(value => `
-                    <div class="value-card p-6 rounded-lg shadow-lg" data-value-id="${value.id}" tabindex="0" role="button" aria-pressed="false" aria-label="${value.title}">
-                        <!-- SVG icon would go here -->
-                        <h4 class="text-xl font-semibold text-white mb-2">${value.title}</h4>
-                        <p class="text-gray-300">${value.content.split('.')[0]}.</p>
+                    <div class="card-base p-6 rounded-lg" data-value-id="${value.id}" tabindex="0" role="button" aria-pressed="false" aria-label="${value.title}">
+                        <h4 class="text-xl font-semibold mb-2">${value.title}</h4>
+                        <p class="text-gray-600">${value.content.split('.')[0]}.</p>
                     </div>
                 `).join('');
                 valuesGrid.innerHTML = valueCardHTML;
             }
-
 
             const serviceDetailsContainer = document.getElementById('service-details'); 
             const valueDetailsContainer = document.getElementById('value-details');
@@ -962,113 +559,31 @@
             let activeValueCard = null;
 
             function handleCardClick(card, dataArray, detailsContainer, type) {
-                // Deactivate other type
-                if (type === 'service') {
-                    if(valueDetailsContainer) valueDetailsContainer.style.display = 'none';
-                    if(activeValueCard) {
-                        activeValueCard.classList.remove('active');
-                        activeValueCard.setAttribute('aria-pressed', 'false');
-                    }
-                    activeValueCard = null;
-                } else {
-                    if(serviceDetailsContainer) serviceDetailsContainer.style.display = 'none';
-                    if(activeServiceCard) {
-                        activeServiceCard.classList.remove('active');
-                        activeServiceCard.setAttribute('aria-pressed', 'false');
-                    }
-                    activeServiceCard = null;
-                }
-
-                // Handle current type
-                let activeCard = type === 'service' ? activeServiceCard : activeValueCard;
-                if (activeCard) {
-                    activeCard.classList.remove('active');
-                    activeCard.setAttribute('aria-pressed', 'false');
-                }
-                card.classList.add('active');
-                card.setAttribute('aria-pressed', 'true');
-                
-                if (type === 'service') {
-                    activeServiceCard = card;
-                } else {
-                    activeValueCard = card;
-                }
-                
                 const id = card.dataset.serviceId || card.dataset.valueId;
                 const selectedItem = data.services.find(item => item.id === id) || data.values.find(item => item.id === id);
                 
                 if(selectedItem && detailsContainer) {
-                    let contentHTML = `
-                        <button class="absolute top-4 right-4 text-white text-2xl font-bold focus:outline-none" aria-label="Close" onclick="this.parentElement.style.display='none'">&times;</button>
-                        <h4 class="text-2xl font-bold text-gradient mb-2">${selectedItem.title}</h4>
-                        <div class="text-lg" style="color: rgba(255, 255, 255, 0.7);">${selectedItem.content}</div>
-                    `; 
-
-                    // Check for related blog posts if it's a service
+                    let contentHTML = `<button class="absolute top-4 right-4 text-2xl font-bold focus:outline-none" aria-label="Close" onclick="this.parentElement.style.display='none'">&times;</button><h4 class="text-2xl font-bold text-gradient mb-2">${selectedItem.title}</h4><div class="text-lg text-gray-700">${selectedItem.content}</div>`; 
                     if (type === 'service' && selectedItem.relatedBlogPosts && selectedItem.relatedBlogPosts.length > 0) {
-                        let blogLinksHTML = '<div class="mt-4 pt-4 border-t border-white/20"><h5 class="font-semibold text-white mb-2">Related Article(s):</h5>';
+                        let blogLinksHTML = '<div class="mt-4 pt-4 border-t"><h5 class="font-semibold mb-2">Related Article(s):</h5>';
                         selectedItem.relatedBlogPosts.forEach(postId => {
                             const post = data.blogPosts.find(p => p.id === postId);
-                            if (post) {
-                                blogLinksHTML += `<p class="font-semibold"><a href="blog.html#${post.id}" class="text-aurora-blue hover:underline">${post.title} &rarr;</a></p>`;
-                            }
+                            if (post) blogLinksHTML += `<p><a href="blog.html#${post.id}" class="text-blue-600 hover:underline">${post.title} &rarr;</a></p>`;
                         });
                         blogLinksHTML += '</div>';
                         contentHTML += blogLinksHTML;
                     }
-
                     detailsContainer.innerHTML = contentHTML;
                     detailsContainer.style.display = 'block'; 
-                    detailsContainer.querySelector('button').focus();
-                    document.getElementById('live-region').textContent = `${selectedItem.title} details opened.`;
-                    
-                    const accordions = detailsContainer.querySelectorAll('.accordion-button');
-                    accordions.forEach(button => {
-                        button.addEventListener('click', function() {
-                            this.classList.toggle('active');
-                            const icon = this.querySelector('.accordion-icon');
-                            icon.textContent = this.classList.contains('active') ? '-' : '+';
-                            const content = this.nextElementSibling;
-                            if (content.style.maxHeight) {
-                                content.style.maxHeight = null;
-                            } else {
-                                content.style.maxHeight = content.scrollHeight + 'px';
-                            }
-                        });
-                    });
-                    
-                    if (window.innerWidth < 768) {
-                        detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
                 }
             }
             
-            // Initial population of cards
             populateServiceCards();
             populateValueCards();
 
-            // Add event listeners after cards are created
-            document.querySelectorAll('.service-card').forEach(card => {
-                card.addEventListener('click', () => handleCardClick(card, data.services, serviceDetailsContainer, 'service'));
-                card.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleCardClick(card, data.services, serviceDetailsContainer, 'service');
-                    }
-                });
-            });
-
-            document.querySelectorAll('.value-card').forEach(card => {
-                card.addEventListener('click', () => handleCardClick(card, data.values, valueDetailsContainer, 'value'));
-                card.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleCardClick(card, data.values, valueDetailsContainer, 'value');
-                    }
-                });
-            });
+            document.querySelectorAll('[data-service-id]').forEach(card => card.addEventListener('click', () => handleCardClick(card, data.services, serviceDetailsContainer, 'service')));
+            document.querySelectorAll('[data-value-id]').forEach(card => card.addEventListener('click', () => handleCardClick(card, data.values, valueDetailsContainer, 'value')));
             
-            // Partnership Models section
             const swotButtonsContainer = document.getElementById('swot-buttons');
             const swotDetailsContainer = document.getElementById('swot-details');
 
@@ -1076,34 +591,29 @@
                 Object.keys(data.engagementModels).forEach(key => {
                     const item = data.engagementModels[key];
                     const button = document.createElement('button');
-                    button.className = `swot-button p-3 rounded-md font-semibold transition-colors duration-300`;
+                    button.className = `swot-button p-3 rounded-md font-semibold`;
                     button.textContent = item.title;
-                    button.dataset.key = key;
                     swotButtonsContainer.appendChild(button);
 
                     button.addEventListener('click', () => {
                         document.querySelectorAll('.swot-button').forEach(btn => btn.classList.remove('active'));
                         button.classList.add('active');
-                        
                         const list = document.createElement('ul');
                         list.className = 'list-inside space-y-2 text-left mx-auto max-w-lg'; 
                         item.points.forEach(point => {
                            const li = document.createElement('li');
-                           li.innerHTML = `<span class="${item.color} mr-2">•</span> <span style="color: rgba(255, 255, 255, 0.7);">${point}</span>`; 
+                           li.innerHTML = `<span class="${item.color} mr-2">•</span> <span class="text-gray-700">${point}</span>`; 
                            list.appendChild(li);
                         });
                         swotDetailsContainer.innerHTML = '';
                         swotDetailsContainer.appendChild(list);
                     });
                 });
-
                 if (document.querySelector('.swot-button')) {
                     document.querySelector('.swot-button').click();
                 }
             }
 
-
-            // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
@@ -1118,106 +628,34 @@
                 });
             });
             
-            // Contact form submission
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     const form = e.target;
                     const formData = new FormData(form);
                     const formFeedback = document.getElementById('form-feedback');
                     const formError = document.getElementById('form-error');
-                    const submitButton = form.querySelector('button[type="submit"]');
-
-                    formError.textContent = '';
-                    let valid = true;
-
-                    // Validation
-                    ['name', 'email'].forEach(id => {
-                        const field = document.getElementById(id);
-                        if (!field.value.trim()) {
-                            field.setAttribute('aria-invalid', 'true');
-                            valid = false;
-                        } else {
-                            field.setAttribute('aria-invalid', 'false');
-                        }
-                    });
-
-                    if (!valid) {
-                        formError.textContent = 'Please fill in all required fields.';
-                        return;
-                    }
-
-                    // Disable button and show loading state
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-
                     fetch(form.action, {
                         method: form.method,
                         body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: { 'Accept': 'application/json' }
                     }).then(response => {
                         if (response.ok) {
-                            formFeedback.textContent = 'Thank you for your message! We will contact you soon.';
+                            formFeedback.textContent = 'Thank you! We will be in touch soon.';
                             form.reset();
                         } else {
-                            response.json().then(data => {
-                                if (Object.hasOwn(data, 'errors')) {
-                                    formError.textContent = data["errors"].map(error => error["message"]).join(", ");
-                                } else {
-                                    formError.textContent = 'Oops! There was a problem submitting your form.';
-                                }
-                            })
+                            formError.textContent = 'Oops! There was a problem.';
                         }
                     }).catch(error => {
-                        formError.textContent = 'Oops! There was a problem submitting your form.';
-                    }).finally(() => {
-                        // Re-enable button
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Engage Us';
-                        setTimeout(() => { formFeedback.textContent = ''; formError.textContent = ''; }, 6000);
+                        formError.textContent = 'Oops! There was a problem.';
                     });
                 });
             }
 
-            // Set copyright year dynamically
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-            // Active nav link on scroll
-            const sections = document.querySelectorAll('main section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 80;
-                    if (window.pageYOffset >= sectionTop) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').endsWith('#' + current)) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // Handle deep linking from blog
-            const hash = window.location.hash;
-            if (hash && hash.startsWith('#service-')) {
-                const serviceId = hash.substring(9); // remove #service-
-                const cardToClick = document.querySelector(`.service-card[data-service-id="${serviceId}"]`);
-                if (cardToClick) {
-                    setTimeout(() => {
-                        cardToClick.click();
-                        cardToClick.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
-                }
-            }
         });
     </script>
 </body>
 </html>
+

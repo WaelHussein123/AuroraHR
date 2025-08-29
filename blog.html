@@ -22,17 +22,16 @@
     
    <style>
         :root {
-            /* New "Aurora Vivid" Theme based on image */
-            --color-bg: #f8f9fa; /* Light grey background */
-            --color-card: #ffffff; /* White card */
-            --color-card-hover: #f1f3f5; /* Slightly darker grey for hover */
-            --color-text-primary: #212529; /* Dark grey for primary text */
-            --color-text-secondary: #6c757d; /* Lighter grey for secondary text */
-            --color-border: #dee2e6; /* Border color */
+            /* "Aurora Vivid" Theme */
+            --color-bg: #f8f9fa;
+            --color-card: #ffffff;
+            --color-card-hover: #f1f3f5;
+            --color-text-primary: #212529;
+            --color-text-secondary: #6c757d;
+            --color-border: #dee2e6;
             --color-accent-orange: #fd7e14;
             --color-accent-teal: #20c997;
-            --color-accent-green: #28a745;
-            --color-aurora-link: var(--color-accent-orange);
+            --color-accent-blue: #399CE2;
         }
         
         html { scroll-behavior: smooth; }
@@ -55,12 +54,9 @@
             background-clip: text; 
         }
         .nav-link { 
-            color: var(--color-text-secondary); 
+            color: var(--color-text-primary);
             transition: all 0.3s ease; 
         } 
-        .nav-link:hover, .nav-link.active {
-            color: var(--color-text-primary);
-        }
         .nav-link::after { 
             content: ''; 
             display: block; 
@@ -73,17 +69,18 @@
         .nav-link.active::after { 
             width: 100%; 
         }
+
         .blog-card {
-            background-color: var(--color-card);
+            background-color: #f0f7ff; /* Light blue background for cards */
             border: 1px solid var(--color-border);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
         .blog-card:hover {
             transform: translateY(-5px);
-            border-color: #399CE2;
+            border-color: var(--color-accent-blue);
             box-shadow: 0 10px 15px -3px rgba(57, 156, 226, 0.2), 0 4px 6px -2px rgba(57, 156, 226, 0.1);
         }
         .blog-card .p-6 {
@@ -94,22 +91,8 @@
         .blog-card-content {
             flex-grow: 1;
         }
-        .post-meta { color: var(--color-text-secondary); }
-        .read-more-link { 
-            color: var(--color-aurora-link); 
-            font-weight: 600;
-        }
-        .post-footer-border { border-color: var(--color-border); }
-        .related-service-link {
-            background-color: #5bb7e9; /* Light blue */
-            color: #ffffff;
-            transition: background-color 0.3s ease;
-        }
-        .related-service-link:hover {
-            background-color: #399ce2; /* Darker blue on hover */
-            color: #ffffff;
-        }
 
+        /* Hero Section Styles from home page */
         .hero-section {
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop');
@@ -119,91 +102,54 @@
             overflow: hidden;
             color: #ffffff;
         }
-
         .hero-section::before {
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
-            background: linear-gradient(-45deg, rgba(10, 20, 30, 0.6), rgba(87, 195, 153, 0.4), rgba(57, 156, 226, 0.4), rgba(130, 86, 172, 0.5), rgba(10, 20, 30, 0.6));
+            background: linear-gradient(-45deg, rgba(10, 20, 30, 0.8), rgba(87, 195, 153, 0.6), rgba(57, 156, 226, 0.6), rgba(130, 86, 172, 0.7), rgba(10, 20, 30, 0.8));
             background-size: 400% 400%;
             animation: auroraShimmer 15s ease infinite;
             z-index: 1;
         }
-
         .hero-section .container {
             position: relative;
             z-index: 2;
         }
-        
-        .hero-section p {
-            color: #f8f9fa;
-        }
-
+        .hero-section p { color: #f8f9fa; }
         @keyframes auroraShimmer {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         @keyframes shooting-star-anim {
-            0% {
-                transform: translateX(0) translateY(0) rotate(-45deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(80vw) translateY(80vh) rotate(-45deg);
-                opacity: 0;
-            }
+            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+            100% { transform: translateX(80vw) translateY(80vh) rotate(-45deg); opacity: 0; }
         }
-
-        /* The ::after pseudo-element is used for the first star */
         .hero-section::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: -15%;
-            width: 200px; 
-            height: 2px;
-            background: linear-gradient(to right, white, transparent);
-            border-radius: 1px;
-            z-index: 1;
-            opacity: 0;
-            animation: shooting-star-anim 22s linear infinite 4s; /* Longer duration and new delay */
+            content: ''; position: absolute; top: 20%; left: -15%; width: 200px; height: 2px;
+            background: linear-gradient(to right, white, transparent); border-radius: 1px;
+            z-index: 1; opacity: 0; animation: shooting-star-anim 28s linear infinite 13s;
         }
-        
-        /* We use the container's pseudo-elements for more stars to avoid adding HTML */
-        .hero-section .container::before,
-        .hero-section .container::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 1px;
-            background: linear-gradient(to right, white, transparent);
-            border-radius: 1px;
-            z-index: 1;
-            opacity: 0;
+        .hero-section .container::before, .hero-section .container::after {
+            content: ''; position: absolute; width: 150px; height: 1px;
+            background: linear-gradient(to right, white, transparent); border-radius: 1px;
+            z-index: 1; opacity: 0;
+        }
+        .hero-section .container::before { top: 60%; left: -25%; animation: shooting-star-anim 34s linear infinite 22s; }
+        .hero-section .container::after { top: 5%; left: 10%; animation: shooting-star-anim 31s linear infinite 8s; }
+
+        .related-service-link {
+            background-color: var(--color-accent-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .related-service-link:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
         }
 
-        /* Star 2 */
-        .hero-section .container::before {
-            top: 60%;
-            left: -25%;
-            animation: shooting-star-anim 28s linear infinite 13s; /* New position, speed, and delay */
-        }
-
-        /* Star 3 */
-        .hero-section .container::after {
-            top: 5%;
-            left: 10%;
-            animation: shooting-star-anim 25s linear infinite 20s; /* New position, speed, and delay */
-        }
-
-        #mobile-menu { background-color: var(--color-card-hover); }
-        #mobile-menu a { 
-            color: var(--color-text-secondary); 
-            padding-top: 0.75rem; 
-            padding-bottom: 0.75rem; 
-        } 
+        #mobile-menu { background-color: var(--color-card); }
+        #mobile-menu a { color: var(--color-text-secondary); } 
         #mobile-menu-button div { background-color: var(--color-text-primary); }
    </style>
 </head>
@@ -226,7 +172,7 @@
                 <a href="index.html#home" class="nav-link text-lg font-light text-gradient">Home</a>
                 <a href="index.html#services" class="nav-link text-lg font-light text-gradient">Services</a>
                 <a href="index.html#approach" class="nav-link text-lg font-light text-gradient">Approach</a>
-                <a href="blog.html" class="nav-link text-lg font-light active text-gradient">Blog</a>
+                <a href="blog.html" class="nav-link text-lg font-light text-gradient active">Blog</a>
                 <a href="index.html#engagement-models" class="nav-link text-lg font-light text-gradient">Partnership Models</a>
                 <a href="index.html#contact" class="nav-link text-lg font-light text-gradient">Engage Us</a>
                 <a href="index.html#about-us" class="nav-link text-lg font-light text-gradient">About Us</a>
@@ -247,8 +193,8 @@
         </div>
     </header>
 
-    <main role="main" class="container mx-auto px-6">
-        <section class="hero-section my-12 md:my-16 py-20 md:py-28">
+    <main role="main">
+        <section class="hero-section my-12 md:my-16 mx-6 py-24 md:py-36">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
@@ -256,28 +202,26 @@
         </section>
 
         <section class="pb-16 md:pb-24">
-            
+            <div class="container mx-auto px-6">
                 <!-- Blog posts will be dynamically inserted here -->
                 <div id="blog-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
-            
+            </div>
         </section>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
             // --- BLOG POST DATA ---
-            // To add a new blog post, copy one of the blocks below (from { to },)
-            // and paste it at the top of this list. Then, edit the content.
             const blogPosts = [
-                {
-                    id: "post-4", // Unique ID for linking
-                    date: "August 29, 2025",
-                    title: "Beyond Pizza Parties: 5 Authentic Ways to Boost Employee Engagement",
-                    summary: "Employee engagement isn't about superficial perks. It's about creating a culture of value and purpose. We explore five impactful strategies—from transparent communication to meaningful recognition—that foster genuine commitment.",
-                    readMoreLink: "#", // Link to the full article page
-                    relatedServiceLink: "index.html#services", // Link to a section on the main page
-                    relatedServiceText: "See Our Engagement Strategies" // Text for the link
+                 {
+                    id: "post-4",
+                    date: "July 26, 2025",
+                    title: "Beyond the Paycheck: Crafting a Total Rewards Strategy that Speaks to Your People",
+                    summary: "In a competitive market, salary alone isn't enough. A compelling total rewards strategy combines compensation, benefits, and meaningful non-monetary perks. Learn how to design a package that aligns with your values and attracts top talent.",
+                    readMoreLink: "#",
+                    relatedServiceLink: "index.html#total-rewards",
+                    relatedServiceText: "See Our Total Rewards Services"
                 },
                 {
                     id: "post-1", // Unique ID for linking
@@ -294,7 +238,7 @@
                     title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
                     summary: "The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.",
                     readMoreLink: "#",
-                    relatedServiceLink: "index.html#service-performance-management",
+                    relatedServiceLink: "index.html#performance-management",
                     relatedServiceText: "Related Service: Performance Management"
                 },
                 {
@@ -303,7 +247,7 @@
                     title: "Why Your People-First Policies Are Your Best Legal Defence",
                     summary: "Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.",
                     readMoreLink: "#",
-                    relatedServiceLink: "index.html#service-hr-policy-development",
+                    relatedServiceLink: "index.html#hr-policy-development",
                     relatedServiceText: "Related Service: HR Policy Development"
                 }
             ];
@@ -319,13 +263,13 @@
                         <div id="${post.id}" class="blog-card rounded-lg overflow-hidden">
                             <div class="p-6">
                                 <div class="blog-card-content">
-                                    <p class="post-meta text-sm mb-2">${post.date}</p>
-                                    <h2 class="text-2xl font-semibold mb-3 text-gradient">${post.title}</h2>
-                                    <p class="font-light mb-4">${post.summary}</p>
-                                    <a href="${post.readMoreLink}" class="read-more-link text-gradient hover:underline">Read More &rarr;</a>
+                                    <p class="text-sm text-gray-500 mb-2">${post.date}</p>
+                                    <h2 class="text-2xl font-semibold text-gradient mb-3">${post.title}</h2>
+                                    <p class="font-light text-gray-700 mb-4">${post.summary}</p>
+                                    <a href="${post.readMoreLink}" class="font-semibold text-gradient hover:underline">Read More &rarr;</a>
                                 </div>
-                                <div class="mt-4 pt-4 post-footer-border">
-                                    <a href="${post.relatedServiceLink}" class="related-service-link inline-block text-xs font-semibold px-3 py-1 rounded-full">
+                                <div class="mt-4 pt-4 border-t border-gray-200">
+                                    <a href="${post.relatedServiceLink}" class="related-service-link inline-block text-xs font-semibold px-3 py-1 rounded-full transition-transform">
                                         ${post.relatedServiceText}
                                     </a>
                                 </div>
@@ -360,18 +304,4 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -15,51 +15,58 @@
     <title>Blog | Aurora HR Consulting</title>
     <meta name="description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces for mission-driven organizations in BC.">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%230f0f23'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2357C399'/><stop offset='50%25' stop-color='%23399CE2'/><stop offset='100%25' stop-color='%238256AC'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
    <style>
         :root {
-            --color-bg: #0f0f23;
-            --color-card: #1a1a2e;
-            --color-card-hover: #16213e;
-            --color-accent-teal: #00ffb4;
-            --color-accent-purple: #7c3aed;
-            --color-accent-pink: #ff6b9d;
-            --color-aurora-blue: #00d4ff;
+            /* New "Aurora Vivid" Theme based on image */
+            --color-bg: #f8f9fa; /* Light grey background */
+            --color-card: #ffffff; /* White card */
+            --color-card-hover: #f1f3f5; /* Slightly darker grey for hover */
+            --color-text-primary: #212529; /* Dark grey for primary text */
+            --color-text-secondary: #6c757d; /* Lighter grey for secondary text */
+            --color-border: #dee2e6; /* Border color */
+            --color-accent-orange: #fd7e14;
+            --color-accent-teal: #20c997;
+            --color-accent-green: #28a745;
+            --color-aurora-link: var(--color-accent-orange);
         }
         
         html { scroll-behavior: smooth; }
         body { 
             font-family: 'Segoe UI', 'Inter', sans-serif; 
-            color: rgba(255, 255, 255, 0.8); 
+            color: var(--color-text-primary); 
             overflow-x: hidden;
             background-color: var(--color-bg);
         } 
         
         .header { 
-            background: rgba(15, 15, 35, 0.85); 
+            background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(15px); 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            border-bottom: 1px solid var(--color-border); 
         }
         .text-gradient { 
-            background: linear-gradient(135deg, var(--color-accent-teal), var(--color-accent-purple), var(--color-accent-pink)); 
+            background: linear-gradient(135deg, #57C399, #399CE2, #8256AC); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             background-clip: text; 
         }
         .nav-link { 
-            color: rgba(255, 255, 255, 0.8); 
+            color: var(--color-text-secondary); 
             transition: all 0.3s ease; 
         } 
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-text-primary);
+        }
         .nav-link::after { 
             content: ''; 
             display: block; 
             width: 0; 
             height: 2px; 
-            background: linear-gradient(90deg, var(--color-accent-teal), var(--color-accent-purple)); 
+            background: linear-gradient(90deg, #57C399, #8256AC); 
             transition: width .3s; 
         }
         .nav-link:hover::after, 
@@ -68,14 +75,16 @@
         }
         .blog-card {
             background-color: var(--color-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--color-border);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
         }
         .blog-card:hover {
             transform: translateY(-5px);
-            border-color: var(--color-accent-teal);
+            border-color: #399CE2;
+            box-shadow: 0 10px 15px -3px rgba(57, 156, 226, 0.2), 0 4px 6px -2px rgba(57, 156, 226, 0.1);
         }
         .blog-card .p-6 {
             flex-grow: 1;
@@ -85,13 +94,117 @@
         .blog-card-content {
             flex-grow: 1;
         }
+        .post-meta { color: var(--color-text-secondary); }
+        .read-more-link { 
+            color: var(--color-aurora-link); 
+            font-weight: 600;
+        }
+        .post-footer-border { border-color: var(--color-border); }
+        .related-service-link {
+            background-color: #5bb7e9; /* Light blue */
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .related-service-link:hover {
+            background-color: #399ce2; /* Darker blue on hover */
+            color: #ffffff;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 1rem;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(-45deg, rgba(10, 20, 30, 0.6), rgba(87, 195, 153, 0.4), rgba(57, 156, 226, 0.4), rgba(130, 86, 172, 0.5), rgba(10, 20, 30, 0.6));
+            background-size: 400% 400%;
+            animation: auroraShimmer 15s ease infinite;
+            z-index: 1;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section p {
+            color: #f8f9fa;
+        }
+
+        @keyframes auroraShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shooting-star-anim {
+            0% {
+                transform: translateX(0) translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(80vw) translateY(80vh) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+
+        /* The ::after pseudo-element is used for the first star */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -15%;
+            width: 200px; 
+            height: 2px;
+            background: linear-gradient(to right, white, transparent);
+            border-radius: 1px;
+            z-index: 1;
+            opacity: 0;
+            animation: shooting-star-anim 22s linear infinite 4s; /* Longer duration and new delay */
+        }
+        
+        /* We use the container's pseudo-elements for more stars to avoid adding HTML */
+        .hero-section .container::before,
+        .hero-section .container::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(to right, white, transparent);
+            border-radius: 1px;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        /* Star 2 */
+        .hero-section .container::before {
+            top: 60%;
+            left: -25%;
+            animation: shooting-star-anim 28s linear infinite 13s; /* New position, speed, and delay */
+        }
+
+        /* Star 3 */
+        .hero-section .container::after {
+            top: 5%;
+            left: 10%;
+            animation: shooting-star-anim 25s linear infinite 20s; /* New position, speed, and delay */
+        }
+
         #mobile-menu { background-color: var(--color-card-hover); }
         #mobile-menu a { 
-            color: rgba(255, 255, 255, 0.8); 
+            color: var(--color-text-secondary); 
             padding-top: 0.75rem; 
             padding-bottom: 0.75rem; 
         } 
-        #mobile-menu-button div { background-color: white; }
+        #mobile-menu-button div { background-color: var(--color-text-primary); }
    </style>
 </head>
 <body class="antialiased">
@@ -110,17 +223,17 @@
                 </svg>
             </a>
             <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
-                <a href="index.html#home" class="nav-link text-lg font-light">Home</a>
-                <a href="index.html#services" class="nav-link text-lg font-light">Services</a>
-                <a href="index.html#approach" class="nav-link text-lg font-light">Approach</a>
-                <a href="blog.html" class="nav-link text-lg font-light active">Blog</a>
-                <a href="index.html#engagement-models" class="nav-link text-lg font-light">Partnership Models</a>
-                <a href="index.html#contact" class="nav-link text-lg font-light">Engage Us</a>
-                <a href="index.html#about-us" class="nav-link text-lg font-light">About Us</a>
+                <a href="index.html#home" class="nav-link text-lg font-light text-gradient">Home</a>
+                <a href="index.html#services" class="nav-link text-lg font-light text-gradient">Services</a>
+                <a href="index.html#approach" class="nav-link text-lg font-light text-gradient">Approach</a>
+                <a href="blog.html" class="nav-link text-lg font-light active text-gradient">Blog</a>
+                <a href="index.html#engagement-models" class="nav-link text-lg font-light text-gradient">Partnership Models</a>
+                <a href="index.html#contact" class="nav-link text-lg font-light text-gradient">Engage Us</a>
+                <a href="index.html#about-us" class="nav-link text-lg font-light text-gradient">About Us</a>
             </nav>
             <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
-                <div class="w-6 h-0.5 mb-1.5 bg-white"></div>
-                <div class="w-6 h-0.5 bg-white"></div>
+                <div class="w-6 h-0.5 mb-1.5"></div>
+                <div class="w-6 h-0.5"></div>
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden p-4">
@@ -134,20 +247,20 @@
         </div>
     </header>
 
-    <main role="main">
-        <section class="py-16 md:py-24">
+    <main role="main" class="container mx-auto px-6">
+        <section class="hero-section my-12 md:my-16 py-20 md:py-28">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-light text-gradient">HR Insights</h1>
+                <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
             </div>
         </section>
 
         <section class="pb-16 md:pb-24">
-            <div class="container mx-auto px-6">
+            
                 <!-- Blog posts will be dynamically inserted here -->
                 <div id="blog-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
-            </div>
+            
         </section>
     </main>
     <script>
@@ -157,6 +270,15 @@
             // To add a new blog post, copy one of the blocks below (from { to },)
             // and paste it at the top of this list. Then, edit the content.
             const blogPosts = [
+                {
+                    id: "post-4", // Unique ID for linking
+                    date: "August 29, 2025",
+                    title: "Beyond Pizza Parties: 5 Authentic Ways to Boost Employee Engagement",
+                    summary: "Employee engagement isn't about superficial perks. It's about creating a culture of value and purpose. We explore five impactful strategies—from transparent communication to meaningful recognition—that foster genuine commitment.",
+                    readMoreLink: "#", // Link to the full article page
+                    relatedServiceLink: "index.html#services", // Link to a section on the main page
+                    relatedServiceText: "See Our Engagement Strategies" // Text for the link
+                },
                 {
                     id: "post-1", // Unique ID for linking
                     date: "July 19, 2025",
@@ -197,13 +319,13 @@
                         <div id="${post.id}" class="blog-card rounded-lg overflow-hidden">
                             <div class="p-6">
                                 <div class="blog-card-content">
-                                    <p class="text-sm text-white/60 mb-2">${post.date}</p>
-                                    <h2 class="text-2xl font-semibold text-white mb-3">${post.title}</h2>
+                                    <p class="post-meta text-sm mb-2">${post.date}</p>
+                                    <h2 class="text-2xl font-semibold mb-3 text-gradient">${post.title}</h2>
                                     <p class="font-light mb-4">${post.summary}</p>
-                                    <a href="${post.readMoreLink}" class="font-semibold text-aurora-blue hover:underline">Read More &rarr;</a>
+                                    <a href="${post.readMoreLink}" class="read-more-link text-gradient hover:underline">Read More &rarr;</a>
                                 </div>
-                                <div class="mt-4 pt-4 border-t border-white/10">
-                                    <a href="${post.relatedServiceLink}" class="inline-block bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/20 transition-colors">
+                                <div class="mt-4 pt-4 post-footer-border">
+                                    <a href="${post.relatedServiceLink}" class="related-service-link inline-block text-xs font-semibold px-3 py-1 rounded-full">
                                         ${post.relatedServiceText}
                                     </a>
                                 </div>
@@ -238,3 +360,18 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

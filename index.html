@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FJ7SMNVJG"></script>
-    <script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -587,7 +582,7 @@
                         title: 'Process Improvement', 
                         cardTitle: 'Process Improvement',
                         subtitle: 'Streamlining HR workflows for efficiency gains',
-                        icon: `<svg viewBox="0 0 100 100"><title>Process Improvement Icon</title><defs><linearGradient id="proc-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#399CE2"/><stop offset="100%" stop-color="#20c997"/></linearGradient></defs><path d="M20,50 C 35,30 65,70 80,50" stroke="url(#proc-grad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="8 8" opacity="0.5"/><path d="M20,50 C 35,60 65,40 80,50" stroke="url(#proc-grad)" stroke-width="4" fill="none" stroke-linecap="round" /></svg>`,
+                        icon: `<svg viewBox="0 0 100 100"><title>Process Improvement Icon</title><defs><linearGradient id="proc-grad-flow" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#399CE2"/><stop offset="100%" stop-color="#20c997"/></linearGradient></defs><path d="M 20 35 C 40 25, 60 45, 80 35" stroke="url(#proc-grad-flow)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/><path d="M 20 50 C 40 40, 60 60, 80 50" stroke="url(#proc-grad-flow)" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M 20 65 C 40 55, 60 75, 80 65" stroke="url(#proc-grad-flow)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/></svg>`,
                         content: '<p>Are inefficient HR processes holding your organization back? In mission-driven organizations, every minute and dollar counts. Clunky, manual, or outdated HR workflows don\'t just waste time—they create frustration, increase the risk of errors, and pull focus from what truly matters. We specialize in mapping your current HR processes, identifying bottlenecks, and co-designing streamlined, user-friendly workflows that are both efficient and aligned with your culture.</p>',
                         relatedBlogPosts: []
                     },
@@ -623,7 +618,7 @@
                         title: 'Total Rewards', 
                         cardTitle: 'Total Rewards',
                         subtitle: 'Balancing Values, Equity, and Sustainability',
-                        icon: `<svg viewBox="0 0 100 100"><title>Total Rewards Icon</title><g stroke-width="2.5"><path d="M50 20 L 80 35 L 80 65 L 50 80 L 20 65 L 20 35 Z" fill="var(--color-card-bg-darker)" stroke="rgba(0,0,0,0.2)"/><circle cx="50" cy="50" r="8" fill="#fd7e14"/><path d="M50 50 L 80 35 M 50 50 L 80 65 M 50 50 L 50 80 M 50 50 L 20 65 M 50 50 L 20 35" stroke="#399CE2" stroke-linecap="round"/><path d="M50 20 L 50 50" stroke="#20c997" stroke-linecap="round"/></g></svg>`,
+                        icon: `<svg viewBox="0 0 100 100"><title>Total Rewards Icon</title><defs><linearGradient id="tr-pillar-grad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#e9f0f7"/><stop offset="100%" stop-color="#d1dde8"/></linearGradient></defs><rect x="15" y="75" width="70" height="5" rx="2" fill="rgba(0,0,0,0.1)"/><rect x="20" y="35" width="15" height="40" rx="2" fill="url(#tr-pillar-grad)" stroke="rgba(0,0,0,0.2)" stroke-width="1"/><circle cx="27.5" cy="55" r="6" fill="#fd7e14"/><text x="27.5" y="58.5" font-size="7" text-anchor="middle" fill="white" font-weight="bold">$</text><rect x="42.5" y="35" width="15" height="40" rx="2" fill="url(#tr-pillar-grad)" stroke="rgba(0,0,0,0.2)" stroke-width="1"/><path d="M45 50 v 8 c 0,3 2.5,5 5,5 s 5,-2 5,-5 v-8 l -5,-4 z" fill="#20c997" stroke-width="1.5"/><rect x="65" y="35" width="15" height="40" rx="2" fill="url(#tr-pillar-grad)" stroke="rgba(0,0,0,0.2)" stroke-width="1"/><path d="M72.5 60 c 0 -5, 5 -5, 5 -10" stroke="#399CE2" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M68 55 C 70 52, 75 52, 77 55" stroke="#399CE2" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M15 35 L 50 25 L 85 35 Z" fill="rgba(0,0,0,0.1)"/></svg>`,
                         content: '<p>We recognize that total rewards are more than just salaries and benefits — they are strategic tools that shape culture, drive engagement, and support long-term sustainability. Every organization is different: some face funding or resource limitations, others strive to meet living wage commitments, and many struggle to balance rising costs with equitable pay. We help organizations design holistic, practical total rewards strategies that that reflect their values, workforce composition, and financial realities. From building a compensation philosophy to creating scalable salary bands and aligning incentives with business goals, we bring the structure, insight, and customization needed to support both organizational resilience and employee well-being.</p>',
                         relatedBlogPosts: []
                     },
@@ -766,6 +761,8 @@
                     detailsContainer.innerHTML = contentHTML;
                     detailsContainer.style.display = 'block'; 
 
+                    detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
                     const accordions = detailsContainer.querySelectorAll('.accordion-button');
                     accordions.forEach(button => {
                         button.addEventListener('click', function() {
@@ -863,4 +860,5 @@
     </script>
 </body>
 </html>
+
 

@@ -79,16 +79,24 @@
             background-clip: text; 
         }
         .nav-link { 
-            color: var(--color-text-primary);
-            transition: all 0.3s ease; 
+            color: var(--color-text-primary); /* Darker text */
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 0.25rem; /* Space for the underline */
         } 
         .nav-link::after { 
-            content: ''; 
-            display: block; 
-            width: 0; 
-            height: 2px; 
-            background: linear-gradient(90deg, #57C399, #8256AC); 
-            transition: width .3s; 
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #57C399, #8256AC);
+            transition: width .3s ease;
+        }
+        .nav-link:hover {
+            color: var(--color-text-primary); /* Keep it dark on hover */
         }
         .nav-link:hover::after, 
         .nav-link.active::after { 
@@ -306,13 +314,13 @@
                 </svg>
             </a>
             <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
-                <a href="#home" class="nav-link text-lg font-light text-gradient">Home</a>
-                <a href="#services" class="nav-link text-lg font-light text-gradient">Services</a>
-                <a href="#approach" class="nav-link text-lg font-light text-gradient">Approach</a>
-                <a href="blog.html" class="nav-link text-lg font-light text-gradient">Blog</a>
-                <a href="#engagement-models" class="nav-link text-lg font-light text-gradient">Pricing</a>
-                <a href="#contact" class="nav-link text-lg font-light text-gradient">Engage Us</a>
-                <a href="#about-us" class="nav-link text-lg font-light text-gradient">About Us</a>
+                <a href="#home" class="nav-link text-lg font-light">Home</a>
+                <a href="#services" class="nav-link text-lg font-light">Services</a>
+                <a href="#approach" class="nav-link text-lg font-light">Approach</a>
+                <a href="blog.html" class="nav-link text-lg font-light">Blog</a>
+                <a href="#engagement-models" class="nav-link text-lg font-light">Pricing</a>
+                <a href="#contact" class="nav-link text-lg font-light">Engage Us</a>
+                <a href="#about-us" class="nav-link text-lg font-light">About Us</a>
             </nav>
             <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
                 <div class="w-6 h-0.5 mb-1.5"></div>

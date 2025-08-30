@@ -32,6 +32,7 @@
             --color-accent-orange: #fd7e14;
             --color-accent-teal: #20c997;
             --color-accent-blue: #399CE2;
+            --color-card-bg-darker: #e3eaf2; /* Darker blue background */
         }
         
         html { scroll-behavior: smooth; }
@@ -69,9 +70,9 @@
         .nav-link.active::after { 
             width: 100%; 
         }
-
+        
         .blog-card {
-            background-color: #f0f7ff; /* Light blue background for cards */
+            background-color: var(--color-card-bg-darker);
             border: 1px solid var(--color-border);
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
@@ -92,7 +93,17 @@
             flex-grow: 1;
         }
 
-        /* Hero Section Styles from home page */
+        .related-service-link {
+            background-color: var(--color-accent-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .related-service-link:hover {
+             box-shadow: 0 4px 15px rgba(57, 156, 226, 0.4);
+        }
+
+
+        /* Hero Section Styles */
         .hero-section {
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop');
@@ -106,55 +117,79 @@
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
-            background: linear-gradient(-45deg, rgba(10, 20, 30, 0.8), rgba(87, 195, 153, 0.6), rgba(57, 156, 226, 0.6), rgba(130, 86, 172, 0.7), rgba(10, 20, 30, 0.8));
-            background-size: 400% 400%;
-            animation: auroraShimmer 15s ease infinite;
+            background: linear-gradient(135deg, rgba(10, 20, 30, 0.8), rgba(57, 156, 226, 0.6));
             z-index: 1;
         }
         .hero-section .container {
             position: relative;
-            z-index: 2;
+            z-index: 3; /* Above stars */
         }
         .hero-section p { color: #f8f9fa; }
-        @keyframes auroraShimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        /* Realistic Shooting Star Animation */
+        .shooting-star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px white);
+            animation-name: shooting-star-anim;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+            z-index: 2;
         }
+
+        .star-1 {
+            top: 0;
+            left: 100%; /* Start off-screen right */
+            animation-duration: 11s;
+            animation-delay: 4s;
+        }
+        .star-2 {
+            top: 30%;
+            left: 100%; /* Start off-screen right */
+            animation-duration: 14s;
+            animation-delay: 1.5s;
+        }
+        .star-3 {
+            top: -20%;
+            left: 70%;
+            animation-duration: 8s;
+            animation-delay: 9s;
+        }
+        
         @keyframes shooting-star-anim {
-            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
-            100% { transform: translateX(80vw) translateY(80vh) rotate(-45deg); opacity: 0; }
+            0% {
+                transform: rotate(135deg) translateX(0);
+                opacity: 0;
+                width: 150px;
+            }
+            15% {
+                opacity: 1;
+            }
+            85% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(135deg) translateX(1200px);
+                opacity: 0;
+                width: 250px;
+            }
         }
-        .hero-section::after {
-            content: ''; position: absolute; top: 20%; left: -15%; width: 200px; height: 2px;
-            background: linear-gradient(to right, white, transparent); border-radius: 1px;
-            z-index: 1; opacity: 0; animation: shooting-star-anim 28s linear infinite 13s;
-        }
-        .hero-section .container::before, .hero-section .container::after {
-            content: ''; position: absolute; width: 150px; height: 1px;
-            background: linear-gradient(to right, white, transparent); border-radius: 1px;
-            z-index: 1; opacity: 0;
-        }
-        .hero-section .container::before { top: 60%; left: -25%; animation: shooting-star-anim 34s linear infinite 22s; }
-        .hero-section .container::after { top: 5%; left: 10%; animation: shooting-star-anim 31s linear infinite 8s; }
-
-        .related-service-link {
-            background-color: var(--color-accent-blue);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .related-service-link:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
+        
         #mobile-menu { background-color: var(--color-card); }
         #mobile-menu a { color: var(--color-text-secondary); } 
         #mobile-menu-button div { background-color: var(--color-text-primary); }
    </style>
 </head>
 <body class="antialiased">
-    <header class="header sticky top-0 z-50" role="banner">
+    <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-white text-black absolute top-0 left-0 z-50">Skip to main content</a>
+    <noscript>
+      <div style="background: #fd7e14; color: #fff; padding: 1em; text-align: center;">
+        This site works best with JavaScript enabled. Some interactive features may not be available.
+      </div>
+    </noscript>
+    <header class="header sticky top-0 left-0 right-0 z-50" role="banner">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" aria-label="Aurora HR Consulting Home">
                 <svg class="w-40 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
@@ -183,7 +218,7 @@
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden p-4">
-            <a href="index.html#home" class="block py-2 text-center">Home</a>
+             <a href="index.html#home" class="block py-2 text-center">Home</a>
             <a href="index.html#services" class="block py-2 text-center">Services</a>
             <a href="index.html#approach" class="block py-2 text-center">Approach</a>
             <a href="blog.html" class="block py-2 text-center">Blog</a>
@@ -193,18 +228,23 @@
         </div>
     </header>
 
-    <main role="main">
-        <section class="hero-section my-12 md:my-16 mx-6 py-24 md:py-36">
-            <div class="container mx-auto px-6 text-center">
+    <main role="main" id="main-content" class="container mx-auto px-6">
+        <!-- Section 1: Hero -->
+        <section id="home" class="hero-section my-12 md:my-16 py-24 md:py-36">
+             <div class="shooting-star star-1"></div>
+             <div class="shooting-star star-2"></div>
+             <div class="shooting-star star-3"></div>
+             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
             </div>
         </section>
 
+        <!-- Section 2: Blog Posts -->
         <section class="pb-16 md:pb-24">
             <div class="container mx-auto px-6">
-                <!-- Blog posts will be dynamically inserted here -->
                 <div id="blog-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog posts will be dynamically inserted here -->
                 </div>
             </div>
         </section>
@@ -216,21 +256,21 @@
             const blogPosts = [
                  {
                     id: "post-4",
-                    date: "July 26, 2025",
-                    title: "Beyond the Paycheck: Crafting a Total Rewards Strategy that Speaks to Your People",
-                    summary: "In a competitive market, salary alone isn't enough. A compelling total rewards strategy combines compensation, benefits, and meaningful non-monetary perks. Learn how to design a package that aligns with your values and attracts top talent.",
+                    date: "August 2, 2025",
+                    title: "Authentic Employee Engagement in a Hybrid World",
+                    summary: "Engagement isn't about virtual pizza parties. Discover three practical strategies to foster genuine connection and motivation in your remote and hybrid teams, boosting both morale and performance.",
                     readMoreLink: "#",
-                    relatedServiceLink: "index.html#total-rewards",
-                    relatedServiceText: "See Our Total Rewards Services"
+                    relatedServiceLink: "index.html#service-employee-engagement",
+                    relatedServiceText: "See Our Engagement Strategies"
                 },
                 {
-                    id: "post-1", // Unique ID for linking
+                    id: "post-1",
                     date: "July 19, 2025",
                     title: "The True Cost of a Bad Hire (and How to Avoid It)",
                     summary: "Beyond the obvious recruitment expenses, a bad hire can impact team morale, productivity, and your bottom line. We break down the hidden costs and share our top strategies for getting recruitment right the first time.",
-                    readMoreLink: "#", // Link to the full article page
-                    relatedServiceLink: "index.html#services", // Link to a section on the main page
-                    relatedServiceText: "Explore Our Services" // Text for the link
+                    readMoreLink: "#",
+                    relatedServiceLink: "index.html#services",
+                    relatedServiceText: "Explore Our Services"
                 },
                 {
                     id: "post-2",
@@ -238,7 +278,7 @@
                     title: "Rethinking Performance Management: From Scorecards to Growth Conversations",
                     summary: "The annual performance review is dead. Discover how continuous feedback, clear goal alignment, and a focus on development can transform your performance management process into a powerful tool for growth.",
                     readMoreLink: "#",
-                    relatedServiceLink: "index.html#performance-management",
+                    relatedServiceLink: "index.html#service-performance-management",
                     relatedServiceText: "Related Service: Performance Management"
                 },
                 {
@@ -247,7 +287,7 @@
                     title: "Why Your People-First Policies Are Your Best Legal Defence",
                     summary: "Well-crafted, human-centered HR policies do more than just build a great culture—they are your first line of defense against legal risk. Learn how clarity and compassion can protect your organization.",
                     readMoreLink: "#",
-                    relatedServiceLink: "index.html#hr-policy-development",
+                    relatedServiceLink: "index.html#service-hr-policy-development",
                     relatedServiceText: "Related Service: HR Policy Development"
                 }
             ];
@@ -265,11 +305,11 @@
                                 <div class="blog-card-content">
                                     <p class="text-sm text-gray-500 mb-2">${post.date}</p>
                                     <h2 class="text-2xl font-semibold text-gradient mb-3">${post.title}</h2>
-                                    <p class="font-light text-gray-700 mb-4">${post.summary}</p>
+                                    <p class="font-light mb-4">${post.summary}</p>
                                     <a href="${post.readMoreLink}" class="font-semibold text-gradient hover:underline">Read More &rarr;</a>
                                 </div>
                                 <div class="mt-4 pt-4 border-t border-gray-200">
-                                    <a href="${post.relatedServiceLink}" class="related-service-link inline-block text-xs font-semibold px-3 py-1 rounded-full transition-transform">
+                                    <a href="${post.relatedServiceLink}" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">
                                         ${post.relatedServiceText}
                                     </a>
                                 </div>
@@ -291,7 +331,6 @@
                     mobileMenu.classList.toggle('hidden');
                 });
 
-                // Close mobile menu on link click
                 document.querySelectorAll('#mobile-menu a').forEach(link => {
                     link.addEventListener('click', () => {
                         if(!mobileMenu.classList.contains('hidden')) {

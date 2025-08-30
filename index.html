@@ -377,11 +377,10 @@
                     <h2 class="text-3xl md:text-4xl font-light text-gradient">Approach</h2>
                 </div>
                 <div class="approach-content max-w-4xl mx-auto">
-                    <h3 class="text-xl font-semibold text-aurora-purple mb-2">From conversation to co-creation, we build tailored Human-Centred Solutions.</h3>
-                    <p>At Aurora HR, we know that mission-driven organisations are the backbone of our communities. You face unique challenges—tight budgets, unpredictable funding and growth , and dynamic team changes—that demand more than a generic, one-size-fits-all approach. Your HR strategy should genuinely reflect your unique circumstances.</p>
-                    <p> That's why our approach is as individual as your business. We work alongside you to understand your people, culture, and stage of growth, developing flexible, values-aligned HR strategies that evolve as you do. </p>
-                    <p>We provide trusted, human-centred HR expertise delivered with clarity, compassion, and respect at every step. No jargon. No cookie-cutter playbooks. Just thoughtful, practical support tailored to the way you work.</p>
-                    <p>Because at the heart of every strong organization are its people, we believe those making a positive impact deserve exceptional support.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Beyond the Playbook: Strategic HR for Mission-Driven Impact.</h3>
+                    <p class="mb-4">Mission-driven organizations can't afford generic HR. The challenges of tight budgets, rapid growth, and dynamic teams demand a strategy that is as focused and adaptable as you are.</p>
+                    <p class="mb-4">At Aurora HR, our approach is built on a simple premise: your people strategy must be a direct reflection of your mission. We move from conversation to co-creation, working alongside your team to build tailored, human-centered solutions. By understanding your unique culture and stage of growth, we develop flexible, values-aligned strategies that work for you.</p>
+                    <p class="mb-4">We deliver our expertise with clarity and respect—no corporate jargon, just thoughtful, practical guidance designed to strengthen your organization from the inside out. To support your team, we offer flexible service available remotely across BC and in-person in the Lower Mainland.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div class="card-base p-8 rounded-lg">
@@ -408,8 +407,7 @@
         <section id="engagement-models" class="py-10 md:py-16">
              <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Pricing: Flexible Partnership Models</h2>
-                    <p class="mt-4 text-lg max-w-3xl mx-auto">We offer a flexible, hybrid service model tailored to meet you remotely across BC or in person in the Lower Mainland.</p>
+                    <h2 class="text-3xl md:text-4xl font-light text-gradient">Pricing: Flexibility and Clarity</h2>
                     <p class="mt-4 text-lg max-w-3xl mx-auto">As part of our commitment to integrity and fairness, we proudly and openly publish our rates for discovery consultations and project-based work. This ensures that every organization receives the same clear, equitable offering. No hidden deals. No preferential pricing. Just transparent, values-based service built on mutual respect.</p>
                 </div>
                 <div class="mt-12 max-w-4xl mx-auto">
@@ -501,7 +499,7 @@
                     <div class="text-center md:text-left">
                         <div class="team-photo-container md:w-32 md:h-32 w-40 h-40 rounded-full mx-auto md:mx-0 mb-4">
                             <a href="#" target="_blank" rel="noopener noreferrer">
-                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo rounded-full object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6b9d/ffffff?text=Gary';">
+                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo rounded-full object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6d/ffffff?text=Gary';">
                             </a>
                         </div>
                         <h4 class="text-xl font-semibold text-aurora-pink">Gary McFarlane</h4>
@@ -714,10 +712,10 @@
                     { id: "post-3", title: "Why Your People-First Policies Are Your Best Legal Defence" }
                 ],
                 values: [
-                    { id: 'integrity', title: 'Integrity', content: 'We operate with unwavering honesty and transparency. Our commitment to ethical practices is the foundation of every partnership.'},
-                    { id: 'innovation', title: 'Innovation', content: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated.'},
-                    { id: 'respect', title: 'Respect', content: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve.'},
-                    { id: 'accessibility', title: 'Accessibility', content: 'We believe transformative HR shouldn’t be out of reach. We deliver expert, high-quality support designed for small businesses and non-profits.'}
+                    { id: 'integrity', title: 'Integrity', cardContent: 'We operate with unwavering honesty and transparency.', detailsContent: 'We are defined by our commitment to doing the right thing, especially when it’s hard.'},
+                    { id: 'innovation', title: 'Innovation', cardContent: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated.', detailsContent: 'We challenge the status quo of traditional HR by designing solutions that are tailored—not templated.'},
+                    { id: 'respect', title: 'Respect', cardContent: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve.', detailsContent: 'Our work is rooted in a profound respect for diverse people, unique organizational cultures, and the communities we serve.'},
+                    { id: 'accessibility', title: 'Accessibility', cardContent: 'We believe transformative HR shouldn’t be out of reach. We deliver expert, high-quality support designed for small businesses and non-profits.', detailsContent: 'We believe transformative HR shouldn’t be out of reach. We deliver expert, high-quality support designed for small businesses and non-profits.'}
                 ],
                 engagementModels: {
                     discoveryConsult: { title: 'Discovery Consult', color: 'text-green-500', points: [
@@ -767,7 +765,7 @@
                 const valueCardHTML = data.values.map(value => `
                     <div class="card-base p-6 rounded-lg" data-value-id="${value.id}" tabindex="0" role="button" aria-pressed="false" aria-label="${value.title}">
                         <h4 class="text-xl font-semibold mb-2">${value.title}</h4>
-                        <p class="text-gray-600">${value.content.split('.')[0]}.</p>
+                        <p class="text-gray-600">${value.cardContent}</p>
                     </div>
                 `).join('');
                 valuesGrid.innerHTML = valueCardHTML;
@@ -781,7 +779,8 @@
                 const selectedItem = data.services.find(item => item.id === id) || data.values.find(item => item.id === id);
                 
                 if(selectedItem && detailsContainer) {
-                    let contentHTML = `<button class="absolute top-4 right-4 text-2xl font-bold focus:outline-none" aria-label="Close" onclick="this.parentElement.style.display='none'">&times;</button><h4 class="text-2xl font-bold text-gradient mb-2">${selectedItem.title}</h4><div class="text-lg">${selectedItem.content}</div>`; 
+                    const contentToShow = type === 'value' ? selectedItem.detailsContent : selectedItem.content;
+                    let contentHTML = `<button class="absolute top-4 right-4 text-2xl font-bold focus:outline-none" aria-label="Close" onclick="this.parentElement.style.display='none'">&times;</button><h4 class="text-2xl font-bold text-gradient mb-2">${selectedItem.title}</h4><div class="text-lg">${contentToShow}</div>`; 
                     if (type === 'service' && selectedItem.relatedBlogPosts && selectedItem.relatedBlogPosts.length > 0) {
                         let blogLinksHTML = '<div class="mt-4 pt-4 border-t"><h5 class="font-semibold mb-2">Related Article(s):</h5>';
                         selectedItem.relatedBlogPosts.forEach(postId => {

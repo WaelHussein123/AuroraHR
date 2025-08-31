@@ -326,9 +326,9 @@
             <div class="container mx-auto px-6 text-center max-w-2xl">
                 <h3 class="text-2xl font-semibold text-gray-800 mb-2">Follow Our Insights</h3>
                 <p class="text-gray-600 mb-6">Get the latest articles and analysis on building thriving, people-first workplaces delivered directly to your inbox.</p>
-                <form id="newsletter-form" action="https://formspree.io/f/xanbwbwd" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                <form id="newsletter-form" action="https://formspree.io/f/xdklznwp" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                     <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required>
-                    <button type="submit" class="cta-button font-semibold px-6 py-2 rounded-md">Follow</button>
+                    <button type="submit" class="cta-button font-semibold px-6 py-2 rounded-md">Send</button>
                 </form>
                 <div id="newsletter-feedback" class="text-center text-green-600 mt-4"></div>
             </div>
@@ -461,7 +461,7 @@
                         feedback.textContent = 'Oops! There was a problem.';
                     }).finally(() => {
                         button.disabled = false;
-                        button.textContent = 'Follow';
+                        button.textContent = 'Send';
                         setTimeout(() => { feedback.textContent = ''; }, 5000);
                     });
                 });

@@ -252,6 +252,15 @@
         .hidden {
             display: none;
         }
+        .cta-button {
+            background-color: var(--color-accent-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(57, 156, 226, 0.4);
+        }
    </style>
 </head>
 <body class="antialiased">
@@ -309,6 +318,18 @@
              <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
+            </div>
+        </section>
+
+        <!-- Section: Follow Us -->
+        <section class="py-12 bg-white rounded-lg shadow-sm my-8">
+            <div class="container mx-auto px-6 text-center max-w-2xl">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Follow Our Insights</h3>
+                <p class="text-gray-600 mb-6">Get the latest articles and analysis on building thriving, people-first workplaces delivered directly to your inbox.</p>
+                <form action="#" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required>
+                    <button type="submit" class="cta-button font-semibold px-6 py-2 rounded-md">Follow</button>
+                </form>
             </div>
         </section>
 

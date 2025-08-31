@@ -190,7 +190,14 @@
         #mobile-menu-button div { background-color: var(--color-text-primary); }
 
         /* Article content styles */
-        .full-content h2 {
+        .full-article-content h1 {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        .full-article-content h2 {
             font-size: 1.5rem; /* 24px */
             font-weight: 500;
             margin-top: 2rem;
@@ -199,19 +206,19 @@
             border-bottom: 1px solid var(--color-border);
             color: var(--color-text-primary);
         }
-        .full-content p, .full-content li {
+        .full-article-content p, .full-article-content li {
             font-size: 1rem; /* 16px */
             line-height: 1.7;
             margin-bottom: 1.25rem;
             color: var(--color-text-secondary);
         }
-        .full-content ul {
+        .full-article-content ul {
             list-style-type: disc;
             list-style-position: inside;
             margin-bottom: 1.25rem;
             padding-left: 1rem;
         }
-        .full-content a {
+        .full-article-content a {
             color: var(--color-accent-blue);
             text-decoration: underline;
         }
@@ -311,7 +318,7 @@
 
     <main role="main" id="main-content" class="container mx-auto px-6">
         <!-- Section 1: Hero -->
-        <section id="home" class="hero-section my-12 md:my-16 py-24 md:py-36">
+        <section id="hero-section" class="hero-section my-12 md:my-16 py-24 md:py-36">
              <div class="shooting-star star-1"></div>
              <div class="shooting-star star-2"></div>
              <div class="shooting-star star-3"></div>
@@ -322,7 +329,7 @@
         </section>
 
         <!-- Section: Follow Us -->
-        <section class="py-12 bg-white rounded-lg shadow-sm my-8">
+        <section id="follow-section" class="py-12 bg-white rounded-lg shadow-sm my-8">
             <div class="container mx-auto px-6 text-center max-w-2xl">
                 <h3 class="text-2xl font-semibold text-gray-800 mb-2">Follow Our Insights</h3>
                 <p class="text-gray-600 mb-6">Get the latest articles and analysis on building thriving, people-first workplaces delivered directly to your inbox.</p>
@@ -335,9 +342,9 @@
         </section>
 
         <!-- Section 2: Blog Posts -->
-        <section class="pb-16 md:pb-24">
+        <section id="blog-section" class="pb-16 md:pb-24">
             <div class="container mx-auto px-6">
-                <div id="blog-posts-container" class="grid grid-cols-1 gap-8">
+                <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Blog posts will be dynamically inserted here -->
                 </div>
             </div>
@@ -346,7 +353,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
-            // --- BLOG POST DATA ---
             const blogPosts = [
                  {
                     id: "post-pay-transparency",
@@ -363,41 +369,34 @@
                         { text: "HR Policy Development", link: "index.html#service-hr-policy-development" }
                     ]
                 }
-                // Future blog post objects can be added here
             ];
 
-            // Function to populate the blog posts on the page
-            function populateBlogPosts() {
-                const container = document.getElementById('blog-posts-container');
-                if (!container) return;
+            const heroSection = document.getElementById('hero-section');
+            const followSection = document.getElementById('follow-section');
+            const blogSection = document.getElementById('blog-section');
+            const postsContainer = document.getElementById('blog-posts-container');
 
-                let allPostsHTML = '';
+            function renderBlogIndex() {
+                heroSection.style.display = 'block';
+                followSection.style.display = 'block';
+                postsContainer.innerHTML = '';
+                postsContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+
                 blogPosts.forEach(post => {
-                    let relatedLinksHTML = '';
-                    if (post.relatedServices && post.relatedServices.length > 0) {
-                        relatedLinksHTML = post.relatedServices.map(service => `
-                            <a href="${service.link}" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">
-                                ${service.text}
-                            </a>
-                        `).join('');
-                    }
+                    let relatedLinksHTML = post.relatedServices.map(service => `
+                        <a href="${service.link}" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">
+                            ${service.text}
+                        </a>
+                    `).join('');
 
-                    allPostsHTML += `
+                    const card = `
                         <div id="${post.id}" class="blog-card rounded-lg overflow-hidden">
                             <div class="p-6">
                                 <div class="blog-card-content">
                                     <p class="text-sm text-gray-500 mb-2">${post.date}</p>
                                     <h2 class="text-2xl font-semibold text-gray-900 mb-3">${post.title}</h2>
-                                    
-                                    <div class="summary-content">
-                                        <p class="font-light mb-4">${post.summary}</p>
-                                        <a href="#" class="read-more-btn font-semibold text-gray-900 hover:underline">Read More &rarr;</a>
-                                    </div>
-
-                                    <div class="full-content hidden" style="text-align: left;">
-                                        ${post.fullContent}
-                                        <a href="#" class="read-less-btn font-semibold text-gray-900 hover:underline mt-4 inline-block">&larr; Read Less</a>
-                                    </div>
+                                    <p class="font-light mb-4">${post.summary}</p>
+                                    <a href="#${post.id}" class="read-more-btn font-semibold text-gray-900 hover:underline">Read More &rarr;</a>
                                 </div>
                                 <div class="mt-4 pt-4 border-t border-gray-200">
                                     <h3 class="text-sm font-semibold mb-2 text-gray-600">Related Services:</h3>
@@ -406,35 +405,45 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    `;
+                        </div>`;
+                    postsContainer.innerHTML += card;
                 });
-                container.innerHTML = allPostsHTML;
             }
 
-            // Run the function to build the page
-            populateBlogPosts();
-            
-            // Add event listeners for Read More/Less buttons
-            document.querySelectorAll('.read-more-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const cardContent = e.target.closest('.blog-card-content');
-                    cardContent.querySelector('.summary-content').classList.add('hidden');
-                    cardContent.querySelector('.full-content').classList.remove('hidden');
-                });
-            });
+            function renderSingleArticle(postId) {
+                const post = blogPosts.find(p => p.id === postId);
+                if (!post) {
+                    renderBlogIndex(); // Fallback to index if post not found
+                    return;
+                }
 
-            document.querySelectorAll('.read-less-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const cardContent = e.target.closest('.blog-card-content');
-                    cardContent.querySelector('.summary-content').classList.remove('hidden');
-                    cardContent.querySelector('.full-content').classList.add('hidden');
-                });
-            });
+                heroSection.style.display = 'none';
+                followSection.style.display = 'none';
+                postsContainer.className = 'grid grid-cols-1 gap-8'; // Ensure single column layout
+                
+                postsContainer.innerHTML = `
+                    <article class="full-article-content bg-white p-8 rounded-lg shadow-sm">
+                         <a href="blog.html" class="inline-block text-lg text-accent-blue hover:underline mb-8">&larr; Back to All Articles</a>
+                        <h1>${post.title}</h1>
+                        <p class="text-gray-500 mb-6">${post.date}</p>
+                        ${post.fullContent}
+                    </article>
+                `;
+            }
 
-            // Newsletter form submission
+            function router() {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    renderSingleArticle(hash);
+                } else {
+                    renderBlogIndex();
+                }
+            }
+
+            window.addEventListener('hashchange', router);
+            router(); // Initial call to render the correct view on page load
+
+            // Newsletter form submission logic...
             const newsletterForm = document.getElementById('newsletter-form');
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
@@ -473,14 +482,6 @@
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
-                });
-
-                document.querySelectorAll('#mobile-menu a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if(!mobileMenu.classList.contains('hidden')) {
-                           mobileMenu.classList.add('hidden');
-                        }
-                    });
                 });
             }
         });

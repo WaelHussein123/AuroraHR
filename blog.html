@@ -491,11 +491,15 @@
 
             function router() {
                 const hash = window.location.hash.substring(1);
-                if (hash) {
+                const post = blogPosts.find(p => p.id === hash);
+
+                if (post) {
                     renderSingleArticle(hash);
-                } else {
+                } else if (!hash) {
                     renderBlogIndex();
                 }
+                // If hash exists but is not a post ID (e.g., #source-1), do nothing.
+                // The browser will handle the anchor link scroll.
             }
 
             window.addEventListener('hashchange', router);

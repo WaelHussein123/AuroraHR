@@ -268,6 +268,14 @@
             transform: scale(1.05);
             box-shadow: 0 8px 25px rgba(57, 156, 226, 0.4);
         }
+        .social-icon {
+             background: var(--color-bg);
+             color: var(--color-text-secondary);
+        }
+        .social-icon:hover {
+            background: var(--color-accent-blue);
+            color: white;
+        }
    </style>
 </head>
 <body class="antialiased">
@@ -350,12 +358,63 @@
             </div>
         </section>
     </main>
+     <footer class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-left">
+                    <a href="index.html" aria-label="Aurora HR Consulting Home">
+                        <svg class="w-32 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="auroraGradientFooter" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#57C399"/>
+                                    <stop offset="50%" stop-color="#399CE2"/>
+                                    <stop offset="100%" stop-color="#8256AC"/>
+                                </linearGradient>
+                            </defs>
+                            <text x="0" y="70" font-family="serif" font-size="60" fill="url(#auroraGradientFooter)">Aurora HR</text>
+                        </svg>
+                    </a>
+                    <p class="mt-2 text-sm max-w-xs">We partner with values-driven organizations in BC to build thriving workplaces.</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <a href="http://linkedin.com/company/AuroraHR" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/yourprofile" target="_blank" class="social-icon" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/AuroraHR.ca" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <a href="mailto:Info@AuroraHR.ca" class="hover:text-aurora-teal transition-colors duration-200">📧 Info@AuroraHR.ca</a>
+                        <a href="tel:+17788925892" class="hover:text-aurora-teal transition-colors duration-200">📞 (778) 892-5892</a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <div class="footer-links flex flex-wrap justify-center gap-4">
+                        <a href="index.html#services" class="hover:text-aurora-teal">Services</a>
+                        <a href="index.html#approach" class="hover:text-aurora-teal">Approach</a>
+                        <a href="blog.html" class="hover:text-aurora-teal">Blog</a>
+                        <a href="index.html#engagement-models" class="hover:text-aurora-teal">Pricing</a>
+                        <a href="index.html#contact" class="hover:text-aurora-teal">Contact Us</a>
+                        <a href="index.html#about-us" class="hover:text-aurora-teal">About Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <p class="text-xs text-gray-500 max-w-3xl mx-auto mb-4">I acknowledge with humility and gratitude that I live and work on the shared, unceded territories of the Cayuse, Umatilla, Walla Walla, S’ólh Téméxw (Stó:lō), Semiahmoo, Hul’qumi’num Treaty Group, Kwantlen, sc̓əwaθenaɁɬ təməxʷ (Tsawwassen), šxʷməθkʷəy̓əmaɁɬ təməxʷ (Musqueam), and Stz’uminus peoples.</p>
+                <p>&copy; <span id="copyright-year"></span> Aurora HR Consulting Services. All rights reserved.</p>
+                <p class="text-sm mt-2">Serving small and medium-sized organizations across British Columbia.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             
             const blogPosts = [
-                 {
-                    id: "BC-Pay-Transparency-Act",
+                {
+                    id: "BC-Pay-Transparency-Act-Large-Employers",
                     date: "August 30, 2025",
                     title: "BC’s Pay Transparency Act: The Nov 1st Deadline Your Business Can’t Ignore",
                     summary: "The deadline is just two months away. If you have 300+ employees, you must publish your first pay transparency report by November 1, 2025. We break down what you need to know from the government's latest findings.",

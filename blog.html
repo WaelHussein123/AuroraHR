@@ -134,61 +134,6 @@
         }
         .hero-section p { color: #f8f9fa; }
 
-        /* Realistic Shooting Star Animation */
-        .shooting-star {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-            border-radius: 999px;
-            filter: drop-shadow(0 0 6px white);
-            animation-name: shooting-star-anim;
-            animation-timing-function: ease-out;
-            animation-iteration-count: infinite;
-            z-index: 2;
-        }
-
-        .star-1 {
-            top: 0;
-            left: 100%; /* Start off-screen right */
-            animation-duration: 11s;
-            animation-delay: 4s;
-        }
-        .star-2 {
-            top: 30%;
-            left: 100%; /* Start off-screen right */
-            animation-duration: 14s;
-            animation-delay: 1.5s;
-        }
-        .star-3 {
-            top: -20%;
-            left: 70%;
-            animation-duration: 8s;
-            animation-delay: 9s;
-        }
-        
-        @keyframes shooting-star-anim {
-            0% {
-                transform: rotate(135deg) translateX(0);
-                opacity: 0;
-                width: 150px;
-            }
-            15% {
-                opacity: 1;
-            }
-            85% {
-                opacity: 1;
-            }
-            100% {
-                transform: rotate(135deg) translateX(1200px);
-                opacity: 0;
-                width: 250px;
-            }
-        }
-        
-        #mobile-menu { background-color: var(--color-card); }
-        #mobile-menu a { color: var(--color-text-secondary); } 
-        #mobile-menu-button div { background-color: var(--color-text-primary); }
-
         .cta-button {
             background-color: var(--color-accent-blue);
             color: white;
@@ -257,9 +202,6 @@
     <main role="main" id="main-content" class="container mx-auto px-6">
         <!-- Section 1: Hero -->
         <section id="hero-section" class="hero-section my-12 md:my-16 py-24 md:py-36">
-             <div class="shooting-star star-1"></div>
-             <div class="shooting-star star-2"></div>
-             <div class="shooting-star star-3"></div>
              <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
@@ -283,7 +225,28 @@
         <section id="blog-section" class="pb-16 md:pb-24">
             <div class="container mx-auto px-6">
                 <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Blog posts will be dynamically inserted here -->
+                    
+                    <!-- Blog Post Card -->
+                    <div class="blog-card rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="blog-card-content">
+                                <p class="text-sm text-gray-500 mb-2">August 30, 2025</p>
+                                <h2 class="text-2xl font-semibold text-gray-900 mb-3">BC’s Pay Transparency Act: A Leader's Guide to the Nov. 1st Deadline</h2>
+                                <p class="font-light mb-4">The deadline is less than two months away. For the next wave of reporting employers, the time to act is now. We break down what you need to know from the government's latest findings.</p>
+                                <a href="blog/BC-Pay-Transparency-Act-Compliance.html" class="read-more-btn font-semibold text-gray-900 hover:underline">Read More &rarr;</a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <h3 class="text-sm font-semibold mb-2 text-gray-600">Related Services:</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="index.html#service-total-rewards" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">Total Rewards</a>
+                                    <a href="index.html#service-hris-data-management" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">HRIS & Data Management</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more blog cards here as you publish new articles -->
+
                 </div>
             </div>
         </section>
@@ -340,60 +303,15 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
-            const blogPosts = [
-                {
-                    id: "BC-Pay-Transparency-Act-Compliance",
-                    date: "September 2, 2025",
-                    title: "BC’s Pay Transparency Act: A Leader's Guide to the Nov. 1st Deadline",
-                    summary: "The deadline is less than two months away. For the next wave of reporting employers, the time to act is now. We break down what you need to know from the government's latest findings.",
-                    relatedServices: [
-                        { text: "Total Rewards", link: "index.html#service-total-rewards" },
-                        { text: "HRIS & Data Management", link: "index.html#service-hris-data-management" },
-                        { text: "Metrics & KPI", link: "index.html#service-metrics-kpi" },
-                        { text: "Diversity & Inclusion", link: "index.html#service-diversity-inclusion" },
-                        { text: "HR Policy Development", link: "index.html#service-hr-policy-development" }
-                    ]
-                }
-                // Add future blog posts here
-            ];
-
-            const postsContainer = document.getElementById('blog-posts-container');
-
-            function renderBlogIndex() {
-                if (!postsContainer) return;
-                postsContainer.innerHTML = '';
-                blogPosts.forEach(post => {
-                    let relatedLinksHTML = post.relatedServices.map(service => `
-                        <a href="${service.link}" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">
-                            ${service.text}
-                        </a>
-                    `).join('');
-
-                    const card = `
-                        <div id="${post.id}" class="blog-card rounded-lg overflow-hidden">
-                            <div class="p-6">
-                                <div class="blog-card-content">
-                                    <p class="text-sm text-gray-500 mb-2">${post.date}</p>
-                                    <h2 class="text-2xl font-semibold text-gray-900 mb-3">${post.title}</h2>
-                                    <p class="font-light mb-4">${post.summary}</p>
-                                    <a href="blog/${post.id}.html" class="read-more-btn font-semibold text-gray-900 hover:underline">Read More &rarr;</a>
-                                </div>
-                                <div class="mt-4 pt-4 border-t border-gray-200">
-                                    <h3 class="text-sm font-semibold mb-2 text-gray-600">Related Services:</h3>
-                                    <div class="flex flex-wrap gap-2">
-                                        ${relatedLinksHTML}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`;
-                    postsContainer.innerHTML += card;
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
             }
 
-            renderBlogIndex();
-
-            // Newsletter form submission logic...
             const newsletterForm = document.getElementById('newsletter-form');
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
@@ -423,15 +341,6 @@
                         button.textContent = 'Send';
                         setTimeout(() => { feedback.textContent = ''; }, 5000);
                     });
-                });
-            }
-
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
                 });
             }
         });

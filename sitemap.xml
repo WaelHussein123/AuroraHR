@@ -2,17 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aurorahr.ca/index.html</loc>
-    <lastmod>2025-09-01</lastmod>
+    <lastmod>2025-09-02</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://aurorahr.ca/blog.html</loc>
-    <lastmod>2025-09-01</lastmod>
+    <lastmod>2025-09-02</lastmod>
     <priority>0.80</priority>
   </url>
+  <!-- This is the new, clean URL for your article -->
   <url>
-    <loc>https://aurorahr.ca/blog.html#BC-Pay-Transparency-Act-Compliance</loc>
-    <lastmod>2025-09-01</lastmod>
+    <loc>https://aurorahr.ca/blog/BC-Pay-Transparency-Act-Compliance.html</loc>
+    <lastmod>2025-09-02</lastmod>
     <priority>0.90</priority>
   </url>
 </urlset>

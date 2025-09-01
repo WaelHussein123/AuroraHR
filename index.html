@@ -16,8 +16,12 @@
     <meta name="description" content="Aurora HR partners with values-driven organizations in BC to build thriving workplaces. We offer tailored, human-centered HR solutions, from policy development to employee engagement, to illuminate the human spirit in your mission.">
     <meta name="keywords" content="HR consulting BC, People-First HR, Wa'el Hussein, Human Resources British Columbia, employee engagement, total rewards, organizational design, mission-driven organizations">
     
+    <!-- Preload the LCP image for faster loading -->
+    <link rel="preload" fetchpriority="high" as="image" href="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=1600&auto=format&fit=crop" type="image/jpeg">
+    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Added &display=swap to the font URL to prevent render-blocking text -->
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -48,7 +52,8 @@
             --color-card: #ffffff;
             --color-card-hover: #f1f3f5;
             --color-text-primary: #212529;
-            --color-text-secondary: #6c757d;
+            /* ACCESSIBILITY FIX: Darkened secondary text for better contrast */
+            --color-text-secondary: #5a6168; 
             --color-border: #dee2e6;
             --color-accent-orange: #fd7e14;
             --color-accent-teal: #20c997;
@@ -128,7 +133,8 @@
         /* Hero Section Styles */
         .hero-section {
             position: relative;
-            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2070&auto=format&fit=crop');
+            /* PERFORMANCE FIX: Using a more optimized image size (1600w instead of 2070w) */
+            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             border-radius: 1rem;
@@ -212,17 +218,17 @@
         /* Component-specific overrides */
         .section-bg-light { background-color: var(--color-bg); } 
         
-        .swot-button {
+        .pricing-model-button {
             background-color: var(--color-bg);
             border: 1px solid var(--color-border);
             color: var(--color-text-secondary);
         }
-        .swot-button.active {
+        .pricing-model-button.active {
             background: var(--color-accent-blue);
             color: white;
             border-color: var(--color-accent-blue);
         }
-        .swot-button:hover:not(.active) {
+        .pricing-model-button:hover:not(.active) {
             background-color: var(--color-card-hover);
         }
 
@@ -244,12 +250,21 @@
         }
 
         .social-icon {
-             background: var(--color-bg);
+             background: var(--color-card-bg-darker);
              color: var(--color-text-secondary);
-        }
+             width: 44px;
+             height: 44px;
+             border-radius: 50%;
+             display: inline-flex;
+             align-items: center;
+             justify-content: center;
+             font-size: 1.25rem;
+             transition: all 0.3s ease;
+         }
         .social-icon:hover {
             background: var(--color-accent-blue);
             color: white;
+            transform: scale(1.1);
         }
 
         .accordion-button {
@@ -282,14 +297,64 @@
         }
         .accordion-icon {
             transition: transform 0.3s ease;
+            width: 1em;
+            height: 1em;
+            position: relative;
         }
-        .accordion-button.active .accordion-icon {
-            transform: rotate(45deg);
+        .accordion-icon::before,
+        .accordion-icon::after {
+            content: '';
+            position: absolute;
+            background-color: currentColor;
+            transition: transform 0.3s ease-out;
+        }
+        .accordion-icon::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            margin-top: -1px;
+        }
+        .accordion-icon::after {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+        }
+        .accordion-button.active .accordion-icon::before {
+            transform: rotate(180deg);
+        }
+        .accordion-button.active .accordion-icon::after {
+            transform: rotate(90deg);
         }
 
         #mobile-menu { background-color: var(--color-card); }
         #mobile-menu a { color: var(--color-text-secondary); } 
         #mobile-menu-button div { background-color: var(--color-text-primary); }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-accent-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        #back-to-top.show {
+            opacity: 1;
+            display: flex;
+        }
    </style>
 </head>
 <body class="antialiased">
@@ -410,8 +475,8 @@
                     <p class="mt-4 text-lg max-w-3xl mx-auto">As part of our commitment to integrity and fairness, we proudly and openly publish our rates for discovery consultations and project-based work. This ensures that every organization receives the same clear, equitable offering. No hidden deals. No preferential pricing. Just transparent, values-based service built on mutual respect.</p>
                 </div>
                 <div class="mt-12 max-w-4xl mx-auto">
-                    <div id="swot-buttons" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
-                    <div id="swot-details" class="mt-6 p-6 card-base rounded-lg min-h-[150px]"></div>
+                    <div id="pricing-model-buttons" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"></div>
+                    <div id="pricing-model-details" class="mt-6 p-6 card-base rounded-lg min-h-[150px]"></div>
                 </div>
             </div>
         </section>
@@ -489,7 +554,8 @@
                     <div class="text-center md:text-left">
                         <div class="team-photo-container md:w-32 md:h-32 w-40 h-40 rounded-full mx-auto md:mx-0 mb-4">
                             <a href="https://ca.linkedin.com/in/waelhussein" target="_blank" rel="noopener noreferrer">
-                                <img src="https://aurorahr.ca/Wael-Cropped.jpg" alt="Wa'el Hussein, CPHR, GRP" class="team-photo rounded-full object-cover w-full h-full"  onerror="this.onerror=null;this.src='https://placehold.co/150x150/7c3aed/ffffff?text=Wa%27el';">
+                                <!-- PERFORMANCE FIX: Added loading="lazy" to defer offscreen image loading -->
+                                <img src="https://aurorahr.ca/Wael-Cropped.jpg" alt="Wa'el Hussein, CPHR, GRP" class="team-photo rounded-full object-cover w-full h-full" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/150x150/7c3aed/ffffff?text=Wa%27el';">
                             </a>
                         </div>
                         <h4 class="text-2xl font-semibold text-aurora-purple">Wa'el Hussein, CPHR, GRP</h4>
@@ -498,7 +564,8 @@
                     <div class="text-center md:text-left">
                         <div class="team-photo-container md:w-32 md:h-32 w-40 h-40 rounded-full mx-auto md:mx-0 mb-4">
                             <a href="#" target="_blank" rel="noopener noreferrer">
-                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo rounded-full object-cover w-full h-full" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6d/ffffff?text=Gary';">
+                                <!-- PERFORMANCE FIX: Added loading="lazy" to defer offscreen image loading -->
+                                <img src="https://aurorahr.ca/garyperu.jpg" alt="Gary McFarlane" class="team-photo rounded-full object-cover w-full h-full" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/150x150/ff6d/ffffff?text=Gary';">
                             </a>
                         </div>
                         <h4 class="text-xl font-semibold text-aurora-pink">Gary McFarlane</h4>
@@ -546,6 +613,8 @@
                     </div>
                     <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <a href="mailto:Info@AuroraHR.ca" class="hover:text-aurora-teal transition-colors duration-200">📧 Info@AuroraHR.ca</a>
+                        <span class="hidden sm:inline">|</span>
+                        <a href="tel:+1-778-892-5892" class="hover:text-aurora-teal transition-colors duration-200">📞 (778) 892-5892</a>
                     </div>
                 </div>
                 
@@ -568,6 +637,7 @@
             </div>
         </div>
     </footer>
+    <a href="#" id="back-to-top" aria-label="Back to top" title="Back to top">↑</a>
     <div id="live-region" class="sr-only" aria-live="polite"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -581,7 +651,7 @@
                         subtitle: 'From Barrier to Bridge Philosophy',
                         icon: `<svg viewBox="0 0 100 100"><title>HR Policy Development Icon</title><circle cx="25" cy="35" r="8" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2.5" /><path d="M15,65 a10,10 0 0,1 20,0 z" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2.5"/><path d="M60 20 L 75 20 L 75 80 L 40 80 L 40 55" fill="var(--color-card-bg-darker)" stroke="rgba(0,0,0,0.3)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M50,30 L65,30 M50,40 L65,40 M50,50 L65,50 M50,60 L65,60" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="round"/><text x="57" y="32" font-size="10" fill="#fd7e14">?</text><text x="57" y="42" font-size="10" fill="#20c997">%</text><text x="57" y="52" font-size="10" fill="#fd7e14">!</text><text x="57" y="62" font-size="10" fill="#20c997">#</text></svg>`,
                         content: `<h4 class="text-lg font-semibold mb-2">Your HR policies are a reflection of your company culture. Are they sending the right message?</h4><p class="mb-4">No more confusing, jargon-filled documents that treat your employees like a liability. It's time for policies that go beyond legal compliance to become genuine engaging tools for your team.</p><p class="mb-4">We build people-first policies tailored to your day-to-day reality. They serve as a unified referance, written in language everyone can understand. This clarity reduces confusion, supports accountability, and frees up your leadership to focus on what really matters—growing your business.</p>
-                        <button class="accordion-button">The People-First Policy Check: Does Yours Make the Grade? <span class="accordion-icon">+</span></button>
+                        <button class="accordion-button">The People-First Policy Check: Does Yours Make the Grade? <span class="accordion-icon"></span></button>
                         <div class="accordion-content">
                             <ul class="list-disc list-inside text-left space-y-2"><li><strong>Easy Navigation (The 30-Second Test):</strong> Can your team find what they need, fast?</li><li><strong>Supportive Language (We vs. The Company):</strong> Is your tone collaborative or corporate?</li><li><strong>Process Transparency (What Happens Next?):</strong> Are your procedures a mystery or a clear path?</li><li><strong>Addressing Fears (The Fear Test):</strong> Do you proactively reassure your team about their biggest concerns (e.g., retaliation)?</li></ul><p class="mt-4">If your policies are failing this check, you're missing a key opportunity to build a transparent, supportive, and high-performing workplace. Let Aurora HR help you create policies that people actually want to use.</p>
                         </div>`,
@@ -657,11 +727,11 @@
                         subtitle: 'Driving individual and organizational growth.',
                         icon: `<svg viewBox="0 0 100 100"><title>Performance Management Icon</title><circle cx="30" cy="30" r="8" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2"/><path d="M20,55 a10,10 0 0,1 20,0 v15 h-20 z" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2"/><path d="M55,65 l10,-20 l10,20" stroke="#20c997" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M85,45 l-10,0 l0,-10" stroke="#20c997" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M55,30 l5,5 l10,-10" stroke="#fd7e14" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
                         content: `<p class="mb-4">At Aurora HR, we believe that performance management is one of the most complicated and sensitive conversations in any organization. Why? Because it touches the very core of what it means to be human at work: our ambitions, our fears, our sense of fairness, and our need to belong and contribute.</p><p class="mb-4">Yet, despite its complexity, most organizations treat performance as a rigid scoreboard — a list of objectives to check off, a once-a-year meeting, a quiet conversation behind closed doors.</p>
-                        <button class="accordion-button">Beyond Checkboxes: Toward Human Potential <span class="accordion-icon">+</span></button>
+                        <button class="accordion-button">Beyond Checkboxes: Toward Human Potential <span class="accordion-icon"></span></button>
                         <div class="accordion-content">
                             <p class="mb-4">We often ask our clients:</p><ul class="list-disc list-inside text-left space-y-2 mb-4"><li>Are you measuring what truly matters, or just what is easy to count?</li><li>Are you rewarding only the safe wins, or are you also celebrating those who dared to explore — even if they failed?</li><li>Have your people stopped taking risks because they fear the consequences of making mistakes?</li></ul><p class="mb-4">These are not rhetorical questions. They are existential questions about the future of your organization.</p>
                         </div>
-                        <button class="accordion-button">Let’s Redefine Performance Together <span class="accordion-icon">+</span></button>
+                        <button class="accordion-button">Let’s Redefine Performance Together <span class="accordion-icon"></span></button>
                         <div class="accordion-content">
                             <p class="mb-4">Are you ready to move beyond appraisals and KPIs? Are you ready to create a workplace where people feel safe to question, explore, and become? At Aurora HR, we embrace this paradox. We help you turn it into your greatest strategic advantage. Together, let’s build a culture where performance is not managed — it’s unleashed.</p>
                         </div>`,
@@ -692,7 +762,7 @@
                         subtitle: 'Navigating workplace disputes with fairness.',
                         icon: `<svg viewBox="0 0 100 100"><title>Conflict Resolution Icon</title><circle cx="25" cy="35" r="8" fill="var(--color-card-bg-darker)" stroke="#fd7e14" stroke-width="2" /><path d="M15,65 a10,10 0 0,1 20,0 z" fill="var(--color-card-bg-darker)" stroke="#fd7e14" stroke-width="2"/><circle cx="75" cy="35" r="8" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2"/><path d="M65,65 a10,10 0 0,1 20,0 z" fill="var(--color-card-bg-darker)" stroke="#399CE2" stroke-width="2"/><path d="M30,40 l10,-10 l10,10" stroke="#fd7e14" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M70,40 l-10,-10 l-10,10" stroke="#399CE2" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="40" y1="60" x2="60" y2="60" stroke="rgba(0,0,0,0.2)" stroke-width="2" /></svg>`,
                         content: `<p>At Aurora HR, we help organizations address conflict early—before it escalates into legal, reputational, or cultural risk. Our services include early intervention, facilitated dialogue, mediation, and impartial investigations, all grounded in empathy, procedural fairness, and your organizational values.<br><br>But we don’t stop at service delivery—we build your internal capability. Our signature Conflict & Investigation Training equips managers and HR professionals with the confidence and tools to respond effectively and fairly.</p>
-                        <button class="accordion-button">What makes our training different? <span class="accordion-icon">+</span></button>
+                        <button class="accordion-button">What makes our training different? <span class="accordion-icon"></span></button>
                         <div class="accordion-content">
                             <ul class="list-disc list-inside text-left space-y-2">
                                 <li>✔ Rooted in BC law with real case studies and up-to-date standards</li>
@@ -798,8 +868,6 @@
                     accordions.forEach(button => {
                         button.addEventListener('click', function() {
                             this.classList.toggle('active');
-                            const icon = this.querySelector('.accordion-icon');
-                            icon.textContent = this.classList.contains('active') ? '-' : '+';
                             const content = this.nextElementSibling;
                             if (content.style.maxHeight) {
                                 content.style.maxHeight = null;
@@ -814,22 +882,34 @@
             populateServiceCards();
             populateValueCards();
 
-            document.querySelectorAll('.service-card').forEach(card => card.addEventListener('click', () => handleCardClick(card, data.services, serviceDetailsContainer, 'service')));
-            document.querySelectorAll('[data-value-id]').forEach(card => card.addEventListener('click', () => handleCardClick(card, data.values, valueDetailsContainer, 'value')));
-            
-            const swotButtonsContainer = document.getElementById('swot-buttons');
-            const swotDetailsContainer = document.getElementById('swot-details');
+            // Event delegation for service cards
+            document.getElementById('services-grid').addEventListener('click', function(e) {
+                const card = e.target.closest('.service-card');
+                if (card) {
+                    handleCardClick(card, data.services, serviceDetailsContainer, 'service');
+                }
+            });
 
-            if (swotButtonsContainer && swotDetailsContainer) {
+            document.querySelector('.values-grid').addEventListener('click', function(e) {
+                const card = e.target.closest('[data-value-id]');
+                if(card) {
+                    handleCardClick(card, data.values, valueDetailsContainer, 'value');
+                }
+            });
+            
+            const pricingModelButtonsContainer = document.getElementById('pricing-model-buttons');
+            const pricingModelDetailsContainer = document.getElementById('pricing-model-details');
+
+            if (pricingModelButtonsContainer && pricingModelDetailsContainer) {
                 Object.keys(data.engagementModels).forEach(key => {
                     const item = data.engagementModels[key];
                     const button = document.createElement('button');
-                    button.className = `swot-button p-3 rounded-md font-semibold`;
+                    button.className = `pricing-model-button p-3 rounded-md font-semibold`;
                     button.textContent = item.title;
-                    swotButtonsContainer.appendChild(button);
+                    pricingModelButtonsContainer.appendChild(button);
 
                     button.addEventListener('click', () => {
-                        document.querySelectorAll('.swot-button').forEach(btn => btn.classList.remove('active'));
+                        document.querySelectorAll('.pricing-model-button').forEach(btn => btn.classList.remove('active'));
                         button.classList.add('active');
                         const list = document.createElement('ul');
                         list.className = 'list-inside space-y-2 text-left mx-auto max-w-lg'; 
@@ -838,12 +918,12 @@
                            li.innerHTML = `<span class="${item.color} mr-2">•</span> <span class="text-gray-700">${point}</span>`; 
                            list.appendChild(li);
                         });
-                        swotDetailsContainer.innerHTML = '';
-                        swotDetailsContainer.appendChild(list);
+                        pricingModelDetailsContainer.innerHTML = '';
+                        pricingModelDetailsContainer.appendChild(list);
                     });
                 });
-                if (document.querySelector('.swot-button')) {
-                    document.querySelector('.swot-button').click();
+                if (document.querySelector('.pricing-model-button')) {
+                    document.querySelector('.pricing-model-button').click();
                 }
             }
 
@@ -900,6 +980,20 @@
                     }, 100);
                 }
             }
+
+            // Back to Top button logic
+            const backToTopButton = document.getElementById('back-to-top');
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            };
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         });
     </script>
 </body>

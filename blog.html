@@ -142,6 +142,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         .hero-section p { color: #f8f9fa; }
 
+        /* Realistic Shooting Star Animation */
+        .shooting-star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px white);
+            animation-name: shooting-star-anim;
+            animation-timing-function: ease-out;
+            animation-iteration-count: infinite;
+            z-index: 2;
+        }
+
+        .star-1 {
+            top: 0;
+            left: 100%; /* Start off-screen right */
+            animation-duration: 11s;
+            animation-delay: 4s;
+        }
+        .star-2 {
+            top: 30%;
+            left: 100%; /* Start off-screen right */
+            animation-duration: 14s;
+            animation-delay: 1.5s;
+        }
+        .star-3 {
+            top: -20%;
+            left: 70%;
+            animation-duration: 8s;
+            animation-delay: 9s;
+        }
+        
+        @keyframes shooting-star-anim {
+            0% {
+                transform: rotate(135deg) translateX(0);
+                opacity: 0;
+                width: 150px;
+            }
+            15% {
+                opacity: 1;
+            }
+            85% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(135deg) translateX(1200px);
+                opacity: 0;
+                width: 250px;
+            }
+        }
+
         .cta-button {
             background-color: var(--color-accent-blue);
             color: white;
@@ -214,6 +265,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main role="main" id="main-content" class="container mx-auto px-6">
         <!-- Section 1: Hero -->
         <section id="hero-section" class="hero-section my-12 md:my-16 py-24 md:py-36">
+             <div class="shooting-star star-1"></div>
+             <div class="shooting-star star-2"></div>
+             <div class="shooting-star star-3"></div>
              <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
@@ -252,6 +306,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="flex flex-wrap gap-2">
                                     <a href="index.html#service-total-rewards" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">Total Rewards</a>
                                     <a href="index.html#service-hris-data-management" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">HRIS & Data Management</a>
+                                    <a href="index.html#service-metrics-kpi" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">Metrics & KPI</a>
+                                    <a href="index.html#service-diversity-inclusion" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">Diversity & Inclusion</a>
+                                    <a href="index.html#service-hr-policy-development" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">HR Policy Development</a>
                                 </div>
                             </div>
                         </div>
@@ -355,6 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     });
                 });
             }
+             document.getElementById('copyright-year').textContent = new Date().getFullYear();
         });
     </script>
 </body>

@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDRVSMBC');</script>
-    <!-- End Google Tag Manager -->
-
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PDRVSMBC');</script>
+<!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FJ7SMNVJG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+    
       gtag('config', 'G-8FJ7SMNVJG');
     </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Aurora HR Consulting</title>
     <meta name="description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces for mission-driven organizations in BC.">
-
-    <!-- Canonical for blog index -->
-    <link rel="canonical" href="https://aurorahr.ca/blog.html" />
-
-    <!-- Open Graph Meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Blog | Aurora HR Consulting" />
-    <meta property="og:description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces in British Columbia." />
-    <meta property="og:url" content="https://aurorahr.ca/blog.html" />
-    <meta property="og:image" content="https://aurorahr.ca/social-share-image.jpg" />
-
-    <!-- Twitter Card Meta -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog | Aurora HR Consulting" />
-    <meta name="twitter:description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces in British Columbia." />
-    <meta name="twitter:image" content="https://aurorahr.ca/social-share-image.jpg" />
-
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora&lt;/text&gt;</svg>">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
    <style>
         :root {
             /* "Aurora Vivid" Theme */
@@ -79,10 +62,10 @@
             background-clip: text; 
         }
         .nav-link { 
-            color: var(--color-text-primary);
+            color: var(--color-text-primary); /* Darker text */
             transition: all 0.3s ease;
             position: relative;
-            padding-bottom: 0.25rem;
+            padding-bottom: 0.25rem; /* Space for the underline */
         } 
         .nav-link::after { 
             content: '';
@@ -96,7 +79,7 @@
             transition: width .3s ease;
         }
         .nav-link:hover {
-            color: var(--color-text-primary);
+            color: var(--color-text-primary); /* Keep it dark on hover */
         }
         .nav-link:hover::after, 
         .nav-link.active::after { 
@@ -134,6 +117,7 @@
              box-shadow: 0 4px 15px rgba(57, 156, 226, 0.4);
         }
 
+
         /* Hero Section Styles */
         .hero-section {
             position: relative;
@@ -153,7 +137,7 @@
         }
         .hero-section .container {
             position: relative;
-            z-index: 3;
+            z-index: 3; /* Above stars */
         }
         .hero-section p { color: #f8f9fa; }
 
@@ -178,20 +162,18 @@
 </head>
 <body class="antialiased">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRVSMBC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRVSMBC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-white text-black absolute top-0 left-0 z-50">Skip to main content</a>
     <noscript>
       <div style="background: #fd7e14; color: #fff; padding: 1em; text-align: center;">
         This site works best with JavaScript enabled. Some interactive features may not be available.
       </div>
     </noscript>
-
     <header class="header sticky top-0 left-0 right-0 z-50" role="banner">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" aria-label="Aurora HR Consulting Home">
+            <a href="index.html" aria-label="Aurora HR Consulting Home">
                 <svg class="w-40 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="auroraGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -204,13 +186,13 @@
                 </svg>
             </a>
             <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
-                <a href="/#home" class="nav-link text-lg font-light">Home</a>
-                <a href="/#services" class="nav-link text-lg font-light">Services</a>
-                <a href="/#approach" class="nav-link text-lg font-light">Approach</a>
-                <a href="/blog.html" class="nav-link text-lg font-light active">Blog</a>
-                <a href="/#engagement-models" class="nav-link text-lg font-light">Pricing</a>
-                <a href="/#contact" class="nav-link text-lg font-light">Contact Us</a>
-                <a href="/#about-us" class="nav-link text-lg font-light">About Us</a>
+                <a href="index.html#home" class="nav-link text-lg font-light">Home</a>
+                <a href="index.html#services" class="nav-link text-lg font-light">Services</a>
+                <a href="index.html#approach" class="nav-link text-lg font-light">Approach</a>
+                <a href="blog.html" class="nav-link text-lg font-light active">Blog</a>
+                <a href="index.html#engagement-models" class="nav-link text-lg font-light">Pricing</a>
+                <a href="index.html#contact" class="nav-link text-lg font-light">Contact Us</a>
+                <a href="index.html#about-us" class="nav-link text-lg font-light">About Us</a>
             </nav>
             <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
                 <div class="w-6 h-0.5 mb-1.5"></div>
@@ -218,194 +200,161 @@
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden p-4">
-             <a href="/#home" class="block py-2 text-center">Home</a>
-            <a href="/#services" class="block py-2 text-center">Services</a>
-            <a href="/#approach" class="block py-2 text-center">Approach</a>
-            <a href="/blog.html" class="block py-2 text-center">Blog</a>
-            <a href="/#engagement-models" class="block py-2 text-center">Pricing</a>
-            <a href="/#contact" class="block py-2 text-center">Contact Us</a>
-            <a href="/#about-us" class="block py-2 text-center">About Us</a>
+             <a href="index.html#home" class="block py-2 text-center">Home</a>
+            <a href="index.html#services" class="block py-2 text-center">Services</a>
+            <a href="index.html#approach" class="block py-2 text-center">Approach</a>
+            <a href="blog.html" class="block py-2 text-center">Blog</a>
+            <a href="index.html#engagement-models" class="block py-2 text-center">Pricing</a>
+            <a href="index.html#contact" class="block py-2 text-center">Contact Us</a>
+            <a href="index.html#about-us" class="block py-2 text-center">About Us</a>
         </div>
     </header>
 
-    <main role="main" id="main-content" class="container mx-auto px-6 py-12">
-        <article class="full-article-content bg-white p-6 sm:p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto">
-            <a href="/blog.html" class="inline-block text-lg text-accent-blue hover:underline mb-8">← Back to All Articles</a>
-            <h1>BC’s Pay Transparency Act: A Leader&#39;s Guide to the Nov. 1st Deadline</h1>
-            <p class="text-gray-500 mb-6">Published on August 30, 2025</p>
-            
-            <div class="summary-box">
-                <h3>1-Minute Summary for Leaders</h3>
-                <p>On November 1, 2025, the next phase of the B.C. Pay Transparency Act will apply to over 700 employers in B.C. with 300 or more employees.<sup>[1]</sup> The government&#39;s latest report from June 2025 revealed that 58% of large employers who reported last year had significant pay gaps favouring men, and it confirmed that collecting the required data was the biggest challenge. For leaders not yet prepared, the time for strategic action is now.</p>
+    <main role="main" id="main-content" class="container mx-auto px-6">
+        <!-- Section 1: Hero -->
+        <section id="hero-section" class="hero-section my-12 md:my-16 py-24 md:py-36">
+             <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-light text-white">HR Insights</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">Articles and analysis on building thriving, people-first workplaces.</p>
             </div>
-
-            <p>As a leader in British Columbia, the final countdown has begun. The <strong>Pay Transparency Act</strong>, designed to combat systemic pay discrimination by making compensation transparent, is about to enter its most public-facing phase for mid-sized companies. The B.C. government&#39;s June 2025 Pay Transparency Report shows the law&#39;s impact and serves as a wake-up call for leaders.</p>
-            <p>While B.C.&#39;s overall gender pay gap has seen a modest decrease to 15%, it remains the fourth-largest in Canada.<sup>[1]</sup> The upcoming November 1st reporting deadline moves your organization from internal process changes to public accountability, and the time to prepare is running out.</p>
-            
-            <h2>The Non-Negotiable Foundation</h2>
-            <p>By now, the foundational rules of the Act should be a &quot;done deal&quot; within your business. Salary ranges are required on all job ads—a mandate with which approximately 85% of B.C. job postings now comply—pay history questions are eliminated, and these changes are codified in your official company policies.<sup>[1]</sup></p>
-            
-            <div class="highlight-box">
-                <h4>A Critical Point on Recruiters and Liability</h4>
-                <p>The Ministry of Finance&#39;s report shows the government is actively enforcing the Act, having received 242 complaints in 2024, most related to job postings. It is crucial to remember that the employer is ultimately liable for the actions of agents acting on their behalf. If a third-party recruiter you hired violates the Act while representing your company, the legal responsibility may fall on your organization.<sup>[1]</sup></p>
-            </div>
-            
-            <h2>A Look Ahead: Lessons from the First Wave of Reports</h2>
-            <p>The June 2025 government report gives us a crystal ball into what the 300+ employee cohort can expect. The findings from the large employers who reported in 2024 are stark:</p>
-            <ul>
-                <li><strong>Pay Gaps are Common:</strong> Nearly 6 out of 10 employers (58%) revealed that they paid men at least 5% more than women. For non-binary employees, the gap was even more prevalent, with 68% of employers paying them at least 5% less than men.<sup>[1]</sup></li>
-                <li><strong>Data Collection is the Biggest Hurdle:</strong> In a post-report survey, employers noted that &quot;collecting gender data from employees took the most time and required careful planning&quot;.</li>
-                <li><strong>Leadership is Taking Action:</strong> Vancity Credit Union, in a quote featured in the report, acknowledged that their report revealed a gap and stated, &quot;So we took action... [we] reimagine our systems to better address pay gaps&quot;. This sets the standard for a proactive, responsible employer.<sup>[1]</sup></li>
-            </ul>
-            
-            <h2>The 2-Month Countdown: Your Reporting Requirements</h2>
-            <p>The November 1st deadline is for the submission of your report, but as the 2024 findings show, the preparation should have been underway for months. If you are just starting, you are in a critical two-month window to complete a year&#39;s worth of data preparation. Here are the core requirements:</p>
-            <ul>
-                <li><strong>Demographic Data Collection:</strong> You must make a reasonable effort to collect gender information from all employees, using the categories of &#39;Man&#39; (M), &#39;Woman&#39; (W), &#39;Non-binary&#39; (X), and &#39;Unknown&#39; (U). This must be done in accordance with the province&#39;s <a href="https://www2.gov.bc.ca/assets/gov/government/services-for-government-and-broader-public-sector/information-technology-services/standards-files/312_gender_and_sex_data_standard.pdf" target="_blank" rel="noopener noreferrer">Gender and Sex Data Standard</a>. If an employee does not provide this information, they must be counted in the &#39;Unknown&#39; category.</li>
-                <li><strong>Calculation of Pay Gaps:</strong> The report requires you to calculate both the mean (average) and median (midpoint) pay gaps for hourly rates, overtime pay, and bonus pay.</li>
-                <li><strong>Submission and Posting:</strong> The report must be completed using the government&#39;s online reporting tool, which requires a Business BCeID, and then posted on a publicly accessible website.</li>
-            </ul>
-            <p>For full details, please refer to the official government source: <a href="https://www2.gov.bc.ca/gov/content/gender-equity/preparing-pay-transparency-reports" target="_blank" rel="noopener noreferrer">Reporting Requirements - Province of British Columbia</a>.</p>
-            
-            <h2>The Deeper Conversation: Pay Equality vs. Pay Equity</h2>
-            <p>This Act is an important step in the right direction, mainly focusing on pay equality—the idea that everyone should receive the same pay for doing the same or similar work. But it also paves the way for a deeper and very important discussion about pay equity.</p>
-            <p>Pay equity is about ensuring everyone receives equal pay for work that is equal or of similar value, even if the jobs are different. This is where the real challenge comes in. For instance, the Act might not quickly address the longstanding issue of lower pay in roles traditionally held by women, like early childhood educators. Since these roles are often gender-segregated, it&#39;s hard to make direct comparisons within an organization or in the broader market due to the limited number of male employees in such positions.</p>
-            <p>It&#39;s also valuable to look beyond just the broad category of &#39;woman.&#39; From a diversity perspective, an internal audit should consider whether pay gaps exist based on other protected grounds, such as ethnicity. Sometimes, higher pay for certain women might hide lower pay for others, especially when intersecting factors come into play. Although these important details might clearly appear in the public report just yet, they are definitely worth exploring as part of an internal review. This approach helps any organization truly work towards fairness and equity.</p>
-            
-            <h2>The Clock is Ticking: Let&#39;s Prepare You for November 1st</h2>
-            <p>Navigating a compressed timeline for data collection and analysis is a significant challenge. AuroraHR is a trusted partner to B.C. businesses, helping them meet their legal obligations effectively and strategically.</p>
-            <p>Our support includes rapid-response data collection frameworks and a Confidential Pay Equity Audit and Reporting Strategy Session to ensure you are not just compliant, but also confident in the story your data will tell.</p>
-            
-            <h2>Source</h2>
-            <ol class="list-decimal list-inside text-sm text-gray-600 space-y-2">
-                <li id="source-1"> <a href="https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/services-policies-for-government/gender-equity/pay-transparency-annual-report-2025.pdf" target="_blank" rel="noopener noreferrer">Pay Transparency Annual Report, June 2025. B.C. Ministry of Finance.</a></li>
-            </ol>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDRVSMBC');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FJ7SMNVJG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8FJ7SMNVJG');
-    </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog | Aurora HR Consulting</title>
-    <meta name="description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces for mission-driven organizations in BC.">
-
-    <!-- Canonical for blog index -->
-    <link rel="canonical" href="https://aurorahr.ca/blog.html" />
-
-    <!-- Open Graph Meta -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Blog | Aurora HR Consulting" />
-    <meta property="og:description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces in British Columbia." />
-    <meta property="og:url" content="https://aurorahr.ca/blog.html" />
-    <meta property="og:image" content="https://aurorahr.ca/social-share-image.jpg" />
-
-    <!-- Twitter Card Meta -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog | Aurora HR Consulting" />
-    <meta name="twitter:description" content="Insights and articles on people-first HR, leadership, and building thriving workplaces in British Columbia." />
-    <meta name="twitter:image" content="https://aurorahr.ca/social-share-image.jpg" />
-
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='20' fill='%23f8f9fa'/><defs><linearGradient id='favGradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'><stop offset='0%25' stop-color='%2320c997'/><stop offset='100%25' stop-color='%23fd7e14'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='serif' font-size='40' fill='url(%23favGradient)' font-weight='600'>Aurora</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-   <style>
-        :root {
-            --color-bg: #f8f9fa;
-            --color-card: #ffffff;
-            --color-card-hover: #f1f3f5;
-            --color-text-primary: #212529;
-            --color-text-secondary: #6c757d;
-            --color-border: #dee2e6;
-            --color-accent-orange: #fd7e14;
-            --color-accent-teal: #20c997;
-            --color-accent-blue: #399CE2;
-            --color-card-bg-darker: #e3eaf2;
-        }
-        body { font-family: 'Segoe UI','Inter',sans-serif; color: var(--color-text-primary); background: var(--color-bg); overflow-x:hidden; }
-        .header { background: rgba(255,255,255,.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--color-border); }
-        .nav-link { color: var(--color-text-primary); transition: all .3s ease; position:relative; padding-bottom:.25rem; }
-        .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background: linear-gradient(90deg,#57C399,#8256AC); transition: width .3s; }
-        .nav-link:hover::after,.nav-link.active::after{width:100%}
-        .blog-card { background:var(--color-card-bg-darker); border:1px solid var(--color-border); transition:.3s; box-shadow:0 4px 6px -1px rgb(0 0 0 / .05),0 2px 4px -2px rgb(0 0 0 / .05); display:flex; flex-direction:column;}
-        .blog-card:hover{transform:translateY(-5px); border-color:var(--color-accent-blue); box-shadow:0 10px 15px -3px rgba(57,156,226,.2),0 4px 6px -2px rgba(57,156,226,.1);}
-        .related-service-link{background:var(--color-accent-blue);color:white;transition:.3s;}
-        .related-service-link:hover{box-shadow:0 4px 15px rgba(57,156,226,.4);}
-   </style>
-</head>
-<body class="antialiased">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRVSMBC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <header class="header sticky top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" aria-label="Aurora HR Consulting Home"><strong>Aurora HR</strong></a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="/#home" class="nav-link">Home</a>
-                <a href="/#services" class="nav-link">Services</a>
-                <a href="/#approach" class="nav-link">Approach</a>
-                <a href="/blog.html" class="nav-link active">Blog</a>
-                <a href="/#engagement-models" class="nav-link">Pricing</a>
-                <a href="/#contact" class="nav-link">Contact Us</a>
-                <a href="/#about-us" class="nav-link">About Us</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-6 py-12">
-        <section class="hero-section my-12 text-center">
-            <h1 class="text-4xl font-light">HR Insights</h1>
-            <p class="mt-4 text-lg">Articles and analysis on building thriving, people-first workplaces.</p>
         </section>
 
-        <section id="blog-section" class="pb-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="blog-card rounded-lg overflow-hidden">
-                    <div class="p-6">
-                        <p class="text-sm text-gray-500 mb-2">August 30, 2025</p>
-                        <h2 class="text-2xl font-semibold mb-3">BC’s Pay Transparency Act: A Leader's Guide</h2>
-                        <p class="font-light mb-4">The deadline is less than two months away. We break down what leaders need to know from the government's latest findings.</p>
-                        <a href="/blog/BC-Pay-Transparency-Act-Compliance.html" class="read-more-btn font-semibold hover:underline">Read More →</a>
+        <!-- Section: Follow Us -->
+        <section id="follow-section" class="py-12 bg-white rounded-lg shadow-sm my-8">
+            <div class="container mx-auto px-6 text-center max-w-2xl">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Follow Our Insights</h3>
+                <p class="text-gray-600 mb-6">Get the latest articles and analysis on building thriving, people-first workplaces delivered directly to your inbox.</p>
+                <form id="newsletter-form" action="https://formspree.io/f/xdklznwp" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" required>
+                    <button type="submit" class="cta-button font-semibold px-6 py-2 rounded-md">Send</button>
+                </form>
+                <div id="newsletter-feedback" class="text-center text-green-600 mt-4"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Blog Posts -->
+        <section id="blog-section" class="pb-16 md:pb-24">
+            <div class="container mx-auto px-6">
+                <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Blog Post Card -->
+                    <div class="blog-card rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <div class="blog-card-content">
+                                <p class="text-sm text-gray-500 mb-2">August 30, 2025</p>
+                                <h2 class="text-2xl font-semibold text-gray-900 mb-3">BC’s Pay Transparency Act: A Leader's Guide to the Nov. 1st Deadline</h2>
+                                <p class="font-light mb-4">The deadline is less than two months away. For the next wave of reporting employers, the time to act is now. We break down what you need to know from the government's latest findings.</p>
+                                <a href="blog/BC-Pay-Transparency-Act-Compliance.html" class="read-more-btn font-semibold text-gray-900 hover:underline">Read More &rarr;</a>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <h3 class="text-sm font-semibold mb-2 text-gray-600">Related Services:</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="index.html#service-total-rewards" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">Total Rewards</a>
+                                    <a href="index.html#service-hris-data-management" class="inline-block related-service-link text-xs font-semibold px-3 py-1 rounded-full">HRIS & Data Management</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <!-- Add more blog cards here as you publish new articles -->
+
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="py-12 bg-gray-100 text-center text-gray-600">
-        <div class="container mx-auto px-6">
-            <div class="footer-links flex flex-wrap justify-center gap-4">
-                <a href="/#services">Services</a>
-                <a href="/#approach">Approach</a>
-                <a href="/blog.html">Blog</a>
-                <a href="/#engagement-models">Pricing</a>
-                <a href="/#contact">Contact Us</a>
-                <a href="/#about-us">About Us</a>
+     <footer class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-left">
+                    <a href="index.html" aria-label="Aurora HR Consulting Home">
+                        <svg class="w-32 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="auroraGradientFooter" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#57C399"/>
+                                    <stop offset="50%" stop-color="#399CE2"/>
+                                    <stop offset="100%" stop-color="#8256AC"/>
+                                </linearGradient>
+                            </defs>
+                            <text x="0" y="70" font-family="serif" font-size="60" fill="url(#auroraGradientFooter)">Aurora HR</text>
+                        </svg>
+                    </a>
+                    <p class="mt-2 text-sm max-w-xs">We partner with values-driven organizations in BC to build thriving workplaces.</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <div class="flex justify-center space-x-4 mb-4">
+                        <a href="http://linkedin.com/company/AuroraHR" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/yourprofile" target="_blank" class="social-icon" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/AuroraHR.ca" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <a href="mailto:Info@AuroraHR.ca" class="hover:text-aurora-teal transition-colors duration-200">📧 Info@AuroraHR.ca</a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <div class="footer-links flex flex-wrap justify-center gap-4">
+                        <a href="index.html#services" class="hover:text-aurora-teal">Services</a>
+                        <a href="index.html#approach" class="hover:text-aurora-teal">Approach</a>
+                        <a href="blog.html" class="hover:text-aurora-teal">Blog</a>
+                        <a href="index.html#engagement-models" class="hover:text-aurora-teal">Pricing</a>
+                        <a href="index.html#contact" class="hover:text-aurora-teal">Contact Us</a>
+                        <a href="index.html#about-us" class="hover:text-aurora-teal">About Us</a>
+                    </div>
+                </div>
             </div>
-            <p class="mt-6 text-xs">&copy; <span id="copyright-year"></span> Aurora HR Consulting Services. All rights reserved.</p>
+            
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <p class="text-xs text-gray-500 max-w-3xl mx-auto mb-4">I acknowledge with humility and gratitude that I live and work on the shared, unceded territories of the Cayuse, Umatilla, Walla Walla, S’ólh Téméxw (Stó:lō), Semiahmoo, Hul’qumi’num Treaty Group, Kwantlen, sc̓əwaθenaɁɬ təməxʷ (Tsawwassen), šxʷməθkʷəy̓əmaɁɬ təməxʷ (Musqueam), and Stz’uminus peoples.</p>
+                <p>&copy; <span id="copyright-year"></span> Aurora HR Consulting Services. All rights reserved.</p>
+                <p class="text-sm mt-2">Serving small and medium-sized organizations across British Columbia.</p>
+            </div>
         </div>
     </footer>
-
     <script>
-      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const formData = new FormData(form);
+                    const feedback = document.getElementById('newsletter-feedback');
+                    const button = form.querySelector('button[type="submit"]');
+                    button.disabled = true;
+                    button.textContent = 'Submitting...';
+
+                    fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            feedback.textContent = 'Thank you for subscribing!';
+                            form.reset();
+                        } else {
+                            feedback.textContent = 'Oops! There was a problem.';
+                        }
+                    }).catch(error => {
+                        feedback.textContent = 'Oops! There was a problem.';
+                    }).finally(() => {
+                        button.disabled = false;
+                        button.textContent = 'Send';
+                        setTimeout(() => { feedback.textContent = ''; }, 5000);
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
-

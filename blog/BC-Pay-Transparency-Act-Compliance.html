@@ -72,12 +72,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: 'Segoe UI', 'Inter', sans-serif; 
             color: var(--color-text-primary); 
             background-color: var(--color-bg);
-        } 
+        }
+        .header { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(15px); 
+            border-bottom: 1px solid var(--color-border); 
+        }
         .text-gradient { 
             background: linear-gradient(135deg, #57C399, #399CE2, #8256AC); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             background-clip: text; 
+        }
+        .nav-link { 
+            color: var(--color-text-primary);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 0.25rem;
+        } 
+        .nav-link::after { 
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #57C399, #8256AC);
+            transition: width .3s ease;
+        }
+        .nav-link:hover {
+            color: var(--color-text-primary);
+        }
+        .nav-link:hover::after, 
+        .nav-link.active::after { 
+            width: 100%; 
         }
         .full-article-content h1 {
             font-size: 2.5rem;
@@ -165,6 +194,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDRVSMBC"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only p-4 bg-white text-black absolute top-0 left-0 z-50">Skip to main content</a>
+    <header class="header sticky top-0 left-0 right-0 z-50" role="banner">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" aria-label="Aurora HR Consulting Home">
+                <svg class="w-40 h-auto" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="auroraGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#57C399"/>
+                            <stop offset="50%" stop-color="#399CE2"/>
+                            <stop offset="100%" stop-color="#8256AC"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="0" y="70" font-family="serif" font-size="60" fill="url(#auroraGradient)">Aurora HR</text>
+                </svg>
+            </a>
+            <nav id="nav-menu" class="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
+                <a href="../index.html#home" class="nav-link text-lg font-light">Home</a>
+                <a href="../index.html#services" class="nav-link text-lg font-light">Services</a>
+                <a href="../index.html#approach" class="nav-link text-lg font-light">Approach</a>
+                <a href="../blog.html" class="nav-link text-lg font-light active">Blog</a>
+                <a href="../index.html#engagement-models" class="nav-link text-lg font-light">Pricing</a>
+                <a href="../index.html#contact" class="nav-link text-lg font-light">Contact Us</a>
+                <a href="../index.html#about-us" class="nav-link text-lg font-light">About Us</a>
+            </nav>
+            <button id="mobile-menu-button" class="p-2 md:hidden" aria-label="Open menu">
+                <div class="w-6 h-0.5 mb-1.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden p-4 bg-white">
+             <a href="../index.html#home" class="block py-2 text-center text-gray-600">Home</a>
+            <a href="../index.html#services" class="block py-2 text-center text-gray-600">Services</a>
+            <a href="../index.html#approach" class="block py-2 text-center text-gray-600">Approach</a>
+            <a href="../blog.html" class="block py-2 text-center text-gray-600">Blog</a>
+            <a href="../index.html#engagement-models" class="block py-2 text-center text-gray-600">Pricing</a>
+            <a href="../index.html#contact" class="block py-2 text-center text-gray-600">Contact Us</a>
+            <a href="../index.html#about-us" class="block py-2 text-center text-gray-600">About Us</a>
+        </div>
+    </header>
+
     <main role="main" id="main-content" class="container mx-auto px-6 py-12">
         <article class="full-article-content bg-white p-6 sm:p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto">
             <a href="../blog.html" class="inline-block text-lg text-accent-blue hover:underline mb-8">&larr; Back to All Articles</a>
@@ -215,7 +284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <h2>Source</h2>
             <ol class="list-decimal list-inside text-sm text-gray-600 space-y-2">
-                <li id="source-1"> <a href="https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/services-policies-for-government/gender-equity/pay-transparency-annual-report-2025.pdf" target="_blank" rel="noopener noreferrer">Pay Transparency Annual Report, June 2025. B.C. Ministry of Finance.</a></li>
+                <li id="source-1">[1] <a href="https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/services-policies-for-government/gender-equity/pay-transparency-annual-report-2025.pdf" target="_blank" rel="noopener noreferrer">Pay Transparency Annual Report, June 2025. B.C. Ministry of Finance.</a> All in-text citations refer to this report.</li>
             </ol>
 
             <!-- NEW SECTION: RELATED SERVICES -->
@@ -244,18 +313,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </footer>
     <script>
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
